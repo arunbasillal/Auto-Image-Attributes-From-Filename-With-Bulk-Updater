@@ -5,7 +5,7 @@ Plugin URI: http://millionclues.com/portfolio/
 Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
 Author: Arun Basil Lal
 Author URI: http://millionclues.com
-Version: 1.0
+Version: 1.1
 Text Domain: abl_iaff_td
 Domain Path: /languages
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -63,8 +63,7 @@ add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
 
 // Do Stuff On Plugin Activation
 function iaff_activate_plugin() {
-	add_option( 'iaff_image_attributes_from_filename_settings', '1' );	// Setting default value. 1 = enable Auto Image Attributes for new images on plugin install
-	add_option( 'iaff_bulk_updater_counter', '0' );					// Setting numer of images processed as zero
+	add_option( 'iaff_bulk_updater_counter', '0' );				// Setting numer of images processed as zero
 }
 register_activation_hook( __FILE__, 'iaff_activate_plugin' );
 
@@ -73,32 +72,37 @@ register_activation_hook( __FILE__, 'iaff_activate_plugin' );
 function iaff_register_settings() {
 
 	// Register Setting
-	register_setting( 'iaff_image_attributes_from_filename_settings_group', 'iaff_image_attributes_from_filename_settings', 'boolval' );
+	register_setting( 
+		'iaff_settings_group', 	// Group Name
+		'iaff_settings' 		// Setting Name = HTML form <input> name on settings form
+	);
 	
 	// Register A New Section
     add_settings_section(
-        'iaff_auto_image_attributes_settings',		// ID
-        __('Auto Image Attributes', 'abl_iaff_td'),	// Title
-        'iaff_auto_image_attributes_callback',		// Callback Function
-        'image-attributes-from-filename'			// Page slug
+        'iaff_auto_image_attributes_settings',						// ID
+        __('Auto Image Attributes For New Uploads', 'abl_iaff_td'),	// Title
+        'iaff_auto_image_attributes_callback',						// Callback Function
+        'image-attributes-from-filename'							// Page slug
     );
 	
-	// Register a new field in the "iaff_auto_image_attributes_settings" section, inside the "image-attributes-from-filename" page
+	// Setting: Enable Auto Image Attributes
     add_settings_field(
-        'iaff_auto_image_attributes_settings_field',			// ID
-        __('Auto Image Attributes Setting', 'abl_iaff_td'),		// Title
+        'iaff_general_settings',								// ID
+        __('General Settings', 'abl_iaff_td'),					// Title
         'iaff_auto_image_attributes_settings_field_callback',	// Callback function
         'image-attributes-from-filename',						// Page slug
         'iaff_auto_image_attributes_settings'					// Settings Section ID
     );
+	
 }
 add_action( 'admin_init', 'iaff_register_settings' );
 
 
 // Do Stuff On Plugin Uninstall
 function iaff_uninstall_plugin() {
-	delete_option( 'iaff_image_attributes_from_filename_settings' );
+	delete_option( 'iaff_settings' );
 	delete_option( 'iaff_bulk_updater_counter' );
+	delete_option( 'iaff_image_attributes_from_filename_settings' );	// Used in Ver 1.0 of the plugin. Simpler days.
 }
 register_uninstall_hook(__FILE__, 'iaff_uninstall_plugin' );
 
@@ -108,20 +112,49 @@ register_uninstall_hook(__FILE__, 'iaff_uninstall_plugin' );
 /*			Admin Options Page			*/
 /*--------------------------------------*/
 
-function iaff_auto_image_attributes_callback()
-{
-	echo '<p>' . __('Enable this to automatically add Image Caption, Description and Alt Text from image title for new uploads.', 'abl_iaff_td') . '</p>';
+function iaff_auto_image_attributes_callback() {
+	echo '<p>' . __('Automatically add Image attributes such as Image Title, Image Caption, Description And Alt Text from Image Filename for new uploads.', 'abl_iaff_td') . '</p>';
 }
  
-// field content cb
-function iaff_auto_image_attributes_settings_field_callback()
-{	
-	// Get the value of the setting we've registered with register_setting()
-	$setting = get_option('iaff_image_attributes_from_filename_settings');
+// Settings Field Callback
+function iaff_auto_image_attributes_settings_field_callback() {	
 
-	// Output the field 
-	// ID and name of form element should be same as the setting name. ?>
-	<input type="checkbox" name="iaff_image_attributes_from_filename_settings" id="iaff_image_attributes_from_filename_settings" value="Enable Auto Image Attributes" <?php echo boolval($setting) ? 'checked' : '';?>><label for="iaff_image_attributes_from_filename_settings"><?php _e('Enable Auto Image Attributes', 'abl_iaff_td') ?></label>
+	// Default Values For Settings
+	$defaults = array(
+					'image_title' => '1',
+					'image_caption' => '1',
+					'image_description' => '1',
+					'image_alttext' => '1'
+				);
+
+	// Get Settings
+	$settings = get_option('iaff_settings', $defaults);
+
+	// General Settings. Name of form element should be same as the setting name in register_setting(). ?>
+	
+	<!-- Auto Add Image Title  -->
+	<input type="checkbox" name="iaff_settings[image_title]" id="iaff_settings[image_title]" value="1" 
+		<?php if ( isset( $settings['image_title'] ) ) { checked( '1', $settings['image_title'] ); } ?>>
+		<label for="iaff_settings[image_title]"><?php _e('Set Image Title from filename for new uploads', 'abl_iaff_td') ?></label>
+		<br>
+		
+	<!-- Auto Add Image Caption  -->
+	<input type="checkbox" name="iaff_settings[image_caption]" id="iaff_settings[image_caption]" value="1" 
+		<?php if ( isset( $settings['image_caption'] ) ) { checked( '1', $settings['image_caption'] ); } ?>>
+		<label for="iaff_settings[image_caption]"><?php _e('Set Image Caption from filename for new uploads', 'abl_iaff_td') ?></label>
+		<br>
+		
+	<!-- Auto Add Image Description  -->
+	<input type="checkbox" name="iaff_settings[image_description]" id="iaff_settings[image_description]" value="1" 
+		<?php if ( isset( $settings['image_description'] ) ) { checked( '1', $settings['image_description'] ); } ?>>
+		<label for="iaff_settings[image_description]"><?php _e('Set Image Description from filename for new uploads', 'abl_iaff_td') ?></label>
+		<br>
+		
+	<!-- Auto Add Alt Text -->
+	<input type="checkbox" name="iaff_settings[image_alttext]" id="iaff_settings[image_alttext]" value="1" 
+		<?php if ( isset( $settings['image_alttext'] ) ) { checked( '1', $settings['image_alttext'] ); } ?>>
+		<label for="iaff_settings[image_alttext]"><?php _e('Set Image Alt Text from filename for new uploads', 'abl_iaff_td') ?></label>
+		<br>
 
 	<?php
 }
@@ -151,7 +184,7 @@ function iaff_admin_interface_render () {
 		<form action="options.php" method="post">		
 			<?php
 			// Output nonce, action, and option_page fields for a settings page.
-			settings_fields( 'iaff_image_attributes_from_filename_settings_group' );
+			settings_fields( 'iaff_settings_group' );
 			
 			// Prints out all settings sections added to a particular settings page. 
 			do_settings_sections( 'image-attributes-from-filename' );	// Page slug
@@ -165,8 +198,8 @@ function iaff_admin_interface_render () {
 		
 		<p style="color:red"><?php _e('IMPORTANT: Please backup your database before running the bulk updater.', 'abl_iaff_td') ?></p>
 		<p><?php _e('Run this bulk updater to update Image Title, Caption, Description and Alt Text from image filename for existing images in the media library.', 'abl_iaff_td') ?></p>
-		<p><?php _e('If your image is named a-lot-like-love.jpg, your Image Title, Caption, Description and Alt Text will be: A Lot Like Love.', 'abl_iaff_td') ?></p>
-		<p><?php _e('Do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.', 'abl_iaff_td') ?></p> <?php
+		<p><?php _e('If your image is named a-lot-like-love.jpg, your Image Title, Caption, Description and Alt Text will be: A Lot Like Love. All attributes are updated regardless of the settings for NEW uploads.', 'abl_iaff_td') ?></p>
+		<p><?php _e('Be Patient and do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.', 'abl_iaff_td') ?></p> <?php
 		
 		submit_button( __('Run Bulk Updater', 'abl_iaff_td'), 'iaff_run_bulk_updater_button' ); ?>
 		
@@ -189,28 +222,39 @@ function iaff_admin_interface_render () {
 /*--------------------------------------*/
 
 
-// Auto Add Image Attributes From Image Filename
+// Auto Add Image Attributes From Image Filename For New Uploads
 function iaff_auto_image_attributes( $post_ID ) {
 
-	// Check if Auto Image Attributes is enabled
-	$setting = get_option('iaff_image_attributes_from_filename_settings');
-	if ( ! boolval($setting) ) {
-		return;
-	}
+	// Default Values For Settings
+	$defaults = array(
+					'image_title' => '1',
+					'image_caption' => '1',
+					'image_description' => '1',
+					'image_alttext' => '1'
+				);
+	// Get Settings
+	$settings = get_option('iaff_settings', $defaults);
 
 	$attachment 		= get_post( $post_ID );
 	$attachment_title 	= $attachment->post_title;
-	
 	$attachment_title 	= str_replace( '-', ' ', $attachment_title );	// Hyphen Removal
 	$attachment_title 	= ucwords( $attachment_title );					// Capitalize First Word
 
 	$uploaded_image               	= array();
 	$uploaded_image['ID']         	= $post_ID;
-	$uploaded_image['post_title'] 	= $attachment_title;	// Image Title
-	$uploaded_image['post_excerpt'] = $attachment_title;	// Image Caption
-	$uploaded_image['post_content'] = $attachment_title;	// Image Description
 	
-	update_post_meta( $post_ID, '_wp_attachment_image_alt', $attachment_title ); // Image Alt Text
+	if ( boolval($settings['image_title']) ) {
+		$uploaded_image['post_title'] 	= $attachment_title;	// Image Title
+	}
+	if ( boolval($settings['image_caption']) ) {
+		$uploaded_image['post_excerpt'] = $attachment_title;	// Image Caption
+	}
+	if ( boolval($settings['image_description']) ) {
+		$uploaded_image['post_content'] = $attachment_title;	// Image Description
+	}
+	if ( boolval($settings['image_alttext']) ) {
+		update_post_meta( $post_ID, '_wp_attachment_image_alt', $attachment_title ); // Image Alt Text
+	}
 
 	wp_update_post( $uploaded_image );
 	
@@ -246,8 +290,8 @@ function iaff_rename_old_image() {
 	
 	// Update the image Title, Caption and Description with the image name
 	$updated_image = array(
-	  'ID'           	=> $image->ID,
-	  'post_title'		=> $image_name,	// Image Title
+	  'ID'           		=> $image->ID,
+	  'post_title'			=> $image_name,	// Image Title
 	  'post_excerpt'		=> $image_name,	// Image Caption
 	  'post_content'		=> $image_name,	// Image Description
 	);
@@ -283,7 +327,7 @@ function iaff_total_number_of_images() {
 	return $total_no_of_images;
 }
 
-// Count Remaining Number Of Images To Process
+// Print Remaining Number Of Images To Process
 function iaff_count_remaining_images() {
 	
 	$total_no_of_images = iaff_total_number_of_images();
@@ -386,4 +430,20 @@ function iaff_image_bulk_updater() {
 	</script> <?php
 }
 add_action( 'admin_footer', 'iaff_image_bulk_updater' );
+
+
+// Admin Footer Text - Ask For 5 Star Rating.
+function iaff_footer_text($default) {
+    
+	// Retun Default On Non-plugin Pages
+	$screen = get_current_screen();
+	if ( $screen->id !== "settings_page_image-attributes-from-filename" ) {
+		return $default;
+	}
+	
+    $iaff_footer_text = sprintf( __( 'If you like this plugin please leave me a %s rating. Thanks a bunch!', 'abl_iaff_td' ), '<a href="https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater/reviews/?rate=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>' );
+	
+	return $iaff_footer_text;
+}
+add_filter('admin_footer_text', 'iaff_footer_text');
 ?>
