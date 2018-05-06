@@ -31,7 +31,7 @@ Please remember to take a database backup before running the bulk updater. The b
 
 **Image Attributes Pro**
 
-A pro add-on is now available for the plugin. Check out [Image Attributes Pro](https://imageattributespro.com/?utm_source=wordpress&utm_medium=readme).
+A pro add-on is now available for the plugin. Check out [Image Attributes Pro](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
 What the pro add-on you get these additional features:
 
@@ -65,9 +65,9 @@ With the pro bulk updater you can:
 * Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
 * Choose to turn off any of the above mentioned features.
 
-For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=wordpress&utm_medium=readme).
+For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
-== Installation ==
+## Installation
 
 To install this plugin:
 
@@ -75,12 +75,12 @@ To install this plugin:
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Go to WordPress Admin > Settings > Image Attributes.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
-= Will this plugin update existing images in the media library? =
+### Will this plugin update existing images in the media library?
 
 Yes, the plugin will update image Title, Caption, Description And Alt Text from the image filename for both existing images in the media library and new uploads.
 
-= I need more features. Can I hire you? =
+### I need more features. Can I hire you?
 
-Please checkout the [Image Attributes Pro add-on](https://imageattributespro.com/?utm_source=wordpress&utm_medium=readme) to see if it suits your requirement. If not, please [get in touch via my contact form](http://millionclues.com/contact/) with a brief description of your requirement and budget for the project. I will be in touch shortly.
+Please checkout the [Image Attributes Pro add-on](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md) to see if it suits your requirement. 
