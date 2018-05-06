@@ -51,7 +51,7 @@ function iaff_settings_link( $links ) {
 		$links
 	);
 }
-add_filter( 'plugin_action_links_' . IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME . '/iaff_image-attributes-from-filename.php', 'iaff_settings_link' );
+add_filter( 'plugin_action_links_auto-image-attributes-from-filename-with-bulk-updater/iaff_image-attributes-from-filename.php', 'iaff_settings_link' );
 
 
 /**

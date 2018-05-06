@@ -35,24 +35,28 @@
 if ( ! defined('ABSPATH') ) exit;
 
 /**
- * Plugin name and directory constants
+ * Plugin directory path and URL constants
  *
  * @since 1.3
+ * @since 1.5 Removed IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME constant
  */
-// The name of the plugin
-// 'auto-image-attributes-from-filename-with-bulk-updater'
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME', trim(dirname(plugin_basename(__FILE__)), '/'));
+if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR' ) ) {
+	
+	/**
+	 * The absolute path to the plugin directory without the trailing slash. Useful for using with includes
+	 * eg - C:\xampp\htdocs\wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater
+	 */
+	define( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR', plugin_dir_path( __FILE__ ) );
+}
 
-// The absolute path to the plugin directory without the trailing slash. Useful for using with includes
-// eg - C:\xampp\htdocs\wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR', plugin_dir_path( __FILE__ ));
-
-// The url to the plugin folder. Useful for referencing src
-// eg - http://localhost/wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater/
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL', plugin_dir_url( __FILE__ ));
+if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL' ) ) {
+	
+	/**
+	* The url to the plugin folder. Useful for referencing src
+	* eg - http://localhost/wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater/
+	*/
+	define( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL', plugin_dir_url( __FILE__ ) );
+}
 
 /**
  * A constant with current version of plugin
