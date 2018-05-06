@@ -73,7 +73,8 @@ if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
 /**
  * Do stuff after a plugin upgrade.
  *
- * @since	1.4
+ * @since 1.4
+ * @since 1.5 Switched to version_compare for version check and added iaff_upgrade_complete_admin_notice transient.
  */
 function iaff_upgrader() {
 	
@@ -103,6 +104,10 @@ function iaff_upgrader() {
 		}
 	}
 	
+	// Set transient to show upgrade complete notice
+	set_transient( 'iaff_upgrade_complete_admin_notice', true, 5 );
+	
+	// Finally add the current version to the database. Upgrade todo complete. 
 	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );
 }
 add_action( 'admin_init', 'iaff_upgrader' );

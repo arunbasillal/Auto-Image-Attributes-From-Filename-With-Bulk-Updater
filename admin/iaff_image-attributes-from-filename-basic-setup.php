@@ -80,11 +80,11 @@ add_filter( 'plugin_row_meta', 'iaff_plugin_row_meta', 10, 2 );
 /**
  * Admin notices
  * 
- * @since 1.5 Added admin notice for plugin upgrade.
+ * @since 1.5
  */
 function iaff_admin_notices() {
 	
-	// Return if transient is not set
+	// Plugin activation notice
 	if ( get_transient( 'iaff_activation_admin_notice' ) ) {
 		
 		echo '<div class="notice notice-success is-dismissible"><p>' . sprintf( __( 'Thank you for installing <strong>Auto Image Attributes From Filename With Bulk Updater</strong>! <a href="%s">Change settings &rarr;</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), admin_url( 'options-general.php?page=image-attributes-from-filename' ) ) . '</p></div>';
@@ -92,9 +92,25 @@ function iaff_admin_notices() {
 		// Delete transient
 		delete_transient( 'iaff_activation_admin_notice' );
 		
+		// No more notices on plugin activation.
 		return;
 	}
 	
+	// Upgrade complete notice
+	if ( get_transient( 'iaff_upgrade_complete_admin_notice' ) ) {
+		
+		$iaff_suggest_pro = '';
+
+		// Suggest IAFF Pro if Pro add-on isn't installed.
+		if ( ! iaff_is_pro() ) {
+			$iaff_suggest_pro = sprintf( __( '<br>Want to use Post Titles as attributes and fine tune Bulk Updater settings? Check out the <a href="%s" target="_blank">Image Attributes Pro</a> add-on.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=upgrade-complete-admin-notice' );
+		}
+		
+		echo '<div class="notice notice-success is-dismissible"><p>' . __( '<strong>Auto Image Attributes From Filename With Bulk Updater</strong> successfully updated. ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . $iaff_suggest_pro . '</p></div>';
+		
+		// Delete transient
+		delete_transient( 'iaff_upgrade_complete_admin_notice' );
+	}
 }
 add_action( 'admin_notices', 'iaff_admin_notices' );
 
