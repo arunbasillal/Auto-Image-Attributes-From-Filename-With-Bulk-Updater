@@ -882,8 +882,8 @@ function iaff_admin_interface_render () {
 					<div id="iaff-advanced" class="iaff-settings-tab">
 					
 						<?php if( ! iaff_is_pro() ) { ?>
-							<div class="updated inline" style="margin-top: 20px;"> 
-								<p><strong><?php _e('This is a preview of the features included in Image Attributes Pro.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
+							<div class="notice notice-warning inline" style="margin-top: 20px;"> 
+								<p><strong><?php printf( __( 'The options below is a preview of the features included in <a href="%s" target="_blank">Image Attributes Pro</a>. Please upgrade to use them.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=preview-warning-advanced-tab' ); ?></strong></p>
 							</div>
 						<?php } ?>
 						
@@ -897,8 +897,8 @@ function iaff_admin_interface_render () {
 					<div id="iaff-bulk-updater-settings" class="iaff-settings-tab">
 					
 						<?php if( ! iaff_is_pro() ) { ?>
-							<div class="updated inline" style="margin-top: 20px;"> 
-								<p><strong><?php _e('This is a preview of the features included in Image Attributes Pro.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
+							<div class="notice notice-warning inline" style="margin-top: 20px;"> 
+								<p><strong><?php printf( __( 'The options below is a preview of the features included in <a href="%s" target="_blank">Image Attributes Pro</a>. Please upgrade to use them.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=preview-warning-bu-settings-tab' ); ?></strong></p>
 							</div>
 						<?php } ?>
 						
