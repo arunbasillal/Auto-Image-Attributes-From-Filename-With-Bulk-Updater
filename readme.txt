@@ -1,6 +1,6 @@
 === Auto Image Attributes From Filename With Bulk Updater ===
 Contributors: arunbasillal
-Donate link: http://millionclues.com/donate/
+Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
 Tested up to: 4.9

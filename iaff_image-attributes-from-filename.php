@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Auto Image Attributes From Filename With Bulk Updater
- * Plugin URI: http://millionclues.com/
+ * Plugin URI: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=plugin-uri
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
- * Author URI: http://millionclues.com
+ * Author URI: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=author-uri
  * Version: 1.5
  * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
