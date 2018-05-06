@@ -6,7 +6,7 @@
  * Author: Arun Basil Lal
  * Author URI: http://millionclues.com
  * Version: 1.4
- * Text Domain: abl_iaff_td
+ * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */

@@ -33,7 +33,7 @@ function iaff_activate_plugin() {
  * @since	1.0
  */
 function iaff_load_plugin_textdomain() {
-    load_plugin_textdomain( 'abl_iaff_td', FALSE, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
+    load_plugin_textdomain( 'auto-image-attributes-from-filename-with-bulk-updater', FALSE, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
 }
 add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
 
@@ -46,7 +46,7 @@ add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
 function iaff_settings_link( $links ) {
 	return array_merge(
 		array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page=image-attributes-from-filename' ) . '">' . __( 'Settings', 'abl_iaff_td' ) . '</a>'
+			'settings' => '<a href="' . admin_url( 'options-general.php?page=image-attributes-from-filename' ) . '">' . __( 'Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '</a>'
 		),
 		$links
 	);
@@ -93,13 +93,13 @@ function iaff_footer_text($default) {
 		return $default;
 	}
 	
-    $iaff_footer_text = sprintf( __( 'If you like this plugin, please <a href="%s" target="_blank">upgrade to pro</a> or leave a <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!', 'abl_iaff_td' ), 
+    $iaff_footer_text = sprintf( __( 'If you like this plugin, please <a href="%s" target="_blank">upgrade to pro</a> or leave a <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!', 'auto-image-attributes-from-filename-with-bulk-updater' ), 
 								'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=footer',
 								'https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater/reviews/?rate=5#new-post' 
 						);
 						
 	if( iaff_is_pro() ) {
-		$iaff_footer_text = __( 'Thank you for choosing Image Attributes Pro! Use the support tab if you have any questions or feedback.', 'abl_iaff_td' );
+		$iaff_footer_text = __( 'Thank you for choosing Image Attributes Pro! Use the support tab if you have any questions or feedback.', 'auto-image-attributes-from-filename-with-bulk-updater' );
 	}
 	
 	return $iaff_footer_text;
