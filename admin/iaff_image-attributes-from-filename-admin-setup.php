@@ -52,7 +52,7 @@ function iaff_register_settings() {
 	// Register Basic Settings Section
     add_settings_section(
         'iaff_basic_settings_section_id',			// ID
-        __('Basic Settings','abl_iaff_td'),			// Title
+        __('Basic Settings','auto-image-attributes-from-filename-with-bulk-updater'),			// Title
         '__return_false',							// Callback Function
         'iaff_basic_settings_section'				// Page slug
     );
@@ -60,7 +60,7 @@ function iaff_register_settings() {
 		// Global Switch
 		add_settings_field(
 			'iaff_global_switch',						// ID
-			__('Global Switch', 'abl_iaff_td'),			// Title
+			__('Global Switch', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
 			'iaff_global_switch_callback',				// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -69,7 +69,7 @@ function iaff_register_settings() {
 		// General Settings
 		add_settings_field(
 			'iaff_general_settings',					// ID
-			__('General Settings', 'abl_iaff_td'),		// Title
+			__('General Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
 			'iaff_general_settings_callback',			// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -78,7 +78,7 @@ function iaff_register_settings() {
 		// Filter Settings
 		add_settings_field(
 			'iaff_filter_settings',						// ID
-			__('Filter Settings', 'abl_iaff_td'),		// Title
+			__('Filter Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
 			'iaff_filter_settings_callback',			// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -87,7 +87,7 @@ function iaff_register_settings() {
 		// Basic SEO Settings
 		add_settings_field(
 			'iaff_basic_seo_settings',					// ID
-			__('Basic SEO Settings', 'abl_iaff_td'),	// Title
+			__('Basic SEO Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_basic_seo_settings_callback',			// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -98,7 +98,7 @@ function iaff_register_settings() {
 			
 			add_settings_field(
 				'iaff_preview_pro_settings',				// ID
-				__('Preview Pro Features', 'abl_iaff_td'),	// Title
+				__('Preview Pro Features', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 				'iaff_preview_pro_settings_callback',		// Callback function
 				'iaff_basic_settings_section',				// Page slug
 				'iaff_basic_settings_section_id'			// Settings Section ID
@@ -108,7 +108,7 @@ function iaff_register_settings() {
 	// Register Advanced Settings Section
     add_settings_section(
         'iaff_advanced_settings_section_id',		// ID
-        __('Advanced Settings','abl_iaff_td'),		// Title
+        __('Advanced Settings','auto-image-attributes-from-filename-with-bulk-updater'),		// Title
         '__return_false',							// Callback Function
         'iaff_advanced_settings_section'			// Page slug
     );
@@ -116,7 +116,7 @@ function iaff_register_settings() {
 		// Advanced Filter
 		add_settings_field(
 			'iaff_advanced_filter_settings',			// ID
-			__('Advanced Filter', 'abl_iaff_td'),		// Title
+			__('Advanced Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
 			'iaff_advanced_filter_callback',			// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -125,7 +125,7 @@ function iaff_register_settings() {
 		// Custom Filter
 		add_settings_field(
 			'iaff_custom_filter_settings',				// ID
-			__('Custom Filter', 'abl_iaff_td'),			// Title
+			__('Custom Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
 			'iaff_custom_filter_callback',				// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -134,7 +134,7 @@ function iaff_register_settings() {
 		// Capitalization Settings
 		add_settings_field(
 			'iaff_capitalization_settings',				// ID
-			__('Capitalization Settings', 'abl_iaff_td'),// Title
+			__('Capitalization Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_capitalization_callback',				// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -143,7 +143,7 @@ function iaff_register_settings() {
 		// Image Title Settings
 		add_settings_field(
 			'iaff_image_title_settings',				// ID
-			__('Image Title Settings', 'abl_iaff_td'),	// Title
+			__('Image Title Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_advanced_image_title_callback',		// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -152,7 +152,7 @@ function iaff_register_settings() {
 		// Image Alt Text Settings
 		add_settings_field(
 			'iaff_image_alt_text_settings',				// ID
-			__('Image Alt Text Settings', 'abl_iaff_td'),// Title
+			__('Image Alt Text Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_advanced_image_alt_text_callback',	// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -161,7 +161,7 @@ function iaff_register_settings() {
 		// Image Caption Settings
 		add_settings_field(
 			'iaff_image_caption_settings',				// ID
-			__('Image Caption Settings', 'abl_iaff_td'),// Title
+			__('Image Caption Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_advanced_image_caption_callback',		// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -170,7 +170,7 @@ function iaff_register_settings() {
 		// Image Description Settings
 		add_settings_field(
 			'iaff_image_description_settings',			// ID
-			__('Image Description Settings', 'abl_iaff_td'),// Title
+			__('Image Description Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_advanced_image_description_callback',	// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -179,7 +179,7 @@ function iaff_register_settings() {
 		// Miscellaneous Settings
 		add_settings_field(
 			'iaff_miscellaneous_settings',				// ID
-			__('Miscellaneous Settings', 'abl_iaff_td'),// Title
+			__('Miscellaneous Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_miscellaneous_callback',				// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -188,7 +188,7 @@ function iaff_register_settings() {
 	// Register Bulk Updater Settings Section
     add_settings_section(
         'iaff_bu_settings_section_id',				// ID
-        __('Bulk Updater Settings','abl_iaff_td'),	// Title
+        __('Bulk Updater Settings','auto-image-attributes-from-filename-with-bulk-updater'),	// Title
         '__return_false',							// Callback Function
         'iaff_bu_settings_section'					// Page slug
     );
@@ -196,7 +196,7 @@ function iaff_register_settings() {
 		// General Settings
 		add_settings_field(
 			'iaff_bu_general_settings',						// ID
-			__('General Settings', 'abl_iaff_td'),			// Title
+			__('General Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
 			'iaff_bu_general_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -205,7 +205,7 @@ function iaff_register_settings() {
 		// Filter Settings
 		add_settings_field(
 			'iaff_bu_filter_settings',						// ID
-			__('Filter Settings', 'abl_iaff_td'),			// Title
+			__('Filter Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
 			'iaff_bu_filter_settings_callback',				// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -214,7 +214,7 @@ function iaff_register_settings() {
 		// Custom Filter
 		add_settings_field(
 			'iaff_bu_custom_filter_settings',				// ID
-			__('Custom Filter', 'abl_iaff_td'),				// Title
+			__('Custom Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),				// Title
 			'iaff_bu_custom_filter_callback',				// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -223,7 +223,7 @@ function iaff_register_settings() {
 		// Capitalization Settings
 		add_settings_field(
 			'iaff_bu_capitalization_settings',				// ID
-			__('Capitalization Settings', 'abl_iaff_td'),	// Title
+			__('Capitalization Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_capitalization_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -232,7 +232,7 @@ function iaff_register_settings() {
 		// Image Title Settings
 		add_settings_field(
 			'iaff_bu_image_title_settings',					// ID
-			__('Image Title Settings', 'abl_iaff_td'),		// Title
+			__('Image Title Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
 			'iaff_bu_image_title_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -241,7 +241,7 @@ function iaff_register_settings() {
 		// Image Alt Text Settings
 		add_settings_field(
 			'iaff_bu_alt_text_settings',					// ID
-			__('Image Alt Text Settings', 'abl_iaff_td'),	// Title
+			__('Image Alt Text Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_alt_text_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -250,7 +250,7 @@ function iaff_register_settings() {
 		// Image Caption Settings
 		add_settings_field(
 			'iaff_bu_image_caption_settings',				// ID
-			__('Image Caption Settings', 'abl_iaff_td'),	// Title
+			__('Image Caption Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_image_caption_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -259,7 +259,7 @@ function iaff_register_settings() {
 		// Image Description Settings
 		add_settings_field(
 			'iaff_bu_image_description_settings',				// ID
-			__('Image Description Settings', 'abl_iaff_td'),// Title
+			__('Image Description Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_bu_image_description_settings_callback',	// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID

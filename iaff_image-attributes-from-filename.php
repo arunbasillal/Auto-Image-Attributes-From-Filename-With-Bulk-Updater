@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: Auto Image Attributes From Filename With Bulk Updater
- * Plugin URI: http://millionclues.com/
+ * Plugin URI: https://imageattributespro.com/?utm_source=plugin-header&utm_medium=plugin-uri
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
- * Author URI: http://millionclues.com
- * Version: 1.4
- * Text Domain: abl_iaff_td
+ * Author URI: https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri
+ * Version: 1.5
+ * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -31,71 +31,89 @@
  * uninstall.php				- Fired when the plugin is uninstalled. 
  */
 
-/**
- * :TODO:
- *
- * - Update IAFF_VERSION_NUM 			in iaff_starter-plugin.php (keep this line for future updates)
- */
-
 // Exit if accessed directly
 if ( ! defined('ABSPATH') ) exit;
 
 /**
- * Plugin name and directory constants
+ * Plugin directory path and URL constants
+ *
+ * @since 1.3
+ * @since 1.5 Removed IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME constant
+ */
+if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR' ) ) {
+	
+	/**
+	 * The absolute path to the plugin directory without the trailing slash. Useful for using with includes
+	 * eg - C:\xampp\htdocs\wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater
+	 */
+	define( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR', plugin_dir_path( __FILE__ ) );
+}
+
+if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL' ) ) {
+	
+	/**
+	* The url to the plugin folder. Useful for referencing src
+	* eg - http://localhost/wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater/
+	*/
+	define( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL', plugin_dir_url( __FILE__ ) );
+}
+
+/**
+ * A constant with current version of plugin
+ *
+ * IAFF_VERSION_NUM will be current version of the plugin. 
+ * This is useful for database upgrades and doing stuff after plugin update. 
  *
  * @since 1.3
  */
-// The name of the plugin
-// 'auto-image-attributes-from-filename-with-bulk-updater'
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME', trim(dirname(plugin_basename(__FILE__)), '/'));
-
-// The absolute path to the plugin directory without the trailing slash. Useful for using with includes
-// eg - C:\xampp\htdocs\wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR', plugin_dir_path( __FILE__ ));
-
-// The url to the plugin folder. Useful for referencing src
-// eg - http://localhost/wp/wp-content/plugins/auto-image-attributes-from-filename-with-bulk-updater/
-if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL'))
-    define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL', plugin_dir_url( __FILE__ ));
-
-/**
- * Add plugin version to database
- *
- * @since 		1.3
- * @constant 	IAFF_VERSION_NUM		the version number of the current version
- * @refer		https://www.smashingmagazine.com/2011/03/ten-things-every-wordpress-plugin-developer-should-know/
- */
-if (!defined('IAFF_VERSION_NUM'))
-    define('IAFF_VERSION_NUM', '1.4');
-
-/**
- * Upgrade database settings on update 
- *
- * @since	1.4
- */
-function iaff_upgrade_db_settings() {
-	
-	$current_ver = get_option('abl_iaff_version');
-	
-	if ( ($current_ver >= 1.4 ) ) {
-		return;	// Version was added in 1.3. Return if version is above 1.3. 
-	}
-	
-	$settings = get_option('iaff_settings');
-	
-	if ( $settings != false ) {
-		$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
-		update_option('iaff_settings', $settings);
-	}
-	
-	update_option('abl_iaff_version', IAFF_VERSION_NUM);
+if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
+	define( 'IAFF_VERSION_NUM', '1.5' );
 }
-add_action( 'plugins_loaded', 'iaff_upgrade_db_settings' );
+
+/**
+ * Do stuff after a plugin upgrade.
+ *
+ * @since 1.4
+ * @since 1.5 Switched to version_compare for version check and added iaff_upgrade_complete_admin_notice transient.
+ */
+function iaff_upgrader() {
+	
+	/**
+	 * Get the current version of the plugin stored in the db.
+	 * Version was added in 1.3, defaults to 1.2
+	 */
+	$current_ver = get_option( 'abl_iaff_version', '1.2' );
+	
+	// Return if we have already done this todo
+	if ( version_compare( $current_ver, IAFF_VERSION_NUM, '==' ) ) {
+		return;
+	}
+	
+	/**
+	 * Upgrade database settings when upgrading from 1.3 or lower
+	 * A global swith with setting name global_switch was introduce in 1.4
+	 */
+	if ( version_compare( $current_ver, '1.3', '<=' ) ) {
+		
+		$settings = get_option( 'iaff_settings' );
+	
+		if ( $settings !== false ) {
+			
+			$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
+			update_option('iaff_settings', $settings);
+		}
+	}
+	
+	// Set transient to show upgrade complete notice
+	set_transient( 'iaff_upgrade_complete_admin_notice', true, 5 );
+	
+	// Finally add the current version to the database. Upgrade todo complete. 
+	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );
+}
+add_action( 'admin_init', 'iaff_upgrader' );
 
 // Load everything
 require_once( IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/admin/iaff_image-attributes-from-filename-loader.php');
 
-// Register activation hook (this has to be in the main plugin file.)
+// Register activation hook
 register_activation_hook( __FILE__ , 'iaff_activate_plugin' );

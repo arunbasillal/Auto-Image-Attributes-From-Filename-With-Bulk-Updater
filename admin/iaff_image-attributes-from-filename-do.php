@@ -106,7 +106,7 @@ function iaff_rename_old_image() {
 	$image_url = wp_get_attachment_url($image->ID);
 	
 	// Update Event log
-	echo __('Image attributes updated for: ', 'abl_iaff_td') . '<a href="'. get_edit_post_link($image->ID) .'">'. $image_url .'</a>';
+	echo __('Image attributes updated for: ', 'auto-image-attributes-from-filename-with-bulk-updater') . '<a href="'. get_edit_post_link($image->ID) .'">'. $image_url .'</a>';
 	
 	wp_die();
 }
@@ -179,7 +179,7 @@ function iaff_reset_bulk_updater_counter() {
 	update_option( 'iaff_bulk_updater_counter', '0' );
 	
 	$response = array(
-		'message'			=> __('Counter reset. The bulk updater will start from scratch in the next run.', 'abl_iaff_td'),
+		'message'			=> __('Counter reset. The bulk updater will start from scratch in the next run.', 'auto-image-attributes-from-filename-with-bulk-updater'),
 		'remaining_images'	=> iaff_count_remaining_images(true),
 	);
 	wp_send_json($response);
