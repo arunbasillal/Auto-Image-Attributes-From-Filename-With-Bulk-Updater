@@ -5,7 +5,7 @@ Plugin URI: http://millionclues.com/portfolio/
 Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
 Author: Arun Basil Lal
 Author URI: http://millionclues.com
-Version: 1.1
+Version: 1.2
 Text Domain: abl_iaff_td
 Domain Path: /languages
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -85,11 +85,20 @@ function iaff_register_settings() {
         'image-attributes-from-filename'							// Page slug
     );
 	
-	// Setting: Enable Auto Image Attributes
+	// General Settings
     add_settings_field(
         'iaff_general_settings',								// ID
         __('General Settings', 'abl_iaff_td'),					// Title
         'iaff_auto_image_attributes_settings_field_callback',	// Callback function
+        'image-attributes-from-filename',						// Page slug
+        'iaff_auto_image_attributes_settings'					// Settings Section ID
+    );
+	
+	// Filter Settings
+    add_settings_field(
+        'iaff_filter_settings',									// ID
+        __('Filter Settings', 'abl_iaff_td'),					// Title
+        'iaff_auto_image_attributes_filter_settings_callback',	// Callback function
         'image-attributes-from-filename',						// Page slug
         'iaff_auto_image_attributes_settings'					// Settings Section ID
     );
@@ -116,7 +125,7 @@ function iaff_auto_image_attributes_callback() {
 	echo '<p>' . __('Automatically add Image attributes such as Image Title, Image Caption, Description And Alt Text from Image Filename for new uploads.', 'abl_iaff_td') . '</p>';
 }
  
-// Settings Field Callback
+// General Settings Field Callback
 function iaff_auto_image_attributes_settings_field_callback() {	
 
 	// Default Values For Settings
@@ -156,6 +165,33 @@ function iaff_auto_image_attributes_settings_field_callback() {
 		<label for="iaff_settings[image_alttext]"><?php _e('Set Image Alt Text from filename for new uploads', 'abl_iaff_td') ?></label>
 		<br>
 
+	<?php
+}
+
+// Filter Settings Field Callback
+function iaff_auto_image_attributes_filter_settings_callback() {	
+
+	// Default Values For Settings
+	$defaults = array(
+					'hyphens' => '1',
+					'under_score' => '1',
+				);
+
+	// Get Settings
+	$settings = get_option('iaff_settings', $defaults); ?>
+	
+	<!-- Filter Hyphens -->
+	<input type="checkbox" name="iaff_settings[hyphens]" id="iaff_settings[hyphens]" value="1" 
+		<?php if ( isset( $settings['hyphens'] ) ) { checked( '1', $settings['hyphens'] ); } ?>>
+		<label for="iaff_settings[hyphens]"><?php _e('Remove hyphens ( - ) from filename', 'abl_iaff_td') ?></label>
+		<br>
+		
+	<!-- Filter Underscore  -->
+	<input type="checkbox" name="iaff_settings[under_score]" id="iaff_settings[under_score]" value="1" 
+		<?php if ( isset( $settings['under_score'] ) ) { checked( '1', $settings['under_score'] ); } ?>>
+		<label for="iaff_settings[under_score]"><?php _e('Remove underscores ( _ ) from filename', 'abl_iaff_td') ?></label>
+		<br>
+		
 	<?php
 }
 
@@ -230,29 +266,38 @@ function iaff_auto_image_attributes( $post_ID ) {
 					'image_title' => '1',
 					'image_caption' => '1',
 					'image_description' => '1',
-					'image_alttext' => '1'
+					'image_alttext' => '1',
+					'hyphens' => '1',
+					'under_score' => '1',
 				);
 	// Get Settings
 	$settings = get_option('iaff_settings', $defaults);
 
 	$attachment 		= get_post( $post_ID );
 	$attachment_title 	= $attachment->post_title;
-	$attachment_title 	= str_replace( '-', ' ', $attachment_title );	// Hyphen Removal
+	
+	if ( isset( $settings['hyphens'] ) && boolval($settings['hyphens']) ) {
+		$attachment_title 	= str_replace( '-', ' ', $attachment_title );	// Hyphen Removal
+	}
+	if ( isset( $settings['under_score'] ) && boolval($settings['under_score']) ) {
+		$attachment_title 	= str_replace( '_', ' ', $attachment_title );	// Underscore Removal
+	}
+	
 	$attachment_title 	= ucwords( $attachment_title );					// Capitalize First Word
 
 	$uploaded_image               	= array();
 	$uploaded_image['ID']         	= $post_ID;
 	
-	if ( boolval($settings['image_title']) ) {
+	if ( isset( $settings['image_title'] ) && boolval($settings['image_title']) ) {
 		$uploaded_image['post_title'] 	= $attachment_title;	// Image Title
 	}
-	if ( boolval($settings['image_caption']) ) {
+	if ( isset( $settings['image_caption'] ) && boolval($settings['image_caption']) ) {
 		$uploaded_image['post_excerpt'] = $attachment_title;	// Image Caption
 	}
-	if ( boolval($settings['image_description']) ) {
+	if ( isset( $settings['image_description'] ) && boolval($settings['image_description']) ) {
 		$uploaded_image['post_content'] = $attachment_title;	// Image Description
 	}
-	if ( boolval($settings['image_alttext']) ) {
+	if ( isset( $settings['image_alttext'] ) && boolval($settings['image_alttext']) ) {
 		update_post_meta( $post_ID, '_wp_attachment_image_alt', $attachment_title ); // Image Alt Text
 	}
 
@@ -286,6 +331,7 @@ function iaff_rename_old_image() {
 	
 	// Process the image name and neatify it
 	$image_name = str_replace( '-', ' ', $image_name );	// replace hyphens with spaces
+	$image_name = str_replace( '_', ' ', $image_name );	// replace underscores with spaces
 	$image_name = ucwords( $image_name ); // Capitalize each word
 	
 	// Update the image Title, Caption and Description with the image name

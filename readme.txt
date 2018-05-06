@@ -1,7 +1,7 @@
 === Auto Image Attributes From Filename With Bulk Updater ===
 Contributors: arunbasillal
 Donate link: http://millionclues.com/donate/
-Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, image attributes
+Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores
 Requires at least: 3.0
 Tested up to: 4.8
 Stable tag: trunk
@@ -16,7 +16,22 @@ Automatically add Image attributes such as Image Title, Image Caption, Descripti
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
-If your image filename is *my-image-name.jpg*, your Image Title, Caption, Description And Alt Text will be *My Image Name*. 
+With this plugin you can:
+
+* Set the image filename as the image Title.
+* Set the image filename as the image Caption.
+* Set the image filename as the image Description.
+* Set the image filename as the image Alt Text.
+* Remove hyphens from the image filename.
+* Remove underscores from the image filename.
+* Choose to turn off any of the above mentioned features.
+
+With the bulk updater you can: 
+
+* Set the image filename as image Title, Caption, Description and Alt Text after removing hyphens and underscores from the filename.
+* Update any number of images in your Media Library in one click.
+
+If your image filename is *my_image-name.jpg*, your Image Title, Caption, Description And Alt Text will be *My Image Name*. 
 
 The plugin settings and bulk updater are in WordPress Admin > Settings > Image Attributes. Here you can choose which attributes to update for NEW uploads. 
 
@@ -46,16 +61,24 @@ Yes! Please [get in touch via my contact form](http://millionclues.com/contact/)
 
 == Changelog ==
 
-= 1.0 =
-* First release of the plugin.
+= 1.2 =
+* Added: Character filter options. Plugin now removes hyphens and underscores.
+* Bug Fix: Minor bug fix.
 
 = 1.1 =
-* Added options to choose individual image attributes for NEW uploads. 
+* Added: Options to choose individual image attributes for NEW uploads. 
+
+= 1.0 =
+* First release of the plugin.
 
 == Upgrade Notice ==
 
-= 1.0 =
-* First release of the plugin.
+= 1.2 =
+* Added: Character filter options. Plugin now removes hyphens and underscores.
+* Bug Fix: Minor bug fix.
+
+= 1.1 =
+* Added: Options to choose individual image attributes for NEW uploads. 
 
 = 1.0 =
-* New feature. Now you can choose specific image attributes for NEW uploads.
+* First release of the plugin.
