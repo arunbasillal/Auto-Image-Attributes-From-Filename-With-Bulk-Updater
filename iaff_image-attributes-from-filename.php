@@ -105,7 +105,7 @@ function iaff_upgrader() {
 	}
 	
 	// Set transient to show upgrade complete notice
-	set_transient( 'iaff_upgrade_complete_admin_notice', true, 5 );
+	set_transient( 'iaff_upgrade_complete_admin_notice', true, 300 );
 	
 	// Finally add the current version to the database. Upgrade todo complete. 
 	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );
