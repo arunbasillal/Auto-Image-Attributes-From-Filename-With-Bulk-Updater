@@ -13,7 +13,7 @@
 
 
 // Exit if accessed directly
-if ( !defined('ABSPATH') ) exit;
+if ( ! defined('ABSPATH') ) exit;
 
  
 /**
@@ -33,7 +33,7 @@ function iaff_activate_plugin() {
  * @since	1.0
  */
 function iaff_load_plugin_textdomain() {
-    load_plugin_textdomain( 'abl_iaff_td', FALSE, IAFF_STARTER_PLUGIN_DIR . '/languages/' );
+    load_plugin_textdomain( 'abl_iaff_td', FALSE, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
 }
 add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
 
@@ -51,7 +51,7 @@ function iaff_settings_link( $links ) {
 		$links
 	);
 }
-add_filter( 'plugin_action_links_' . IAFF_STARTER_PLUGIN . '/iaff_image-attributes-from-filename.php', 'iaff_settings_link' );
+add_filter( 'plugin_action_links_' . IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME . '/iaff_image-attributes-from-filename.php', 'iaff_settings_link' );
 
 
 /**
@@ -60,13 +60,18 @@ add_filter( 'plugin_action_links_' . IAFF_STARTER_PLUGIN . '/iaff_image-attribut
  * @since	1.0
  */
 function iaff_plugin_row_meta( $links, $file ) {
+	
+	if ( iaff_is_pro() ) {
+		return $links;
+	}
+	
 	if ( strpos( $file, 'iaff_image-attributes-from-filename.php' ) !== false ) {
 		$new_links = array(
-				'donate' 	=> '<a href="http://millionclues.com/donate/" target="_blank">Donate</a>',
-				'hireme' 	=> '<a href="http://millionclues.com/portfolio/" target="_blank">Hire Me For A Project</a>',
+				'upgrade' 	=> '<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=plugins-list" target="_blank">Upgrade To Image Attributes Pro</a>',
 				);
 		$links = array_merge( $links, $new_links );
 	}
+	
 	return $links;
 }
 add_filter( 'plugin_row_meta', 'iaff_plugin_row_meta', 10, 2 );
@@ -88,10 +93,14 @@ function iaff_footer_text($default) {
 		return $default;
 	}
 	
-    $iaff_footer_text = sprintf( __( 'If you like this plugin, please <a href="%s" target="_blank">make a donation</a> or leave a <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!', 'abl_iaff_td' ), 
-								'http://millionclues.com/donate/',
+    $iaff_footer_text = sprintf( __( 'If you like this plugin, please <a href="%s" target="_blank">upgrade to pro</a> or leave a <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!', 'abl_iaff_td' ), 
+								'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=footer',
 								'https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater/reviews/?rate=5#new-post' 
 						);
+						
+	if( iaff_is_pro() ) {
+		$iaff_footer_text = __( 'Thank you for choosing Image Attributes Pro! Use the support tab if you have any questions or feedback.', 'abl_iaff_td' );
+	}
 	
 	return $iaff_footer_text;
 }
@@ -113,5 +122,3 @@ function iaff_footer_version($default) {
 	return 'Plugin version ' . IAFF_VERSION_NUM;
 }
 add_filter( 'update_footer', 'iaff_footer_version', 11 );
-
-?>

@@ -1,20 +1,22 @@
+#iaff-pro {
+	min-width: 900px;
+}
+
+#iaff-pro h2 {
+	display: none;
+}
+
+#iaff-pro h2.showh2 {
+	display: block;
+}
+
+#iaff-pro .iaff-bulk-updater-buttons {
+	margin-right: 5px;
+}
+
 #iaff-pro .reset-counter-button .submit {
 	margin-top: 0px !important; 
 	padding-top: 0px !important;	
-}
-
-#iaff-pro .backup-warning {
-    position: relative;
-	margin: 5px 0 15px;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-	background: #fff none repeat scroll 0 0;
-	border-left: 4px solid #DC3232;
-	
-}
-
-#iaff-pro .backup-warning p {
-    margin: 0.5em 0;
-    padding: 15px;
 }
 
 #iaff-pro #bulk-updater-results {
@@ -24,14 +26,11 @@
 #iaff-pro #bulk-updater-log-wrapper {
     border: 1px solid #aaa;
     margin: 10px auto;
-}
-
-#iaff-pro fieldset {
-    padding: 20px;
+	padding: 20px;
 }
 
 #iaff-pro #bulk-updater-log {
-    border: 1px solid #aaaaaa;
+    border: 1px solid #aaa;
     height: 300px;
     overflow: auto;
 }
@@ -45,10 +44,125 @@
     background: #DFDFDF;
 }
 
+#iaff-pro #bulk-updater-log a {
+    color: #444;
+}
+
 #iaff-pro p.iaff-green {
 	color: #46B450;
 }
 
 #iaff-pro p.iaff-red {
 	color: #DC3232;
+}
+
+#iaff-pro a.nav-tab:focus {
+	box-shadow: none;
+}
+
+#iaff-pro #iaff-support-tab {
+	float: right;
+	margin-right: 8px;
+}
+
+#iaff-pro .iaff-columns-2 {
+	margin-right: 320px;
+}
+
+#iaff-pro .iaff-admin-options-main {
+	float: left;
+	width: 100%;
+}
+
+#iaff-pro .iaff-admin-options-sidebar {
+	float: right;
+	width: 280px;
+	margin-left: 20px;
+	padding-right: 20px;
+	margin-right: -320px;
+}
+
+#iaff-pro .iaff-icon {
+	background: url('../img/iaff-icon.png') no-repeat;
+	height: 128px;
+	width: 128px;
+	margin: 0 auto;
+}
+
+#iaff-pro .iaff-upgrade-header {
+	padding: 30px;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../img/black-traingles.png') repeat;
+	margin-top: 9px;
+}
+
+#iaff-pro .patua {
+	font-family: 'Patua One', cursive;
+	letter-spacing: 1px;
+}
+
+#iaff-pro .iaff-upgrade-header h1 {
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+}
+
+#iaff-pro .iaff-upgrade-header a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+#iaff-pro .iaff-upgrade-form {
+	background: #fff;
+	padding: 20px 30px;
+}
+
+#iaff-pro .iaff-upgrade-form input {
+	width: 100%;
+}
+
+#iaff-pro .opacity-75 {
+	opacity: 0.75;
+}
+
+#iaff-pro .iaff-upgrade-review-stars {
+	text-align: center;
+}
+
+#iaff-pro .iaff-upgrade-review-avatar {
+	border-radius: 50px;
+}
+
+#iaff-pro .iaff-upgrade-review-detail {
+	display: inline-block;
+}
+
+#iaff-pro .iaff-upgrade-review-detail-left {
+	float: left;
+	width: 75px;
+	margin-top: 14px;
+	margin-right: 20px;
+}
+
+#iaff-pro .iaff-upgrade-review-detail a {
+	color: #444;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+#iaff-pro .iaff-support-block {
+	width: 280px;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../img/black-traingles.png') repeat;
+	float: left;
+	margin-right: 30px;
+}
+
+#iaff-pro .iaff-support-block-inner {
+	padding: 30px;
+	color: #fff;
+}
+
+#iaff-pro .iaff-support-block-inner h2, #iaff-pro .iaff-support-block-inner a {
+	color: #fff;
+	text-decoration: none;
 }
