@@ -114,6 +114,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * Date: 
 * Enhancement: Changed text domain from abl_iaff_td to auto-image-attributes-from-filename-with-bulk-updater to make the plugin translation ready in translate.wordpress.org.
 * Enhancement: Code improvements.
+* Enhancement: Added an actvation notice with link to the settings page for better onboarding experience. 
 
 = 1.4 =
 * Date: 22.November.2017
