@@ -103,7 +103,7 @@ function iaff_admin_notices() {
 
 		// Suggest IAFF Pro if Pro add-on isn't installed.
 		if ( ! iaff_is_pro() ) {
-			$iaff_suggest_pro = sprintf( __( '<br>Want to use Post Titles as attributes and fine tune Bulk Updater settings? Check out the <a href="%s" target="_blank">Image Attributes Pro</a> add-on.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=upgrade-complete-admin-notice' );
+			$iaff_suggest_pro = sprintf( __( '<br>Want to use Post Titles for image attributes? Check out the <a href="%s" target="_blank">Image Attributes Pro</a> add-on.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=upgrade-complete-admin-notice' );
 		}
 		
 		echo '<div class="notice notice-success is-dismissible"><p>' . __( '<strong>Auto Image Attributes From Filename With Bulk Updater</strong> successfully updated. ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . $iaff_suggest_pro . '</p></div>';
