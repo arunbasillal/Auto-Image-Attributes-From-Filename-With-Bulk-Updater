@@ -55,41 +55,56 @@ if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL'))
     define('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL', plugin_dir_url( __FILE__ ));
 
 /**
- * Add plugin version to database
+ * A constant with current version of plugin
  *
- * @since 		1.3
- * @constant 	IAFF_VERSION_NUM		the version number of the current version
- * @refer		https://www.smashingmagazine.com/2011/03/ten-things-every-wordpress-plugin-developer-should-know/
+ * IAFF_VERSION_NUM will be current version of the plugin. 
+ * This is useful for database upgrades and doing stuff after plugin update. 
+ *
+ * @since 1.3
  */
-if (!defined('IAFF_VERSION_NUM'))
-    define('IAFF_VERSION_NUM', '1.5');
+if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
+	define( 'IAFF_VERSION_NUM', '1.5' );
+}
 
 /**
- * Upgrade database settings on update 
+ * Do stuff after a plugin upgrade.
  *
  * @since	1.4
  */
-function iaff_upgrade_db_settings() {
+function iaff_upgrader() {
 	
-	$current_ver = get_option('abl_iaff_version');
+	/**
+	 * Get the current version of the plugin stored in the db.
+	 * Version was added in 1.3, defaults to 1.2
+	 */
+	$current_ver = get_option( 'abl_iaff_version', '1.2' );
 	
-	if ( ($current_ver >= 1.4 ) ) {
-		return;	// Version was added in 1.3. Return if version is above 1.3. 
+	// Return if we have already done this todo
+	if ( version_compare( $current_ver, IAFF_VERSION_NUM, '==' ) ) {
+		return;
 	}
 	
-	$settings = get_option('iaff_settings');
+	/**
+	 * Upgrade database settings when upgrading from 1.3 or lower
+	 * A global swith with setting name global_switch was introduce in 1.4
+	 */
+	if ( version_compare( $current_ver, '1.3', '<=' ) ) {
+		
+		$settings = get_option( 'iaff_settings' );
 	
-	if ( $settings != false ) {
-		$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
-		update_option('iaff_settings', $settings);
+		if ( $settings !== false ) {
+			
+			$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
+			update_option('iaff_settings', $settings);
+		}
 	}
 	
-	update_option('abl_iaff_version', IAFF_VERSION_NUM);
+	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );
 }
-add_action( 'plugins_loaded', 'iaff_upgrade_db_settings' );
+add_action( 'admin_init', 'iaff_upgrader' );
 
 // Load everything
 require_once( IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/admin/iaff_image-attributes-from-filename-loader.php');
 
-// Register activation hook (this has to be in the main plugin file.)
+// Register activation hook
 register_activation_hook( __FILE__ , 'iaff_activate_plugin' );
