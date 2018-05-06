@@ -1002,7 +1002,7 @@ function iaff_admin_interface_render () {
 								<h2 class="patua showh2">Premium Support</h2>
 								<ul>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs?utm_source=iap&utm_medium=support-tab">Documentation</a></li>
-									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://millionclues.net/?utm_source=iap&utm_medium=support-tab">Priority Support Forum</a></li>
+									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Priority Email Support</a></li>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Contact Support</a></li>
 									
 								</ul>
