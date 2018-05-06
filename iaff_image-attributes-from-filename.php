@@ -5,7 +5,7 @@
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
  * Author URI: http://millionclues.com
- * Version: 1.4
+ * Version: 1.5
  * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -29,12 +29,6 @@
  * iaff_starter-plugin.php		- File containing plugin name and other version info for WordPress.
  * readme.txt					- Readme for WordPress plugin repository. https://wordpress.org/plugins/files/2017/03/readme.txt
  * uninstall.php				- Fired when the plugin is uninstalled. 
- */
-
-/**
- * :TODO:
- *
- * - Update IAFF_VERSION_NUM 			in iaff_starter-plugin.php (keep this line for future updates)
  */
 
 // Exit if accessed directly
@@ -68,7 +62,7 @@ if (!defined('IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL'))
  * @refer		https://www.smashingmagazine.com/2011/03/ten-things-every-wordpress-plugin-developer-should-know/
  */
 if (!defined('IAFF_VERSION_NUM'))
-    define('IAFF_VERSION_NUM', '1.4');
+    define('IAFF_VERSION_NUM', '1.5');
 
 /**
  * Upgrade database settings on update 
