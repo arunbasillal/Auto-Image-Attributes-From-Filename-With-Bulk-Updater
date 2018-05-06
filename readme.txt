@@ -2,8 +2,8 @@
 Contributors: arunbasillal
 Donate link: http://millionclues.com/donate/
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores
-Requires at least: 3.0
-Tested up to: 4.8
+Requires at least: 3.5.0
+Tested up to: 4.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,9 +21,13 @@ With this plugin you can:
 * Set the image filename as the image Title.
 * Set the image filename as the image Caption.
 * Set the image filename as the image Description.
-* Set the image filename as the image Alt Text.
+* Set the image filename as the image Alt Text. This was a default feature in WordPress before 4.7. This option restores this essential feature which is great for SEO.
+* Insert Image Title into post HTML. WordPress stopped adding Image Titles to images since WordPress 3.5. This option restores it.
 * Remove hyphens from the image filename.
 * Remove underscores from the image filename.
+* Remove full stops from filename.
+* Remove commas from filename.
+* Remove all numbers from filename.
 * Choose to turn off any of the above mentioned features.
 
 With the bulk updater you can: 
@@ -55,11 +59,29 @@ Yes, the plugin will update image Title, Caption, Description And Alt Text from 
 
 Yes! Please [get in touch via my contact form](http://millionclues.com/contact/) with a brief description of your requirement and budget for the project. I will be in touch shortly.
 
+= This plugin saved me a lot of time, how can I show my appreciation? =
+
+I am glad to hear that! You can either [make a donation](http://millionclues.com/donate/) or leave a [rating](https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater/reviews/?rate=5#new-post) to motivate me to keep working on the plugin. 
+
 == Screenshots ==
 
-1. The settings page in WordPress Admin > Settings > Image Attributes
+1. The settings page in WordPress Admin > Settings > Image Attributes with default settings.
+2. Bulk Updater
 
 == Changelog ==
+
+= 1.3 =
+* Improved the architecture of the plugin laying foundation for future updates. Utilizing my [starter plugin framework](http://millionclues.com/lab/wordpress-starter-plugin-a-framework-for-quick-plugin-development/)
+* Bug fix: For images that had EXIF data, EXIF data was used instead of filename. Props to @mathieupellegrin for reporting this. 
+* NEW: Added option to Insert Image Title into HTML. WordPress stopped including image titles since 3.5. Code from [Restore Image Title](https://wordpress.org/plugins/restore-image-title/) plugin was used. 
+* NEW: Remove full stops ( . ) from filename.
+* NEW: Remove commas ( , ) from filename.
+* NEW: Remove all numbers ( 0-9 ) from filename.
+* NEW: Added a warning and user confirmation before while clicking "Run Bulk Updater" button to prevent accidental clicks.
+* UI Improvement: Cleaned up the interface and moved the Bulk Updater to its own tab. 
+* UI Improvement: Bulk updater log is now displayed in a neat box instead of just printing the results on the page. 
+* Parts of the code was updated for more efficiency and faster processing. 
+* Tested on WordPress 4.8.1. Result = pass.
 
 = 1.2 =
 * Added: Character filter options. Plugin now removes hyphens and underscores.
@@ -72,6 +94,19 @@ Yes! Please [get in touch via my contact form](http://millionclues.com/contact/)
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Improved the architecture of the plugin laying foundation for future updates. Utilizing my [starter plugin framework](http://millionclues.com/lab/wordpress-starter-plugin-a-framework-for-quick-plugin-development/)
+* Bug fix: For images that had EXIF data, EXIF data was used instead of filename. Props to @mathieupellegrin for reporting this. 
+* NEW: Added option to Insert Image Title into HTML. WordPress stopped including image titles since 3.5. Code from [Restore Image Title](https://wordpress.org/plugins/restore-image-title/) plugin was used. 
+* NEW: Remove full stops ( . ) from filename.
+* NEW: Remove commas ( , ) from filename.
+* NEW: Remove all numbers ( 0-9 ) from filename.
+* NEW: Added a warning and user confirmaton before while clicking "Run Bulk Updater" button to prevent accidental clicks.
+* UI Improvement: Cleaned up the interface and moved the Bulk Updater to its own tab. 
+* UI Improvement: Bulk updater log is now displayed in a neat box instead of just printing the results on the page. 
+* Parts of the code was updated for more efficiency and faster processing. 
+* Tested on WordPress 4.8.1. Result = pass.
 
 = 1.2 =
 * Added: Character filter options. Plugin now removes hyphens and underscores.

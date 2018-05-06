@@ -1,0 +1,54 @@
+#iaff-pro .reset-counter-button .submit {
+	margin-top: 0px !important; 
+	padding-top: 0px !important;	
+}
+
+#iaff-pro .backup-warning {
+    position: relative;
+	margin: 5px 0 15px;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+	background: #fff none repeat scroll 0 0;
+	border-left: 4px solid #DC3232;
+	
+}
+
+#iaff-pro .backup-warning p {
+    margin: 0.5em 0;
+    padding: 15px;
+}
+
+#iaff-pro #bulk-updater-results {
+	max-width: 1200px;
+}
+
+#iaff-pro #bulk-updater-log-wrapper {
+    border: 1px solid #aaa;
+    margin: 10px auto;
+}
+
+#iaff-pro fieldset {
+    padding: 20px;
+}
+
+#iaff-pro #bulk-updater-log {
+    border: 1px solid #aaaaaa;
+    height: 300px;
+    overflow: auto;
+}
+
+#iaff-pro #bulk-updater-log > p {
+    margin: 0;
+    padding: 3px 5px;
+}
+
+#iaff-pro #bulk-updater-log > p:nth-child(even) {
+    background: #DFDFDF;
+}
+
+#iaff-pro p.iaff-green {
+	color: #46B450;
+}
+
+#iaff-pro p.iaff-red {
+	color: #DC3232;
+}
