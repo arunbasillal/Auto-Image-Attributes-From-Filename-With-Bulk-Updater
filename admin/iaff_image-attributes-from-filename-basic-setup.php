@@ -7,15 +7,14 @@
  * @function	iaff_load_plugin_textdomain()	Load plugin text domain
  * @function	iaff_settings_link()			Print direct link to plugin settings in plugins list in admin
  * @function	iaff_plugin_row_meta()			Add donate and other links to plugins list
+ * @function 	iaff_admin_notices()			Admin notices
  * @function	iaff_footer_text()				Admin footer text
  * @function	iaff_footer_version()			Admin footer version
  */
 
-
 // Exit if accessed directly
 if ( ! defined('ABSPATH') ) exit;
 
- 
 /**
  * Plugin activatation todo list
  *
@@ -23,9 +22,13 @@ if ( ! defined('ABSPATH') ) exit;
  * @since	1.0
  */
 function iaff_activate_plugin() {
-	add_option( 'iaff_bulk_updater_counter', '0' );				// Setting numer of images processed as zero
+	
+	// Set the counter to 0 for the number of images updated by bulk updater.
+	add_option( 'iaff_bulk_updater_counter', '0' );	// Setting numer of images processed as zero
+	
+	// Show admin notice
+	set_transient( 'iaff_activation_admin_notice', true, 5 );
 }
-
 
 /**
  * Load plugin text domain
@@ -36,7 +39,6 @@ function iaff_load_plugin_textdomain() {
     load_plugin_textdomain( 'auto-image-attributes-from-filename-with-bulk-updater', FALSE, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
 }
 add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
-
 
 /**
  * Print direct link to plugin settings in plugins list in admin
@@ -52,7 +54,6 @@ function iaff_settings_link( $links ) {
 	);
 }
 add_filter( 'plugin_action_links_auto-image-attributes-from-filename-with-bulk-updater/iaff_image-attributes-from-filename.php', 'iaff_settings_link' );
-
 
 /**
  * Add donate and other links to plugins list
@@ -76,6 +77,26 @@ function iaff_plugin_row_meta( $links, $file ) {
 }
 add_filter( 'plugin_row_meta', 'iaff_plugin_row_meta', 10, 2 );
 
+/**
+ * Admin notices
+ * 
+ * @since 1.5 Added admin notice for plugin upgrade.
+ */
+function iaff_admin_notices() {
+	
+	// Return if transient is not set
+	if ( get_transient( 'iaff_activation_admin_notice' ) ) {
+		
+		echo '<div class="notice notice-success is-dismissible"><p>' . sprintf( __( 'Thank you for installing <strong>Auto Image Attributes From Filename With Bulk Updater</strong>! <a href="%s">Change settings &rarr;</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), admin_url( 'options-general.php?page=image-attributes-from-filename' ) ) . '</p></div>';
+		
+		// Delete transient
+		delete_transient( 'iaff_activation_admin_notice' );
+		
+		return;
+	}
+	
+}
+add_action( 'admin_notices', 'iaff_admin_notices' );
 
 /**
  * Admin footer text
