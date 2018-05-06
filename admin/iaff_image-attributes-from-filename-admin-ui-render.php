@@ -276,10 +276,10 @@ function iaff_custom_filter_callback() {
 	<fieldset>
 		
 		<p>Enter words or characters to filter separated by commas. Filter is case sensitive.</p>
-		<input type="text" name="iaff_settings[custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['custom_filter'] ) && ( ! empty($settings['custom_filter']) ) ) esc_attr_e($settings['custom_filter']); ?>"/><br><br>
+		<input type="text" name="iaff_settings[custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['custom_filter'] ) && ( ! empty( $settings['custom_filter'] ) ) ) echo esc_attr( $settings['custom_filter'] ); ?>"/><br><br>
 		
 		<p>Filter with regular expression</p>
-		<input type="text" name="iaff_settings[regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['regex_filter'] ) && ( ! empty($settings['regex_filter']) ) ) esc_attr_e($settings['regex_filter']); ?>"/><br>
+		<input type="text" name="iaff_settings[regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['regex_filter'] ) && ( ! empty( $settings['regex_filter'] ) ) ) echo esc_attr( $settings['regex_filter'] ); ?>"/><br>
 		
 	</fieldset>
 	
@@ -622,10 +622,10 @@ function iaff_bu_custom_filter_callback() {
 	<fieldset>
 		
 		<p>Enter words or characters to filter separated by commas. Filter is case sensitive.</p>
-		<input type="text" name="iaff_settings[bu_custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['bu_custom_filter'] ) && ( ! empty($settings['bu_custom_filter']) ) ) esc_attr_e($settings['bu_custom_filter']); ?>"/><br><br>
+		<input type="text" name="iaff_settings[bu_custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['bu_custom_filter'] ) && ( ! empty( $settings['bu_custom_filter'] ) ) ) echo esc_attr( $settings['bu_custom_filter'] ); ?>"/><br><br>
 		
 		<p>Filter with regular expression</p>
-		<input type="text" name="iaff_settings[bu_regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['bu_regex_filter'] ) && ( ! empty($settings['bu_regex_filter']) ) ) esc_attr_e($settings['bu_regex_filter']); ?>"/><br>
+		<input type="text" name="iaff_settings[bu_regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['bu_regex_filter'] ) && ( ! empty( $settings['bu_regex_filter'] ) ) ) echo esc_attr( $settings['bu_regex_filter'] ); ?>"/><br>
 		
 	</fieldset>
 	
@@ -926,11 +926,11 @@ function iaff_admin_interface_render () {
 					</div>
 					
 					<p class="submit">
-						<input class="button-primary iaff-bulk-updater-buttons iaff_run_bulk_updater_button" type="submit" name="Run Bulk Updater" value="<?php esc_attr_e( 'Run Bulk Updater' ); ?>" />
+						<input class="button-primary iaff-bulk-updater-buttons iaff_run_bulk_updater_button" type="submit" name="Run Bulk Updater" value="<?php _e( 'Run Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
 						
-						<input class="button-secondary iaff-bulk-updater-buttons iaff_test_bulk_updater_button" type="submit" name="Test Bulk Updater" value="<?php esc_attr_e( 'Test Bulk Updater' ); ?>" />
+						<input class="button-secondary iaff-bulk-updater-buttons iaff_test_bulk_updater_button" type="submit" name="Test Bulk Updater" value="<?php _e( 'Test Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
 						
-						<input class="button-secondary iaff-bulk-updater-buttons iaff_stop_bulk_updater_button" type="submit" name="Run Bulk Updater" value="<?php esc_attr_e( 'Stop Bulk Updater' ); ?>" disabled />
+						<input class="button-secondary iaff-bulk-updater-buttons iaff_stop_bulk_updater_button" type="submit" name="Stop Bulk Updater" value="<?php _e( 'Stop Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" disabled />
 					</p>
 					
 					<h2 class="showh2"><?php _e('Reset Counter', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
