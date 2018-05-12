@@ -421,8 +421,8 @@ function iaff_lcb_restore_image_title( $html, $id ) {
 	// Get Settings
 	$settings = iaff_get_settings();
 	
-	// Return if disabled in settings
-	if ( isset($settings['image_title_to_html']) && ($settings['image_title_to_html'] == 0) ) {
+	// Return if disabled in setings
+	if ( ! ( isset( $settings['image_title_to_html'] ) && boolval( $settings['image_title_to_html'] ) ) )  {
 		return $html;
 	}
 	
@@ -444,7 +444,7 @@ function iaff_lcb_restore_title_to_gallery( $content, $id ) {
 	$settings = iaff_get_settings();
 	
 	// Return if disabled in setings
-	if ( isset($settings['image_title_to_html']) && ( ! boolval($settings['image_title_to_html']) ) )  {
+	if ( ! ( isset( $settings['image_title_to_html'] ) && boolval( $settings['image_title_to_html'] ) ) )  {
 		return $content;
 	}
 	
