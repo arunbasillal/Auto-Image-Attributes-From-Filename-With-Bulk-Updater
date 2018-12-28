@@ -135,6 +135,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 = 1.6 =
 * Date: 
 * Tested with WordPress 5.0.2. 
+* Enhancement: Improved bulk updater warning and inline documentaiton. 
 * Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. Thanks [@jamesryancooper](https://wordpress.org/support/topic/image-title-being-inserted-even-with-checkbox-unselected/)
 
 = 1.5 =
