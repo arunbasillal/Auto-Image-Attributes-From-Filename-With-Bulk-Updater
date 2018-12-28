@@ -104,8 +104,19 @@ function iaff_upgrader() {
 		}
 	}
 	
-	// Set transient to show upgrade complete notice
-	set_transient( 'iaff_upgrade_complete_admin_notice', true, 300 );
+	/**
+	 * Detect first install. 
+	 * 
+	 * Since abl_iaff_version is not saved at this point, $current_ver will be 
+	 * the default value of 1.2 at this point. 
+	 * 
+	 * @since 1.6
+	 */
+	if ( $current_ver !== '1.2' ) {
+		
+		// Set transient to show upgrade complete notice
+		set_transient( 'iaff_upgrade_complete_admin_notice', true, 300 );
+	}
 	
 	// Finally add the current version to the database. Upgrade todo complete. 
 	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );
