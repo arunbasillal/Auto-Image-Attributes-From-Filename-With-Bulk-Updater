@@ -1041,10 +1041,10 @@ function iaff_admin_interface_render () {
 					<div class="iaff-upgrade-header">
 						<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=coupon-sidebar" target="_blank">
 							<div class="iaff-icon"></div>
-							<h1 class="patua">Image Attributes Pro</h1>
+							<h1 class="patua">Upgrade to Pro</h1>
 							<ul>
-								<li><span class="dashicons dashicons-yes"></span>Use post titles as attributes</li>
 								<li><span class="dashicons dashicons-yes"></span>Advanced formatting options</li>
+								<li><span class="dashicons dashicons-yes"></span>Use post titles as attributes</li>
 								<li><span class="dashicons dashicons-yes"></span>Fine tune bulk updater settings</li>
 							</ul>
 						</a>
@@ -1052,14 +1052,29 @@ function iaff_admin_interface_render () {
 					
 					<div class="iaff-upgrade-form">
 					
-						<div class="iaff-upgrade-form-inner">
-							<h4><span class="dashicons dashicons-info"></span> Did you know?</h4>
-							<p>That you can see a preview of all the options of <b>Image Attributes Pro</b> by enabling <code>Preview Pro Features</code> option in the Basic tab? Try it!
+						<form method="post" action="https://imageattributespro.com/coupons/" target="_blank">
 							
-							<form method="post" action="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=coupon-sidebar" target="_blank">
-								<input type="submit" class="button" value="Checkout Image Attributes Pro"/>
-							</form>
-						</div>
+							<h1 class="patua">20% Coupon</h1>
+
+							<?php $user = wp_get_current_user(); ?>
+
+							<p>Submit your name and email to receive 20% off when you upgrade to the pro version.</p>
+
+							<fieldset>
+								
+								<input type="text" name="first_name" value="<?php echo esc_attr( trim( $user->first_name ) ); ?>" placeholder="First Name"/>
+								
+								<input type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="Your Email"/>
+
+								<input type="hidden" name="source" value="IAFF" />
+								<input type="hidden" name="submitted" id="submitted" value="true" />
+
+								<input type="submit" class="button" value="Send me the coupon"/>
+								
+							</fieldset>
+
+							<p class="opacity-75">Your email will be kept private and will not be shared or spammed.</p>
+						</form>
 						
 						<hr>
 						

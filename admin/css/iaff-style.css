@@ -98,12 +98,11 @@
 #iaff-pro .patua {
 	font-family: 'Patua One', cursive;
 	letter-spacing: 1px;
-	text-align: center;
 }
 
 #iaff-pro .iaff-upgrade-header h1 {
 	color: #fff;
-	font-size: 20px;
+	font-size: 30px;
 	text-align: center;
 }
 
@@ -115,16 +114,11 @@
 
 #iaff-pro .iaff-upgrade-form {
 	background: #fff;
-	padding: 10px 10px 20px 10px;
-}
-
-#iaff-pro .iaff-upgrade-form-inner {
-	padding: 0px 10px 20px 10px;
+	padding: 20px 30px;
 }
 
 #iaff-pro .iaff-upgrade-form input {
 	width: 100%;
-	margin-top: 10px;
 }
 
 #iaff-pro .opacity-75 {
