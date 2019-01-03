@@ -1054,11 +1054,11 @@ function iaff_admin_interface_render () {
 					
 						<form method="post" action="https://imageattributespro.com/coupons/" target="_blank">
 							
-							<h1 class="patua">20% Coupon</h1>
+							<h1 class="patua">10% For Lifetime</h1>
 
 							<?php $user = wp_get_current_user(); ?>
 
-							<p>Submit your name and email to receive 20% off when you upgrade to the pro version.</p>
+							<p>Submit your name and email to receive 10% off when you upgrade to the Lifetime license.</p>
 
 							<fieldset>
 								
