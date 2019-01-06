@@ -94,6 +94,9 @@ With the pro bulk updater you can:
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
 * Choose to turn off any of the above mentioned features.
+* Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
+* Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
+* Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=wordpress.org&utm_medium=readme).
 
 For screenshots, FAQ and full list of features, please see the [product website](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme).
 
@@ -133,7 +136,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 1.6 =
-* Date: 
+* Date: 06.January.2019 
 * Tested with WordPress 5.0.2. 
 * Enhancement: Improved bulk updater warning and inline documentaiton. 
 * Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. Thanks [@jamesryancooper](https://wordpress.org/support/topic/image-title-being-inserted-even-with-checkbox-unselected/)
@@ -185,6 +188,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 1.6 =
+* Tested with WordPress 5.0.2. 
+* Enhancement: Improved bulk updater warning and inline documentaiton. 
+* Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. 
 
 = 1.5 =
 * Enhancement: Changed text domain from abl_iaff_td to auto-image-attributes-from-filename-with-bulk-updater to make the plugin translation ready in translate.wordpress.org.
