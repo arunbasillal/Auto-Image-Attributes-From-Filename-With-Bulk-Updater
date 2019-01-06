@@ -993,8 +993,8 @@ function iaff_admin_interface_render () {
 						<div class="iaff-support-block-inner">
 							<h2 class="patua showh2">Free Support</h2>
 							<ul>
-								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs?utm_source=iaff-basic&utm_medium=support-tab">Documentation</a></li>
-								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/plugins/auto-image-attributes-from-filename-with-bulk-updater/">Read the FAQ</a></li>
+								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs/?utm_source=iaff-basic&utm_medium=support-tab">Documentation</a></li>
+								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/plugins/auto-image-attributes-from-filename-with-bulk-updater/#faq-header">Read the FAQ</a></li>
 								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater">Free Support Forum</a></li>
 							</ul>
 						</div>
@@ -1006,7 +1006,7 @@ function iaff_admin_interface_render () {
 							<div class="iaff-support-block-inner">
 								<h2 class="patua showh2">Premium Support</h2>
 								<ul>
-									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs?utm_source=iap&utm_medium=support-tab">Documentation</a></li>
+									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs/?utm_source=iap&utm_medium=support-tab">Documentation</a></li>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Priority Email Support</a></li>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Contact Support</a></li>
 									
