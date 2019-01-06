@@ -5,7 +5,7 @@
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
  * Author URI: https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri
- * Version: 1.5
+ * Version: 1.6
  * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -67,7 +67,7 @@ if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL' ) ) {
  * @since 1.3
  */
 if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
-	define( 'IAFF_VERSION_NUM', '1.5' );
+	define( 'IAFF_VERSION_NUM', '1.6' );
 }
 
 /**
@@ -104,8 +104,19 @@ function iaff_upgrader() {
 		}
 	}
 	
-	// Set transient to show upgrade complete notice
-	set_transient( 'iaff_upgrade_complete_admin_notice', true, 5 );
+	/**
+	 * Detect first install. 
+	 * 
+	 * Since abl_iaff_version is not saved at this point, $current_ver will be 
+	 * the default value of 1.2 at this point. 
+	 * 
+	 * @since 1.6
+	 */
+	if ( $current_ver !== '1.2' ) {
+		
+		// Set transient to show upgrade complete notice
+		set_transient( 'iaff_upgrade_complete_admin_notice', true, 300 );
+	}
 	
 	// Finally add the current version to the database. Upgrade todo complete. 
 	update_option( 'abl_iaff_version', IAFF_VERSION_NUM );

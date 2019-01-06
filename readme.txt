@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 4.9
+Tested up to: 5.0.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Automatically add Image attributes such as Image Title, Image Caption, Descripti
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
-> **Life-Saver** -
+> **Life-Saver**
 > It allowed me to save tons of time. Further, the support is nice and ready to help.
 > - [thnk4](https://wordpress.org/support/topic/life-saver-188/)
 
@@ -24,7 +24,7 @@ Image alt text and title is critical for your image SEO and will help users disc
 
 Proper alt text also helps people who are blind or who have low vision understand your images there by improving the accessibility of your website. This will open up your website to a new segment of visitors and increase your traffic.
 
-> **Wow!** -
+> **Wow!**
 > If I could give this 1 more star I would!
 > - [jdev](https://wordpress.org/support/topic/wow-550/)
 
@@ -61,7 +61,7 @@ The pro add-on can update the image attributes from not just the image filename,
 
 > Thank you so much for all your help in trying to fix this, its very much appreciated indeed. You've gone above and beyond what I was expecting in support!
 > Rest assured I will give great feedback on your plugin anywhere I can!!
-> - James Barber, for [Image Attributes Pro](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme) via email.
+> - **James Barber**, for [Image Attributes Pro](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme) via email.
 
 What the pro add-on you get these additional features:
 
@@ -94,10 +94,13 @@ With the pro bulk updater you can:
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
 * Choose to turn off any of the above mentioned features.
+* Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
+* Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
+* Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=wordpress.org&utm_medium=readme).
 
 For screenshots, FAQ and full list of features, please see the [product website](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme).
 
-> **No Competitors** -
+> **No Competitors**
 > This is the only one that enables you to add missing tags to your images in one go, simple! ... This one is very well coded and the author pays great attentions to users feedback / requests / support. 
 > - [arsenalemusica](https://wordpress.org/support/topic/no-competitors/)
 
@@ -131,6 +134,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 4. Bulk Updater
 
 == Changelog ==
+
+= 1.6 =
+* Date: 06.January.2019 
+* Tested with WordPress 5.0.2. 
+* Enhancement: Improved bulk updater warning and inline documentaiton. 
+* Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. Thanks [@jamesryancooper](https://wordpress.org/support/topic/image-title-being-inserted-even-with-checkbox-unselected/)
 
 = 1.5 =
 * Date: 06.May.2018
@@ -179,6 +188,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 1.6 =
+* Tested with WordPress 5.0.2. 
+* Enhancement: Improved bulk updater warning and inline documentaiton. 
+* Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. 
 
 = 1.5 =
 * Enhancement: Changed text domain from abl_iaff_td to auto-image-attributes-from-filename-with-bulk-updater to make the plugin translation ready in translate.wordpress.org.

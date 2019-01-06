@@ -919,10 +919,15 @@ function iaff_admin_interface_render () {
 					
 					<div class="error inline"> 
 						<p class="hide-if-js"><strong><?php _e('It seems that JavasScript is disabled in your browser. Please enable JavasScript or use a different browser to use the bulk updater.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
+						
 						<p><strong><?php _e('IMPORTANT: Please backup your database before running the bulk updater.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
+						
+						<p><strong><?php _e('Use <code>Test Bulk Updater</code> button to update one image at a time and verify the results.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
+						
 						<?php if( ! iaff_is_pro() ) { ?>
 							<p><strong><?php printf( __( 'If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Caption, Description and Alt Text will be: <em>a lot like love</em>. <a href="%s" target="_blank">Upgrade to Pro</a> for more options.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=bulk-updater-notice' ); ?></strong></p>
 						<?php } ?>
+						
 					</div>
 					
 					<p class="submit">
@@ -988,8 +993,8 @@ function iaff_admin_interface_render () {
 						<div class="iaff-support-block-inner">
 							<h2 class="patua showh2">Free Support</h2>
 							<ul>
-								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs?utm_source=iaff-basic&utm_medium=support-tab">Documentation</a></li>
-								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/plugins/auto-image-attributes-from-filename-with-bulk-updater/">Read the FAQ</a></li>
+								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs/?utm_source=iaff-basic&utm_medium=support-tab">Documentation</a></li>
+								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/plugins/auto-image-attributes-from-filename-with-bulk-updater/#faq-header">Read the FAQ</a></li>
 								<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater">Free Support Forum</a></li>
 							</ul>
 						</div>
@@ -1001,7 +1006,7 @@ function iaff_admin_interface_render () {
 							<div class="iaff-support-block-inner">
 								<h2 class="patua showh2">Premium Support</h2>
 								<ul>
-									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs?utm_source=iap&utm_medium=support-tab">Documentation</a></li>
+									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/docs/?utm_source=iap&utm_medium=support-tab">Documentation</a></li>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Priority Email Support</a></li>
 									<li><span class="dashicons dashicons-yes"></span><a target="_blank" href="https://imageattributespro.com/contact/?utm_source=iap&utm_medium=support-tab">Contact Support</a></li>
 									
@@ -1049,11 +1054,11 @@ function iaff_admin_interface_render () {
 					
 						<form method="post" action="https://imageattributespro.com/coupons/" target="_blank">
 							
-							<h1 class="patua">20% Coupon</h1>
+							<h1 class="patua">10% For Lifetime</h1>
 
 							<?php $user = wp_get_current_user(); ?>
 
-							<p>Submit your name and email to receive 20% off when you upgrade to the pro version.</p>
+							<p>Submit your name and email to receive 10% off when you upgrade to the Lifetime license.</p>
 
 							<fieldset>
 								

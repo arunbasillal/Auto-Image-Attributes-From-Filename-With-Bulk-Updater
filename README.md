@@ -4,6 +4,10 @@ Automatically Add Image Title, Caption, Description And Alt Text From Filename. 
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
+Image alt text and title is critical for your image SEO and will help users discover your images (and there by your website) in Google / Yahoo / Bing image search. 
+
+Proper alt text also helps people who are blind or who have low vision understand your images there by improving the accessibility of your website. This will open up your website to a new segment of visitors and increase your traffic.
+
 With this plugin you can:
 
 * Set the image filename as the image Title.
@@ -33,8 +37,14 @@ Please remember to take a database backup before running the bulk updater. The b
 
 A pro add-on is now available for the plugin. Check out [Image Attributes Pro](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
+The pro add-on can update the image attributes from not just the image filename, but also from the post / page / product / custom post type title. You can fine tune the bulk updater settings and even clean up the actual image filename. 
+
 What the pro add-on you get these additional features:
 
+* Use post title as title text. If image is not attached to a post, image filename will be used instead.
+* Use post title as alt text. If image is not attached to a post, image filename will be used instead.
+* Use post title as caption. If image is not attached to a post, image filename will be used instead.
+* Use post title as description. If image is not attached to a post, image filename will be used instead.
 * Remove apostrophe ( ' ) from filename
 * Remove tilde ( ~ ) from filename
 * Remove plus ( + ) from filename
@@ -50,20 +60,19 @@ What the pro add-on you get these additional features:
 * Use title casing for image attributes. First Letter Of Each Word Will Be Capitalized.
 * Use sentence casing for image attributes. First letter of a sentence will be capitalized.
 * Clean the actual image filename after upload.
-* Use post title as title text. If image is not attached to a post, image filename will be used instead.
-* Use post title as alt text. If image is not attached to a post, image filename will be used instead.
-* Use post title as caption. If image is not attached to a post, image filename will be used instead.
-* Use post title as description. If image is not attached to a post, image filename will be used instead.
 * Choose to turn off any of the above mentioned features.
 
 With the pro bulk updater you can:
 
-* Update image title and alt text for images inserted into posts and custom post types.
+* Update image title and alt text for images inserted into posts and custom post types. Not just the media library.
 * Fine tune all settings. Choose what to update.
 * Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
 * Choose to turn off any of the above mentioned features.
+* Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
+* Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
+* Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=github&utm_medium=readme.md).
 
 For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
