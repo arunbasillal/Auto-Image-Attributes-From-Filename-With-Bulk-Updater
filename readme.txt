@@ -135,6 +135,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 2.0 =
+* Date: 
+* UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
+
 = 1.6 =
 * Date: 06.January.2019 
 * Tested with WordPress 5.0.2. 

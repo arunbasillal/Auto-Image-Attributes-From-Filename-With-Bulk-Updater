@@ -73,6 +73,12 @@ function iaff_general_settings_callback() {
 			<input type="checkbox" name="iaff_settings[image_title]" id="iaff_settings[image_title]" value="1" <?php if ( isset($settings['image_title']) ) checked( '1', $settings['image_title'] ); ?>>
 			<span><?php _e('Set Image Title for new uploads', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
+		
+		<!-- Auto Add Alt Text -->
+		<label for="iaff_settings[image_alttext]">
+			<input type="checkbox" name="iaff_settings[image_alttext]" id="iaff_settings[image_alttext]" value="1" <?php if ( isset($settings['image_alttext']) ) checked( '1', $settings['image_alttext'] ); ?>>
+			<span><?php _e('Set Image Alt Text for new uploads', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
+		</label><br>
 			
 		<!-- Auto Add Image Caption  -->
 		<label for="iaff_settings[image_caption]">
@@ -84,12 +90,6 @@ function iaff_general_settings_callback() {
 		<label for="iaff_settings[image_description]">
 			<input type="checkbox" name="iaff_settings[image_description]" id="iaff_settings[image_description]" value="1" <?php if ( isset($settings['image_description']) ) checked( '1', $settings['image_description'] ); ?>>
 			<span><?php _e('Set Image Description for new uploads', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Auto Add Alt Text -->
-		<label for="iaff_settings[image_alttext]">
-			<input type="checkbox" name="iaff_settings[image_alttext]" id="iaff_settings[image_alttext]" value="1" <?php if ( isset($settings['image_alttext']) ) checked( '1', $settings['image_alttext'] ); ?>>
-			<span><?php _e('Set Image Alt Text for new uploads', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -488,6 +488,12 @@ function iaff_bu_general_settings_callback() {
 			<input type="checkbox" name="iaff_settings[bu_image_title]" id="iaff_settings[bu_image_title]" value="1" <?php if ( isset($settings['bu_image_title']) ) checked( '1', $settings['bu_image_title'] ); ?>>
 			<span><?php _e('Update Image Title', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
+		
+		<!-- Auto Add Alt Text -->
+		<label for="iaff_settings[bu_image_alttext]">
+			<input type="checkbox" name="iaff_settings[bu_image_alttext]" id="iaff_settings[bu_image_alttext]" value="1" <?php if ( isset($settings['bu_image_alttext']) ) checked( '1', $settings['bu_image_alttext'] ); ?>>
+			<span><?php _e('Update Image Alt Text', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
+		</label><br>
 			
 		<!-- Auto Add Image Caption  -->
 		<label for="iaff_settings[bu_image_caption]">
@@ -499,12 +505,6 @@ function iaff_bu_general_settings_callback() {
 		<label for="iaff_settings[bu_image_description]">
 			<input type="checkbox" name="iaff_settings[bu_image_description]" id="iaff_settings[bu_image_description]" value="1" <?php if ( isset($settings['bu_image_description']) ) checked( '1', $settings['bu_image_description'] ); ?>>
 			<span><?php _e('Update Image Description', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Auto Add Alt Text -->
-		<label for="iaff_settings[bu_image_alttext]">
-			<input type="checkbox" name="iaff_settings[bu_image_alttext]" id="iaff_settings[bu_image_alttext]" value="1" <?php if ( isset($settings['bu_image_alttext']) ) checked( '1', $settings['bu_image_alttext'] ); ?>>
-			<span><?php _e('Update Image Alt Text', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
 		
 	</fieldset>
