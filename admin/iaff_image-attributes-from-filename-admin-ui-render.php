@@ -354,7 +354,7 @@ function iaff_advanced_image_title_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[title_source]" value="1" <?php if ( isset($settings['title_source']) ) checked( '1', $settings['title_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as title text. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as title text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -382,7 +382,7 @@ function iaff_advanced_image_alt_text_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[alt_text_source]" value="1" <?php if ( isset($settings['alt_text_source']) ) checked( '1', $settings['alt_text_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as alt text. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as alt text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -410,7 +410,7 @@ function iaff_advanced_image_caption_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[caption_source]" value="1" <?php if ( isset($settings['caption_source']) ) checked( '1', $settings['caption_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as caption. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as caption. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -438,7 +438,7 @@ function iaff_advanced_image_description_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[description_source]" value="1" <?php if ( isset($settings['description_source']) ) checked( '1', $settings['description_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as description. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as description. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -700,7 +700,7 @@ function iaff_bu_image_title_settings_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_title_source]" value="1" <?php if ( isset($settings['bu_title_source']) ) checked( '1', $settings['bu_title_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as title text. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as title text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<h4>Bulk Updater Behaviour</h4>
@@ -745,7 +745,7 @@ function iaff_bu_alt_text_settings_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_alt_text_source]" value="1" <?php if ( isset($settings['bu_alt_text_source']) ) checked( '1', $settings['bu_alt_text_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as alt text. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as alt text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<h4>Bulk Updater Behaviour</h4>
@@ -790,7 +790,7 @@ function iaff_bu_image_caption_settings_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_caption_source]" value="1" <?php if ( isset($settings['bu_caption_source']) ) checked( '1', $settings['bu_caption_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as caption. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as caption. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -818,7 +818,7 @@ function iaff_bu_image_description_settings_callback() {
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_description_source]" value="1" <?php if ( isset($settings['bu_description_source']) ) checked( '1', $settings['bu_description_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as description. If image is not attached to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Use post title as description. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>

@@ -138,6 +138,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 = 2.0 =
 * Date: 
 * UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
+* UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
 
 = 1.6 =
 * Date: 06.January.2019 
