@@ -68,7 +68,7 @@ With the pro bulk updater you can:
 * Fine tune all settings. Choose what to update.
 * Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
 * Update image titles / alt text in media library and existing posts.
-* Update image titles / alt text in existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
+* Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
