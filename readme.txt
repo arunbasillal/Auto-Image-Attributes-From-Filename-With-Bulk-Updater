@@ -138,9 +138,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 = 2.0 =
 * Date: 18.June.2021
+* Tested with WordPress 5.7.2.
 * UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
 * UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
-* I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/)
+* I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/).
 
 = 1.6 =
 * Date: 06.January.2019 
@@ -195,6 +196,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 2.0 =
+* Tested with WordPress 5.7.2.
+* UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
+* UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
+* I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/).
 
 = 1.6 =
 * Tested with WordPress 5.0.2. 

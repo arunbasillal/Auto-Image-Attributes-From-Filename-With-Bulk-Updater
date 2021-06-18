@@ -64,15 +64,16 @@ What the pro add-on you get these additional features:
 
 With the pro bulk updater you can:
 
-* Update image title and alt text for images inserted into posts and custom post types. Not just the media library.
+* Update image title and alt text for images inserted into posts and custom post types. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=github&utm_medium=readme.md)
 * Fine tune all settings. Choose what to update.
 * Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
 * Update image titles / alt text in media library and existing posts.
-* Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
+* Update image titles / alt text in existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
 * Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=github&utm_medium=readme.md).
+* Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=github&utm_medium=readme.md)
 
 For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
