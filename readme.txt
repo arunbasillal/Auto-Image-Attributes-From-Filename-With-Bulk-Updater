@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 5.2.1
+Tested up to: 5.7.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,15 +88,16 @@ What the pro add-on you get these additional features:
 
 With the pro bulk updater you can:
 
-* Update image title and alt text **for images inserted into posts and custom post types**. Not just the media library.
+* Update image title and alt text **for images inserted into posts and custom post types**. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=wordpress.org&utm_medium=readme)
 * Fine tune all settings. Choose what to update.
 * Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
 * Update image titles / alt text in media library and existing posts.
-* Update image titles / alt text in existing posts only if no title / alt text is set. All image titles/ alt text in media library will be updated.
+* Update image titles / alt text in existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
 * Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=wordpress.org&utm_medium=readme).
+* Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=wordpress.org&utm_medium=readme)
 
 For screenshots, FAQ and full list of features, please see the [product website](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme).
 
@@ -134,6 +135,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 4. Bulk Updater
 
 == Changelog ==
+
+= 2.0 =
+* Date: 18.June.2021
+* Tested with WordPress 5.7.2.
+* UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
+* UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
+* I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/).
 
 = 1.6 =
 * Date: 06.January.2019 
@@ -188,6 +196,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 2.0 =
+* Tested with WordPress 5.7.2.
+* UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
+* UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
+* I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/).
 
 = 1.6 =
 * Tested with WordPress 5.0.2. 
