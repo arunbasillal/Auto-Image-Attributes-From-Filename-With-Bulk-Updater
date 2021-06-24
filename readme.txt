@@ -136,6 +136,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 2.1 =
+* Date: 
+* Enhancement: Compatibility with Image Attributes Pro v2.0. 
+
 = 2.0 =
 * Date: 18.June.2021
 * Tested with WordPress 5.7.2.

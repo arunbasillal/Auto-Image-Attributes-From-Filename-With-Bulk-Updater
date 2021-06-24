@@ -271,24 +271,36 @@ add_action( 'admin_init', 'iaff_register_settings' );
 /**
  * Input validator and sanitizer
  *
- * @since	1.4
- * @param	Array	$settings	An array that contains all the settings
- * @return	Array	Array containing all the settings
+ * @since 1.4
+ * 
+ * @param Array	$settings An array that contains all the settings
+ * 
+ * @return Array Array containing all the settings
  */
 function iaff_settings_validater_and_sanitizer( $settings ) {
 	
 	// Sanitize Custom Filter
-	$settings['custom_filter'] 		= sanitize_text_field($settings['custom_filter']);
-	$settings['bu_custom_filter']	= sanitize_text_field($settings['bu_custom_filter']);
+	$settings['custom_filter']	= sanitize_text_field( $settings['custom_filter'] );
+	$settings['bu_custom_filter']	= sanitize_text_field( $settings['bu_custom_filter'] );
+	
+	// Sanitize Custom Attributes
+	$settings['custom_attribute_title'] 		= sanitize_text_field( $settings['custom_attribute_title'] );
+	$settings['custom_attribute_bu_title'] 		= sanitize_text_field( $settings['custom_attribute_bu_title'] );
+	$settings['custom_attribute_alt_text'] 		= sanitize_text_field( $settings['custom_attribute_alt_text'] );
+	$settings['custom_attribute_bu_alt_text'] 	= sanitize_text_field( $settings['custom_attribute_bu_alt_text'] );
+	$settings['custom_attribute_caption'] 		= sanitize_text_field( $settings['custom_attribute_caption'] );
+	$settings['custom_attribute_bu_caption'] 	= sanitize_text_field( $settings['custom_attribute_bu_caption'] );
+	$settings['custom_attribute_description'] 	= sanitize_text_field( $settings['custom_attribute_description'] );
+	$settings['custom_attribute_bu_description'] 	= sanitize_text_field( $settings['custom_attribute_bu_description'] );
 	
 	// Validating Regex
-	if( @preg_match($settings['regex_filter'], null) === false ) {
-		unset($settings['regex_filter']);
+	if( @preg_match( $settings['regex_filter'], null ) === false ) {
+		unset( $settings['regex_filter'] );
 	}
 	
 	// Validating Bulk Updater Regex
-	if( @preg_match($settings['bu_regex_filter'], null) === false ) {
-		unset($settings['bu_regex_filter']);
+	if( @preg_match( $settings['bu_regex_filter'], null ) === false ) {
+		unset( $settings['bu_regex_filter'] );
 	}
 	
 	return $settings;
@@ -363,3 +375,24 @@ function iaff_enqueue_js_and_css() {
 	wp_enqueue_style('iaff-google-font', 'https://fonts.googleapis.com/css?family=Patua+One', array(), null, 'all');
 }
 add_action( 'admin_enqueue_scripts', 'iaff_enqueue_js_and_css' );
+
+/**
+ * Tags for custom attribute
+ * 
+ * @since 2.1
+ */
+function iaff_custom_attribute_tags() {
+	
+	$available_tags = array(
+		/* translators: %s: Custom image attribute tag. */
+		'filename'	=> __( '%s (The image filename.)' ),
+		/* translators: %s: Custom image attribute tag. */
+		'posttitle'	=> __( '%s (Title of the post, page or product.)' ),
+		/* translators: %s: Custom image attribute tag. */
+		'yoastfkw'	=> __( '%s (Yoast focus keyword.)' ),
+		/* translators: %s: Custom image attribute tag. */
+		'rankmathfkw'	=> __( '%s (Rank Math focus keyword.)' ),
+	);
+	
+	return $available_tags;
+}

@@ -166,3 +166,12 @@
 	color: #fff;
 	text-decoration: none;
 }
+
+#iaff-pro .iaff-custom-attribute-tags {
+	display: inline-block;
+}
+
+#iaff-pro .iaff-custom-attribute-tags li {
+	float: left;
+	margin-right: 5px;
+}
