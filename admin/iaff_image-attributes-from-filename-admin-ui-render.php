@@ -364,31 +364,7 @@ function iaff_advanced_image_title_callback() {
 			<input type="text" id="text_custom_attribute_title" class="text_custom_attribute regular-text code" data-attribute="title" name="iaff_settings[custom_attribute_title]" value="<?php if ( isset( $settings['custom_attribute_title'] ) && ( ! empty( $settings['custom_attribute_title'] ) ) ) echo esc_attr( $settings['custom_attribute_title'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="title"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'title' ); ?>
 		
 	</fieldset>
 		
@@ -425,31 +401,7 @@ function iaff_advanced_image_alt_text_callback() {
 			<input type="text" id="text_custom_attribute_alt_text" class="text_custom_attribute regular-text code" data-attribute="alt_text" name="iaff_settings[custom_attribute_alt_text]" value="<?php if ( isset( $settings['custom_attribute_alt_text'] ) && ( ! empty( $settings['custom_attribute_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_alt_text'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="alt_text"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'alt_text' ); ?>
 		
 	</fieldset>
 		
@@ -486,31 +438,7 @@ function iaff_advanced_image_caption_callback() {
 			<input type="text" id="text_custom_attribute_caption" class="text_custom_attribute regular-text code" data-attribute="caption" name="iaff_settings[custom_attribute_caption]" value="<?php if ( isset( $settings['custom_attribute_caption'] ) && ( ! empty( $settings['custom_attribute_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_caption'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="caption"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'caption' ); ?>
 		
 	</fieldset>
 		
@@ -547,31 +475,7 @@ function iaff_advanced_image_description_callback() {
 			<input type="text" id="text_custom_attribute_description" class="text_custom_attribute regular-text code" data-attribute="description" name="iaff_settings[custom_attribute_description]" value="<?php if ( isset( $settings['custom_attribute_description'] ) && ( ! empty( $settings['custom_attribute_description'] ) ) ) echo esc_attr( $settings['custom_attribute_description'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="description"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'description' ); ?>
 		
 	</fieldset>
 		
@@ -842,31 +746,7 @@ function iaff_bu_image_title_settings_callback() {
 			<input type="text" id="text_custom_attribute_bu_title" class="text_custom_attribute regular-text code" data-attribute="bu_title" name="iaff_settings[custom_attribute_bu_title]" value="<?php if ( isset( $settings['custom_attribute_bu_title'] ) && ( ! empty( $settings['custom_attribute_bu_title'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_title'] ); ?>" />
 		</label><br>
 		
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="bu_title"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'bu_title' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
@@ -920,31 +800,7 @@ function iaff_bu_alt_text_settings_callback() {
 			<input type="text" id="text_custom_attribute_bu_alt_text" class="text_custom_attribute regular-text code" data-attribute="bu_alt_text" name="iaff_settings[custom_attribute_bu_alt_text]" value="<?php if ( isset( $settings['custom_attribute_bu_alt_text'] ) && ( ! empty( $settings['custom_attribute_bu_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_alt_text'] ); ?>" />
 		</label><br>
 		
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="bu_alt_text"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'bu_alt_text' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
@@ -998,31 +854,7 @@ function iaff_bu_image_caption_settings_callback() {
 			<input type="text" id="text_custom_attribute_bu_caption" class="text_custom_attribute regular-text code" data-attribute="bu_caption" name="iaff_settings[custom_attribute_bu_caption]" value="<?php if ( isset( $settings['custom_attribute_bu_caption'] ) && ( ! empty( $settings['custom_attribute_bu_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_caption'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="bu_caption"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'bu_caption' ); ?>
 		
 	</fieldset>
 		
@@ -1059,34 +891,48 @@ function iaff_bu_image_description_settings_callback() {
 			<input type="text" id="text_custom_attribute_bu_description" class="text_custom_attribute regular-text code" data-attribute="bu_description" name="iaff_settings[custom_attribute_bu_description]" value="<?php if ( isset( $settings['custom_attribute_bu_description'] ) && ( ! empty( $settings['custom_attribute_bu_description'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_description'] ); ?>" />
 		</label><br>
 
-		<div class="iaff-custom-attribute-tags">
-			<?php
-			$available_tags = iaff_custom_attribute_tags();
-
-			if ( ! empty( $available_tags ) ) :
-				?>
-				<p><?php _e( 'Available tags:' ); ?></p>
-				<ul role="list">
-					<?php
-					foreach ( $available_tags as $tag => $explanation ) {
-						?>
-						<li>
-							<button type="button"
-								class="button button-secondary"
-								data-attribute="bu_description"
-								aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
-								<?php echo '%' . $tag . '%'; ?>
-							</button>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			<?php endif; ?>
-		</div>
+		<?php iaff_custom_attribute_tags_ui_render( 'bu_description' ); ?>
 		
 	</fieldset>
 		
+	<?php
+}
+
+/**
+ * Display the selector UI to show available tags.
+ * 
+ * @since 2.1
+ * 
+ * @param $data_attribute string The attribute for which the UI will be used for.data-attribute will be different for each attribute.
+ */
+function iaff_custom_attribute_tags_ui_render( $data_attribute ) {
+	?>
+<div class="iaff-custom-attribute-tags">
+	<?php
+	$available_tags = iaff_custom_attribute_tags();
+
+	if ( ! empty( $available_tags ) ) :
+		?>
+		<p><?php _e( 'Available tags:' ); ?></p>
+		<ul role="list">
+			<?php
+			foreach ( $available_tags as $tag => $explanation ) {
+				?>
+				<li>
+					<button type="button"
+						class="button button-secondary"
+						data-attribute="<? echo $data_attribute; ?>"
+						title ="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>"
+						aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
+						<?php echo '%' . $tag . '%'; ?>
+					</button>
+				</li>
+				<?php
+			}
+			?>
+		</ul>
+	<?php endif; ?>
+</div>
 	<?php
 }
 
