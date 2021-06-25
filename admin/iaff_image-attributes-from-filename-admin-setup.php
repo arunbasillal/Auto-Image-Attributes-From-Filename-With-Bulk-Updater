@@ -384,14 +384,11 @@ add_action( 'admin_enqueue_scripts', 'iaff_enqueue_js_and_css' );
 function iaff_custom_attribute_tags() {
 	
 	$available_tags = array(
-		/* translators: %s: Custom image attribute tag. */
-		'filename'	=> __( '%s (The image filename.)' ),
-		/* translators: %s: Custom image attribute tag. */
-		'posttitle'	=> __( '%s (Title of the post, page or product.)' ),
-		/* translators: %s: Custom image attribute tag. */
-		'yoastfkw'	=> __( '%s (Yoast focus keyword.)' ),
-		/* translators: %s: Custom image attribute tag. */
-		'rankmathfkw'	=> __( '%s (Rank Math focus keyword.)' ),
+		'filename'	=> __( 'The image filename.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'posttitle'	=> __( 'Title of the post, page or product.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'sitetitle'	=> __( 'Site Title defined in General Settings.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'yoastfocuskw'	=> __( 'Yoast Focus Keyword.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'rankmathfkw'	=> __( 'Rank Math Focus Keyword.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
 	return $available_tags;

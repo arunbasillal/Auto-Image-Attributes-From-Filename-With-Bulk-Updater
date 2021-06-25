@@ -922,8 +922,8 @@ function iaff_custom_attribute_tags_ui_render( $data_attribute ) {
 					<button type="button"
 						class="button button-secondary"
 						data-attribute="<? echo $data_attribute; ?>"
-						title ="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>"
-						aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>">
+						title ="<?php echo esc_attr( $explanation ); ?>"
+						aria-label="<?php echo esc_attr( $explanation ); ?>">
 						<?php echo '%' . $tag . '%'; ?>
 					</button>
 				</li>
