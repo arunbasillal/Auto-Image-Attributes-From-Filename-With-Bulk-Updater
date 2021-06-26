@@ -856,6 +856,18 @@ function iaff_bu_image_caption_settings_callback() {
 
 		<?php iaff_custom_attribute_tags_ui_render( 'bu_caption' ); ?>
 		
+		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
+		
+		<label>
+			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="0" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '0', $settings['bu_caption_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Update all captions in media library. Existing captions will be overwritten.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
+		
+		<label>
+			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="2" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '2', $settings['bu_caption_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Update captions in media library if no caption is set. Existing captions will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
+		
 	</fieldset>
 		
 	<?php
@@ -892,6 +904,18 @@ function iaff_bu_image_description_settings_callback() {
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'bu_description' ); ?>
+		
+		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
+		
+		<label>
+			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="0" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '0', $settings['bu_description_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Update all descriptions in media library. Existing descriptions will be overwritten.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
+		
+		<label>
+			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="2" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '2', $settings['bu_description_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Update description in media library if no description is set. Existing descriptions will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
 		
 	</fieldset>
 		

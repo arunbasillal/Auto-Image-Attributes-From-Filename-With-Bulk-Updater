@@ -340,7 +340,9 @@ function iaff_get_settings() {
 						'bu_alt_text_source'	=> '0',
 						'bu_alt_text_in_post'	=> '0',
 						'bu_caption_source'		=> '0',
+						'bu_caption_behaviour'		=> '1',
 						'bu_description_source'	=> '0',
+						'bu_description_behaviour'	=> '1',
 					);
 
 	$settings = get_option('iaff_settings', $iaff_defaults);
