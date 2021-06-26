@@ -171,6 +171,11 @@
 	display: inline-block;
 }
 
+#iaff-pro .iaff-available-custom-attribute-tags {
+	display: inline-block;
+	margin-bottom: 0px;
+}
+
 #iaff-pro .iaff-custom-attribute-tags li {
 	float: left;
 	margin-right: 5px;

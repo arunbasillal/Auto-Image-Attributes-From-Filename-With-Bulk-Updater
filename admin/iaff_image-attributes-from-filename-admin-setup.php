@@ -384,11 +384,11 @@ add_action( 'admin_enqueue_scripts', 'iaff_enqueue_js_and_css' );
 function iaff_custom_attribute_tags() {
 	
 	$available_tags = array(
-		'filename'		=> __( 'The image filename.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'posttitle'		=> __( 'Title of the post, page or product.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'sitetitle'		=> __( 'Site Title defined in General Settings.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'yoastfocuskw'		=> __( 'Yoast Focus Keyword.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'rankmathfocuskw'	=> __( 'Rank Math Focus Keyword.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'filename'		=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'posttitle'		=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'sitetitle'		=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'yoastfocuskw'		=> __( 'Yoast Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'rankmathfocuskw'	=> __( 'Rank Math Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
 	return $available_tags;

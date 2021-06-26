@@ -914,7 +914,8 @@ function iaff_custom_attribute_tags_ui_render( $data_attribute ) {
 	if ( ! empty( $available_tags ) ) :
 		?>
 		<p><?php _e( 'Available tags:' ); ?></p>
-		<ul role="list">
+		<p><?php _e( 'The following tags when used in a custom attribute will be replaced with their corresponding value.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></p>
+		<ul class="iaff-available-custom-attribute-tags" role="list">
 			<?php
 			foreach ( $available_tags as $tag => $explanation ) {
 				?>
@@ -931,6 +932,7 @@ function iaff_custom_attribute_tags_ui_render( $data_attribute ) {
 			}
 			?>
 		</ul>
+		<p><?php _e( 'For example, if you set custom attribute as <code>%posttitle% - Your Name</code>, the <code>%posttitle%</code> will be replaced by the title of the post to which the image is uploaded to. ', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></p>
 	<?php endif; ?>
 </div>
 	<?php
