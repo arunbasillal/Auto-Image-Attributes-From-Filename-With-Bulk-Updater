@@ -90,6 +90,21 @@ function iaff_upgrader() {
 	}
 	
 	/**
+	 * @since 2.1
+	 * Bulk Updater Behaviour was added for image caption and description.
+	 */
+	if ( version_compare( $current_ver, '2.0', '<=' ) ) {
+		
+		$settings = get_option( 'iaff_settings' );
+
+		if ( $settings !== false ) {
+			$settings['bu_caption_behaviour'] 	= 1;
+			$settings['bu_description_behaviour'] 	= 1;
+			update_option('iaff_settings', $settings);
+		}
+	}
+	
+	/**
 	 * Upgrade database settings when upgrading from 1.3 or lower
 	 * A global swith with setting name global_switch was introduce in 1.4
 	 */
