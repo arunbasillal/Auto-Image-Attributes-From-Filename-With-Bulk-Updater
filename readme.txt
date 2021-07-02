@@ -69,6 +69,10 @@ What the pro add-on you get these additional features:
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
+* Build your own attributes using custom tags like `%filename%`,`%posttitle%`,`%sitetitle%`,`%yoastfocuskw%`,`%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
+* Clear any image attribute by setting it as blank / empty. 
+* Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used. 
 * Remove apostrophe ( ' ) from filename
 * Remove tilde ( ~ ) from filename
 * Remove plus ( + ) from filename
@@ -92,7 +96,9 @@ With the pro bulk updater you can:
 * Fine tune all settings. Choose what to update.
 * Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
 * Update image titles / alt text in media library and existing posts.
-* Update image titles / alt text in existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
+* Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
+* Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
+* Build your own attributes using custom tags like `%filename%`,`%posttitle%`,`%sitetitle%`,`%yoastfocuskw%`,`%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
@@ -135,6 +141,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 4. Bulk Updater
 
 == Changelog ==
+
+= 2.1 =
+* Date: 02.July.2021
+* Enhancement: Compatibility with Image Attributes Pro v2.0. 
 
 = 2.0 =
 * Date: 18.June.2021
@@ -196,6 +206,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 2.1 =
+* Date: 02.July.2021
+* Enhancement: Compatibility with Image Attributes Pro v2.0. 
 
 = 2.0 =
 * Tested with WordPress 5.7.2.
