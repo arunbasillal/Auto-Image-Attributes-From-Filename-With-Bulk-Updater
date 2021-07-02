@@ -53,7 +53,7 @@ The plugin settings and bulk updater are in WordPress Admin > Settings > Image A
 
 Please remember to take a database backup before running the bulk updater. The bulk updater updates ALL attributes for existing images in the Media Library and ignores the settings set for NEW uploads.
 
-**Image Attributes Pro**
+## Image Attributes Pro
 
 A pro add-on is now available for the plugin. Check out [Image Attributes Pro](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme).
 
@@ -63,13 +63,13 @@ The pro add-on can update the image attributes from not just the image filename,
 > Rest assured I will give great feedback on your plugin anywhere I can!!
 > - **James Barber**, for [Image Attributes Pro](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme) via email.
 
-What the pro add-on you get these additional features:
+**What the pro add-on you get these additional features:**
 
 * Use post title as title text. If image is not attached to a post, image filename will be used instead.
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
-* Build your own attributes using custom tags like `%filename%`,`%posttitle%`,`%sitetitle%`,`%yoastfocuskw%`,`%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
 * Clear any image attribute by setting it as blank / empty. 
 * Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used. 
@@ -90,7 +90,7 @@ What the pro add-on you get these additional features:
 * Clean the actual image filename after upload.
 * Choose to turn off any of the above mentioned features.
 
-With the pro bulk updater you can:
+**With the pro bulk updater you can:**
 
 * Update image title and alt text **for images inserted into posts and custom post types**. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=wordpress.org&utm_medium=readme)
 * Fine tune all settings. Choose what to update.
@@ -98,7 +98,7 @@ With the pro bulk updater you can:
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
-* Build your own attributes using custom tags like `%filename%`,`%posttitle%`,`%sitetitle%`,`%yoastfocuskw%`,`%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
