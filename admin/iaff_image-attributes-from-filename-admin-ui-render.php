@@ -3,7 +3,6 @@
  * Admin UI setup and render
  *
  * @since 1.3
- * @function	iaff_global_switch_callback()		Global Switch Callback
  * @function	iaff_general_settings_callback()	General Settings field Callback
  * @function	iaff_filter_settings_callback()		Filter Settings field callback
  * @function	iaff_basic_seo_settings_callback()	Basic SEO Settings Callback
@@ -29,29 +28,6 @@
 
 // Exit if accessed directly
 if ( ! defined('ABSPATH') ) exit;
-
-/**
- * Global Switch Callback
- *
- * @since 	1.4
- */
-function iaff_global_switch_callback() {	
-
-	// Get Settings
-	$settings = iaff_get_settings();
-	?>
-		
-	<fieldset>
-	
-		<label for="iaff_settings[global_switch]">
-			<input type="checkbox" name="iaff_settings[global_switch]" id="iaff_settings[global_switch]" value="1" <?php if ( isset($settings['global_switch']) ) checked( '1', $settings['global_switch'] ); ?>>
-			<span><?php _e('Globally enable or disable Auto Image Attributes. Should be checked for the plugin to work.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-	</fieldset>
-		
-	<?php
-}
 
 /**
  * General Settings field Callback

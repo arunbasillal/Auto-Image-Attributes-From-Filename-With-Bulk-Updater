@@ -105,21 +105,6 @@ function iaff_upgrader() {
 	}
 	
 	/**
-	 * Upgrade database settings when upgrading from 1.3 or lower
-	 * A global swith with setting name global_switch was introduce in 1.4
-	 */
-	if ( version_compare( $current_ver, '1.3', '<=' ) ) {
-		
-		$settings = get_option( 'iaff_settings' );
-	
-		if ( $settings !== false ) {
-			
-			$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
-			update_option('iaff_settings', $settings);
-		}
-	}
-	
-	/**
 	 * Detect first install. 
 	 * 
 	 * Since abl_iaff_version is not saved at this point, $current_ver will be 
