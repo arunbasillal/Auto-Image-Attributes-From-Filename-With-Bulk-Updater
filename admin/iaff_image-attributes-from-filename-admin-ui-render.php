@@ -1155,41 +1155,18 @@ function iaff_admin_interface_render () {
 							<div class="iaff-icon"></div>
 							<h1 class="patua"><?php _e('Upgrade to Pro', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h1>
 							<ul>
-								<li><span class="dashicons dashicons-yes"></span><?php _e('Advanced formatting options', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
-								<li><span class="dashicons dashicons-yes"></span><?php _e('Use post titles as attributes', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
-								<li><span class="dashicons dashicons-yes"></span><?php _e('Fine tune bulk updater settings', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
+								<li><span class="dashicons dashicons-yes"></span><?php _e('Get more traffic from Google Images', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
+								<li><span class="dashicons dashicons-yes"></span><?php _e('Use post / product title as attributes', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
+								<li><span class="dashicons dashicons-yes"></span><?php _e('Preserve existing attributes', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
+								<li><span class="dashicons dashicons-yes"></span><?php _e('Update attributes within posts', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
+								<li><span class="dashicons dashicons-yes"></span><?php _e('Build custom attributes and fine tune settings', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 							</ul>
+							<button class="button" style="width:100%">Read more &rarr; </button>
 						</a>
 					</div><!-- .iaff-upgrade-header -->
 					
 					<div class="iaff-upgrade-form">
-					
-						<form method="post" action="https://imageattributespro.com/coupons/" target="_blank">
-							
-							<h1 class="patua"><?php _e('10&percnt; For Lifetime', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h1>
 
-							<?php $user = wp_get_current_user(); ?>
-
-							<p><?php _e('Submit your name and email to receive 10&percnt; off when you upgrade to the Lifetime license.', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></p>
-
-							<fieldset>
-								
-								<input type="text" name="first_name" value="<?php echo esc_attr( trim( $user->first_name ) ); ?>" placeholder="<?php _e('First Name', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
-								
-								<input type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="<?php _e('Your Email', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
-
-								<input type="hidden" name="source" value="IAFF" />
-								<input type="hidden" name="submitted" id="submitted" value="true" />
-
-								<input type="submit" class="button" value="<?php _e('Send me the coupon', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
-								
-							</fieldset>
-
-							<p class="opacity-75"><?php _e('Your email will be kept private and will not be shared or spammed.', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></p>
-						</form>
-						
-						<hr>
-						
 						<div class="iaff-upgrade-review">
 							<div class="iaff-upgrade-review-stars">
 								<h3>"<?php _e('Fast &amp; Simple Time Saver', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"</h3>
@@ -1204,6 +1181,33 @@ function iaff_admin_interface_render () {
 								</div>	
 							</div>
 						</div>
+
+						<hr style="margin: 20px 0px;">
+					
+						<form method="post" action="https://imageattributespro.com/newsletter/" target="_blank">
+							
+							<h1 class="patua" style="text-align: center;"><?php _e('SEO Newsletter', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h1>
+
+							<?php $user = wp_get_current_user(); ?>
+
+							<p><?php _e('Stay tuned to the latest image SEO news and receive helpful product updates.', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></p>
+
+							<fieldset>
+								
+								<input type="text" name="first_name" value="<?php echo esc_attr( trim( $user->first_name ) ); ?>" placeholder="<?php _e('First Name', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
+								
+								<input type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="<?php _e('Your Email', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
+
+								<input type="hidden" name="source" value="IAFF" />
+								<input type="hidden" name="submitted" id="submitted" value="true" />
+
+								<input type="submit" class="button" value="<?php _e('Subscribe', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
+								
+							</fieldset>
+
+							<p class="opacity-75"><?php _e('Your email will be kept private and will not be shared or spammed.', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></p>
+						</form>	
+						
 					</div><!-- .iaff-upgrade-form -->
 				</div><!-- .iaff-admin-options-sidebar -->
 			<?php } ?>
