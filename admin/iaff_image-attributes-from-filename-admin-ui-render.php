@@ -251,7 +251,7 @@ function iaff_custom_filter_callback() {
 		
 	<fieldset>
 		
-		<p><?php _e('Enter words or characters to filter separated by commas. Filter is case sensitive.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
+		<p><?php printf( __( 'Enter words or characters to filter separated by commas. Filter is case sensitive. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/custom-filter-and-regex-filter/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
 		<input type="text" name="iaff_settings[custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['custom_filter'] ) && ( ! empty( $settings['custom_filter'] ) ) ) echo esc_attr( $settings['custom_filter'] ); ?>"/><br><br>
 		
 		<p><?php _e('Filter with regular expression', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
@@ -633,7 +633,7 @@ function iaff_bu_custom_filter_callback() {
 		
 	<fieldset>
 		
-		<p><?php _e('Enter words or characters to filter separated by commas. Filter is case sensitive.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
+		<p><?php printf( __( 'Enter words or characters to filter separated by commas. Filter is case sensitive. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/custom-filter-and-regex-filter/?utm_source=iaff-basic&utm_medium=bu-settings-tab' ); ?></p>
 		<input type="text" name="iaff_settings[bu_custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['bu_custom_filter'] ) && ( ! empty( $settings['bu_custom_filter'] ) ) ) echo esc_attr( $settings['bu_custom_filter'] ); ?>"/><br><br>
 		
 		<p><?php _e('Filter with regular expression', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
@@ -985,7 +985,7 @@ function iaff_admin_interface_render () {
 					<!-- Basic Settings -->
 					<div id="iaff-basic" class="iaff-settings-tab">
 						<h2 class="showh2"><?php _e('Basic Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
-						<p><?php _e('Automatically add Image attributes such as Image Title, Image Caption, Description And Alt Text from Image Filename for new uploads', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
+						<p><?php _e( 'Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads.', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></p>
 						<?php do_settings_sections( 'iaff_basic_settings_section' ); ?>
 						<?php submit_button( __('Save Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ); ?>
 					</div>
@@ -1037,7 +1037,7 @@ function iaff_admin_interface_render () {
 						<p><strong><?php _e('Use <code>Test Bulk Updater</code> button to update one image at a time and verify the results.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></strong></p>
 						
 						<?php if( ! iaff_is_pro() ) { ?>
-							<p><strong><?php printf( __( 'If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Caption, Description and Alt Text will be: <em>a lot like love</em>. <a href="%s" target="_blank">Upgrade to Pro</a> for more options.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=bulk-updater-notice' ); ?></strong></p>
+							<p><strong><?php printf( __( 'The Bulk Updater will update every attribute. If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Alt Text, Caption and Description will be: <em>a lot like love</em>. <a href="%s" target="_blank">Upgrade to Pro</a> for more options.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=bulk-updater-notice' ); ?></strong></p>
 						<?php } ?>
 						
 					</div>
@@ -1153,7 +1153,7 @@ function iaff_admin_interface_render () {
 					<div class="iaff-upgrade-header">
 						<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=coupon-sidebar" target="_blank">
 							<div class="iaff-icon"></div>
-							<h1 class="patua"><?php _e('Upgrade to Pro', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h1>
+							<h1 class="patua"><?php _e( 'Unlock Traffic', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h1>
 							<ul>
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Get more traffic from Google Images', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Use post / product title as attributes', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
@@ -1161,7 +1161,7 @@ function iaff_admin_interface_render () {
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Update attributes within posts', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Build custom attributes and fine tune settings', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 							</ul>
-							<button class="button" style="width:100%">Read more &rarr; </button>
+							<button class="button" style="width:100%">Upgrade to Pro &rarr; </button>
 						</a>
 					</div><!-- .iaff-upgrade-header -->
 					

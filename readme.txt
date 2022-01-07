@@ -145,6 +145,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 = 3.0 =
 * Date: 
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
+* UI Enhancement: Added description text to clarity settings to improve usability. 
 
 = 2.1 =
 * Date: 02.July.2021
