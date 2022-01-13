@@ -1186,22 +1186,20 @@ function iaff_admin_interface_render () {
 					
 						<form method="post" action="https://imageattributespro.com/newsletter/" target="_blank">
 							
-							<h1 class="patua" style="text-align: center;"><?php _e('SEO Newsletter', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h1>
+							<h1 class="patua" style="text-align: center;"><?php _e( 'SEO Newsletter', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h1>
 
 							<?php $user = wp_get_current_user(); ?>
 
 							<p><?php _e('Stay tuned to the latest image SEO news and receive helpful product updates.', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></p>
 
 							<fieldset>
-								
-								<input type="text" name="first_name" value="<?php echo esc_attr( trim( $user->first_name ) ); ?>" placeholder="<?php _e('First Name', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
-								
+
 								<input type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="<?php _e('Your Email', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
 
 								<input type="hidden" name="source" value="IAFF" />
 								<input type="hidden" name="submitted" id="submitted" value="true" />
 
-								<input type="submit" class="button" value="<?php _e('Subscribe', 'auto-image-attributes-from-filename-with-bulk-updater'); ?>"/>
+								<input type="submit" class="button-primary" style="margin-top:5px;" value="<?php _e( 'Subscribe', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"/>
 								
 							</fieldset>
 
