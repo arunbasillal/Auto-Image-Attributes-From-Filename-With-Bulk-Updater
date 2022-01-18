@@ -99,14 +99,7 @@ function iaff_admin_notices() {
 	// Upgrade complete notice
 	if ( get_transient( 'iaff_upgrade_complete_admin_notice' ) ) {
 		
-		$iaff_suggest_pro = '';
-
-		// Suggest IAFF Pro if Pro add-on isn't installed.
-		if ( ! iaff_is_pro() ) {
-			$iaff_suggest_pro = sprintf( __( '<br>Want to use Post Titles for image attributes? Check out the <a href="%s" target="_blank">Image Attributes Pro</a> add-on.', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=upgrade-complete-admin-notice' );
-		}
-		
-		echo '<div class="notice notice-success is-dismissible"><p>' . __( '<strong>Auto Image Attributes From Filename With Bulk Updater</strong> successfully updated. ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . $iaff_suggest_pro . '</p></div>';
+		echo '<div class="notice notice-success is-dismissible"><p>' . __( '<strong>Auto Image Attributes From Filename With Bulk Updater</strong> successfully updated. ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . sprintf( __( '<br>Stay tuned to the latest image SEO news and receive helpful product updates. Subscribe to the <a href="%s" target="_blank">Image SEO Newsletter &rarr;</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/newsletter/?utm_source=iaff-basic&utm_medium=upgrade-complete-admin-notice' ) . '</p></div>';
 		
 		// Delete transient
 		delete_transient( 'iaff_upgrade_complete_admin_notice' );
