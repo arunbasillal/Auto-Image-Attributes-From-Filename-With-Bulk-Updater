@@ -16,7 +16,7 @@ Automatically add Image attributes such as Image Title, Image Caption, Descripti
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
-https://youtu.be/V5SOU4okOfU
+https://www.youtube.com/watch?v=V5SOU4okOfU
 
 Image alt text and title is critical for your image SEO and will help users discover your images (and there by your website) in Google / Yahoo / Bing image search. 
 
@@ -145,7 +145,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 3.0 =
-* Date: 18.January.2022
+* Date: 19.January.2022
 * Tested with WordPress 5.8.3.
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
 * UI Enhancement: Added description text to clarity settings to improve usability. 
@@ -217,7 +217,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Upgrade Notice ==
 
 = 3.0 =
-* Date: 18.January.2022
+* Date: 19.January.2022
 * Tested with WordPress 5.8.3.
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
 * UI Enhancement: Added description text to clarity settings to improve usability. 

@@ -4,6 +4,8 @@ Automatically Add Image Title, Caption, Description And Alt Text From Filename. 
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
+[![Image Attributes Pro Demo Video](https://i.ytimg.com/vi/V5SOU4okOfU/maxresdefault.jpg)](https://youtu.be/V5SOU4okOfU)
+
 Image alt text and title is critical for your image SEO and will help users discover your images (and there by your website) in Google / Yahoo / Bing image search. 
 
 Proper alt text also helps people who are blind or who have low vision understand your images there by improving the accessibility of your website. This will open up your website to a new segment of visitors and increase your traffic.
