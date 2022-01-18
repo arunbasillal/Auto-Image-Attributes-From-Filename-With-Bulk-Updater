@@ -36,10 +36,6 @@ function iaff_auto_image_attributes( $post_id ) {
 	// Return if attachment is not an image
 	if( ! wp_attachment_is_image($post_id) )
 		return;
-	
-	// Return if Global switch is turned off
-	if ( ! ( isset( $settings['global_switch'] ) && boolval($settings['global_switch']) ) )
-		return;
 
 	// Retrieve image object from its ID
 	$image = get_post( $post_id );

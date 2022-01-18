@@ -5,7 +5,7 @@
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
  * Author URI: https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri
- * Version: 2.1
+ * Version: 3.0
  * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -67,7 +67,7 @@ if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL' ) ) {
  * @since 1.3
  */
 if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
-	define( 'IAFF_VERSION_NUM', '2.1' );
+	define( 'IAFF_VERSION_NUM', '3.0' );
 }
 
 /**
@@ -100,21 +100,6 @@ function iaff_upgrader() {
 		if ( $settings !== false ) {
 			$settings['bu_caption_behaviour'] 	= 1;
 			$settings['bu_description_behaviour'] 	= 1;
-			update_option('iaff_settings', $settings);
-		}
-	}
-	
-	/**
-	 * Upgrade database settings when upgrading from 1.3 or lower
-	 * A global swith with setting name global_switch was introduce in 1.4
-	 */
-	if ( version_compare( $current_ver, '1.3', '<=' ) ) {
-		
-		$settings = get_option( 'iaff_settings' );
-	
-		if ( $settings !== false ) {
-			
-			$settings['global_switch'] = 1;	// Global switch was introduced in ver 1.4
 			update_option('iaff_settings', $settings);
 		}
 	}

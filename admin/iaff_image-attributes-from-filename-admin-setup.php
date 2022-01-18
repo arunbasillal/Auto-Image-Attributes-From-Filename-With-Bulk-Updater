@@ -56,20 +56,11 @@ function iaff_register_settings() {
         '__return_false',							// Callback Function
         'iaff_basic_settings_section'				// Page slug
     );
-	
-		// Global Switch
-		add_settings_field(
-			'iaff_global_switch',						// ID
-			__('Global Switch', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
-			'iaff_global_switch_callback',				// Callback function
-			'iaff_basic_settings_section',				// Page slug
-			'iaff_basic_settings_section_id'			// Settings Section ID
-		);
 		
 		// General Settings
 		add_settings_field(
 			'iaff_general_settings',					// ID
-			__('General Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
+			__( 'General Settings<p class="iaff-description">Select image attributes that should be automatically generated when you upload a new image.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),		// Title
 			'iaff_general_settings_callback',			// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -78,7 +69,7 @@ function iaff_register_settings() {
 		// Filter Settings
 		add_settings_field(
 			'iaff_filter_settings',						// ID
-			__('Filter Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
+			__( 'Filter Settings<p class="iaff-description">Selected characters will be removed from filename text before using them as image attributes.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),		// Title
 			'iaff_filter_settings_callback',			// Callback function
 			'iaff_basic_settings_section',				// Page slug
 			'iaff_basic_settings_section_id'			// Settings Section ID
@@ -116,7 +107,7 @@ function iaff_register_settings() {
 		// Advanced Filter
 		add_settings_field(
 			'iaff_advanced_filter_settings',			// ID
-			__('Advanced Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
+			__( 'Advanced Filter<p class="iaff-description">Selected characters will be removed from filename text before using them as image attributes.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),		// Title
 			'iaff_advanced_filter_callback',			// Callback function
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
@@ -196,7 +187,7 @@ function iaff_register_settings() {
 		// General Settings
 		add_settings_field(
 			'iaff_bu_general_settings',						// ID
-			__('General Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
+			__( 'General Settings<p class="iaff-description">Select image attributes that should be updated when you run the Bulk Updater.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),			// Title
 			'iaff_bu_general_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -205,7 +196,7 @@ function iaff_register_settings() {
 		// Filter Settings
 		add_settings_field(
 			'iaff_bu_filter_settings',						// ID
-			__('Filter Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),			// Title
+			__( 'Filter Settings<p class="iaff-description">Selected characters will be removed from filename text before using them as image attributes.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),			// Title
 			'iaff_bu_filter_settings_callback',				// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -315,7 +306,6 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 function iaff_get_settings() {
 
 	$iaff_defaults = array(
-		'global_switch'			=> '1',
 		'image_title' 			=> '1',
 		'image_caption' 		=> '1',
 		'image_description' 		=> '1',
