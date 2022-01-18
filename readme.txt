@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 5.8
+Tested up to: 5.8.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,11 +16,13 @@ Automatically add Image attributes such as Image Title, Image Caption, Descripti
 
 The plugin can update image attributes for both new images and existing images in the media library. 
 
+https://youtu.be/V5SOU4okOfU
+
+Image alt text and title is critical for your image SEO and will help users discover your images (and there by your website) in Google / Yahoo / Bing image search. 
+
 > **Life-Saver**
 > It allowed me to save tons of time. Further, the support is nice and ready to help.
 > - [thnk4](https://wordpress.org/support/topic/life-saver-188/)
-
-Image alt text and title is critical for your image SEO and will help users discover your images (and there by your website) in Google / Yahoo / Bing image search. 
 
 Proper alt text also helps people who are blind or who have low vision understand your images there by improving the accessibility of your website. This will open up your website to a new segment of visitors and increase your traffic.
 
@@ -143,9 +145,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 3.0 =
-* Date: 
+* Date: 18.January.2022
+* Tested with WordPress 5.8.3.
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
 * UI Enhancement: Added description text to clarity settings to improve usability. 
+* UI Enhancement: Added [demo video link](https://imageattributespro.com/demo/?utm_source=wordpress.org&utm_medium=changelog) in plugin settings page. 
 
 = 2.1 =
 * Date: 02.July.2021
@@ -211,6 +215,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 3.0 =
+* Date: 18.January.2022
+* Tested with WordPress 5.8.3.
+* Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
+* UI Enhancement: Added description text to clarity settings to improve usability. 
+* UI Enhancement: Added [demo video link](https://imageattributespro.com/demo/?utm_source=wordpress.org&utm_medium=changelog) in plugin settings page. 
 
 = 2.1 =
 * Date: 02.July.2021

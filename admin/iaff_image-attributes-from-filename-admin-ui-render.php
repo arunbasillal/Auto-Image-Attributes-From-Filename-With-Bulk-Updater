@@ -985,7 +985,7 @@ function iaff_admin_interface_render () {
 					<!-- Basic Settings -->
 					<div id="iaff-basic" class="iaff-settings-tab">
 						<h2 class="showh2"><?php _e('Basic Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
-						<p><?php _e( 'Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads.', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></p>
+						<p><?php printf( __( 'Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads. <a href="%s" target="_blank">Take a tour</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/demo/?utm_source=iaff-basic&utm_medium=basic-tab' ); ?> 📺</p>
 						<?php do_settings_sections( 'iaff_basic_settings_section' ); ?>
 						<?php submit_button( __('Save Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ); ?>
 					</div>
