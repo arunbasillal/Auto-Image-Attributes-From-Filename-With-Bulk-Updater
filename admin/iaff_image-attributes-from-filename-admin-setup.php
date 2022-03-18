@@ -275,14 +275,14 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	$settings['bu_custom_filter']	= sanitize_text_field( $settings['bu_custom_filter'] );
 	
 	// Sanitize Custom Attributes
-	$settings['custom_attribute_title'] 		= sanitize_text_field( $settings['custom_attribute_title'] );
-	$settings['custom_attribute_bu_title'] 		= sanitize_text_field( $settings['custom_attribute_bu_title'] );
-	$settings['custom_attribute_alt_text'] 		= sanitize_text_field( $settings['custom_attribute_alt_text'] );
-	$settings['custom_attribute_bu_alt_text'] 	= sanitize_text_field( $settings['custom_attribute_bu_alt_text'] );
-	$settings['custom_attribute_caption'] 		= sanitize_text_field( $settings['custom_attribute_caption'] );
-	$settings['custom_attribute_bu_caption'] 	= sanitize_text_field( $settings['custom_attribute_bu_caption'] );
-	$settings['custom_attribute_description'] 	= sanitize_text_field( $settings['custom_attribute_description'] );
-	$settings['custom_attribute_bu_description'] 	= sanitize_text_field( $settings['custom_attribute_bu_description'] );
+	$settings['custom_attribute_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_title'] );
+	$settings['custom_attribute_bu_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_bu_title'] );
+	$settings['custom_attribute_alt_text'] 			= iaff_sanitize_text_field( $settings['custom_attribute_alt_text'] );
+	$settings['custom_attribute_bu_alt_text'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_alt_text'] );
+	$settings['custom_attribute_caption'] 			= iaff_sanitize_text_field( $settings['custom_attribute_caption'] );
+	$settings['custom_attribute_bu_caption'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_caption'] );
+	$settings['custom_attribute_description'] 		= iaff_sanitize_text_field( $settings['custom_attribute_description'] );
+	$settings['custom_attribute_bu_description'] 	= iaff_sanitize_text_field( $settings['custom_attribute_bu_description'] );
 	
 	// Validating Regex
 	if( @preg_match( $settings['regex_filter'], null ) === false ) {
@@ -295,6 +295,28 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	}
 	
 	return $settings;
+}
+
+/**
+ * Extend sanitize_text_field() to preserve %category% custom attribute tag.
+ * 
+ * sanitize_text_field() converts %category% to tegory%.
+ * Here %category% is replaced with IAFF_CATEGORY_CUSTOM_TAG keyword before sanitization. 
+ * Then IAFF_CATEGORY_CUSTOM_TAG is replaced with %category% after sanitization. 
+ * 
+ * @since 3.1
+ * 
+ * @param (String) $str String to be sanitized.
+ * 
+ * @return (String) Sanitized string with %category% preserved. 
+ */
+function iaff_sanitize_text_field( $str ) {
+
+	$str = str_replace( '%category%', 'IAFF_CATEGORY_CUSTOM_TAG', $str );
+	$str = sanitize_text_field( $str );
+	$str = str_replace( 'IAFF_CATEGORY_CUSTOM_TAG', '%category%', $str );
+
+	return $str;
 }
 
 /**
@@ -379,6 +401,8 @@ function iaff_custom_attribute_tags() {
 		'filename'		=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'posttitle'		=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'sitetitle'		=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'category'		=> __( 'Post or Product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'tag'			=> __( 'Post or Product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'yoastfocuskw'		=> __( 'Yoast Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'rankmathfocuskw'	=> __( 'Rank Math Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
