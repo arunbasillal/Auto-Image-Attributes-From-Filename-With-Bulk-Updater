@@ -144,6 +144,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 3.1 =
+* Date: 
+* Tested with WordPress 5.9.2.
+* Enhancement: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Compatibility with Image Attributes Pro version 3.0. [Image Attributes Pro changelog.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
+
 = 3.0 =
 * Date: 19.January.2022
 * Tested with WordPress 5.8.3.
