@@ -1054,12 +1054,16 @@ function iaff_admin_interface_render () {
 					
 					<p><?php _e('To restart processing images from the beginning (the oldest upload first), reset the counter.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
 
-					<p><?php printf( __( 'If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=iaff-basic&utm_medium=skip-image-button' ); ?></p>
+					<?php if ( apply_filters( 'iaff_debug_mode', false ) ) { ?>
+						<p><?php printf( __( 'If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=iaff-basic&utm_medium=skip-image-button' ); ?></p>
+					<?php } ?>
 
 					<p class="submit">
 						<input class="button-secondary iaff-bulk-updater-buttons iaff_reset_counter_button" type="submit" name="Reset Counter" value="<?php _e( 'Reset Counter', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
 						
-						<input class="button-secondary iaff-bulk-updater-buttons iaff_skip_image_button" type="submit" name="Skip Image" value="<?php _e( 'Skip Image', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						<?php if ( apply_filters( 'iaff_debug_mode', false ) ) { ?>
+							<input class="button-secondary iaff-bulk-updater-buttons iaff_skip_image_button" type="submit" name="Skip Image" value="<?php _e( 'Skip Image', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						<?php } ?>
 					</p>
 					
 					<!-- Event log -->
