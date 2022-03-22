@@ -403,9 +403,15 @@ function iaff_custom_attribute_tags() {
 		'sitetitle'		=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'category'		=> __( 'Post or Product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'tag'			=> __( 'Post or Product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'yoastfocuskw'		=> __( 'Yoast Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'rankmathfocuskw'	=> __( 'Rank Math Focus Keyword', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
-	return $available_tags;
+	/**
+	 * Filter the custom attribute tags. 
+	 * Used by Image Attributes Pro to add custom tags like %yoastfocuskw% and %rankmathfocuskw% dynamically. 
+	 * 
+	 * @since 3.1
+	 * 
+	 * @param $available_tags (array) Array containing all custom attribute tags.
+	 */
+	return apply_filters( 'iaff_custom_attribute_tags', $available_tags );
 }
