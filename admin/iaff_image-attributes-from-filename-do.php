@@ -192,6 +192,11 @@ function iaff_before_bulk_updater() {
 	// Security Check
 	check_ajax_referer( 'iaff_before_bulk_updater_nonce', 'security' );
 	
+	/**
+	 * Action hook that is fired at the start of the Bulk Updater before updating any image.
+	 * 
+	 * @link https://imageattributespro.com/codex/iaff_before_bulk_updater/
+	 */
 	do_action('iaff_before_bulk_updater');
 }
 add_action( 'wp_ajax_iaff_before_bulk_updater', 'iaff_before_bulk_updater' );
@@ -206,6 +211,11 @@ function iaff_after_bulk_updater() {
 	// Security Check
 	check_ajax_referer( 'iaff_after_bulk_updater_nonce', 'security' );
 	
+	/**
+	 * Action hook that is fired at the end of the Bulk Updater after updating all images.
+	 * 
+	 * @link https://imageattributespro.com/codex/iaff_after_bulk_updater/
+	 */
 	do_action('iaff_after_bulk_updater');
 }
 add_action( 'wp_ajax_iaff_after_bulk_updater', 'iaff_after_bulk_updater');
