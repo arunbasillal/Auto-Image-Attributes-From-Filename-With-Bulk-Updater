@@ -81,9 +81,12 @@ function iaff_rename_old_image() {
 	
 	// Image Attributes Pro
 	if ( iaff_is_pro() ) {
+
+		// Get the object of the image form image ID.
+		$image_object = get_post( $image->ID );
 		
 		// Running the pro module
-		iaffpro_auto_image_attributes_pro($image, true);
+		iaffpro_auto_image_attributes_pro( $image_object, true );
 		
 	} else {
 		
