@@ -71,7 +71,7 @@ The pro add-on can update the image attributes from not just the image filename,
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
 * Clear any image attribute by setting it as blank / empty. 
 * Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used. 
@@ -92,7 +92,7 @@ The pro add-on can update the image attributes from not just the image filename,
 * Clean the actual image filename after upload.
 * Choose to turn off any of the above mentioned features.
 
-**With the pro bulk updater you can:**
+**With the Image Attributes Pro bulk updater you can:**
 
 * Update image title and alt text **for images inserted into posts and custom post types**. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=wordpress.org&utm_medium=readme)
 * Fine tune all settings. Choose what to update.
@@ -100,12 +100,17 @@ The pro add-on can update the image attributes from not just the image filename,
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
 * Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=wordpress.org&utm_medium=readme).
 * Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=wordpress.org&utm_medium=readme)
+
+**Other Image Attributes Pro features:**
+
+* Bulk Update image attributes from WordPress Media Library. Select images and choose `Update image attributes` Bulk action in Media Library (list view). [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=wordpress.org&utm_medium=readme)
+* Bulk Update image attributes from WordPress admin page for Posts, Pages and WooCommerce Products. Select the posts, pages or WooCommerce products in bulk and choose "Update image attributes" Bulk action. [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=wordpress.org&utm_medium=readme)
 
 For screenshots, FAQ and full list of features, please see the [product website](https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=readme).
 
@@ -145,43 +150,43 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 3.1 =
-* Date: 
+* Date: 24.March.2022.
 * Tested with WordPress 5.9.2.
-* Enhancement: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
-* Enhancement: Compatibility with Image Attributes Pro version 3.0. [Image Attributes Pro changelog.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
+* New Feature: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Compatibility with Image Attributes Pro version 3.0. [Check what's new in 3.0.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
 
 = 3.0 =
-* Date: 19.January.2022
+* Date: 19.January.2022.
 * Tested with WordPress 5.8.3.
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
 * UI Enhancement: Added description text to clarity settings to improve usability. 
 * UI Enhancement: Added [demo video link](https://imageattributespro.com/demo/?utm_source=wordpress.org&utm_medium=changelog) in plugin settings page. 
 
 = 2.1 =
-* Date: 02.July.2021
+* Date: 02.July.2021.
 * Enhancement: Compatibility with Image Attributes Pro v2.0. 
 
 = 2.0 =
-* Date: 18.June.2021
+* Date: 18.June.2021.
 * Tested with WordPress 5.7.2.
 * UI Enhancement: Changed order of `General Settings` to match the order in `Media Library`. 
 * UI Enhancement: Changed the word `attached` to `uploaded` in `If image is not attached to a post, image filename will be used instead` for better clarity. 
 * I18n: More strings are now translation ready, thanks to [@alexclassroom](https://profiles.wordpress.org/alexclassroom/).
 
 = 1.6 =
-* Date: 06.January.2019 
+* Date: 06.January.2019.
 * Tested with WordPress 5.0.2. 
 * Enhancement: Improved bulk updater warning and inline documentation. 
 * Bug Fix: Fixed a bug that ignored the setting for inserting image title into the post HTML. Thanks [@jamesryancooper](https://wordpress.org/support/topic/image-title-being-inserted-even-with-checkbox-unselected/)
 
 = 1.5 =
-* Date: 06.May.2018
+* Date: 06.May.2018.
 * Enhancement: Changed text domain from abl_iaff_td to auto-image-attributes-from-filename-with-bulk-updater to make the plugin translation ready in translate.wordpress.org.
 * Enhancement: Code improvements.
 * Enhancement: Added an activation notice with link to the settings page for better on-boarding experience. 
 
 = 1.4 =
-* Date: 22.November.2017
+* Date: 22.November.2017.
 * NEW: Global switch to enable or disable the plugin.
 * NEW: Test button.
 * NEW: Stop Bulk Updater button.
@@ -194,7 +199,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * Code improvements.
 
 = 1.3 =
-* Date: 17.August.2017
+* Date: 17.August.2017.
 * Improved the architecture of the plugin laying foundation for future updates. Utilizing my [starter plugin framework](http://millionclues.com/lab/wordpress-starter-plugin-a-framework-for-quick-plugin-development/)
 * Bug fix: For images that had EXIF data, EXIF data was used instead of filename. Props to @mathieupellegrin for reporting this. 
 * NEW: Added option to Insert Image Title into HTML. WordPress stopped including image titles since 3.5. Code from [Restore Image Title](https://wordpress.org/plugins/restore-image-title/) plugin was used. 
@@ -208,29 +213,35 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * Tested on WordPress 4.8.1. Result = pass.
 
 = 1.2 =
-* Date: 15.July.2017
+* Date: 15.July.2017.
 * Added: Character filter options. Plugin now removes hyphens and underscores.
 * Bug Fix: Minor bug fix.
 
 = 1.1 =
-* Date: 4.July.2017
+* Date: 4.July.2017.
 * Added: Options to choose individual image attributes for NEW uploads. 
 
 = 1.0 =
-* Date: 4.July.2017
+* Date: 4.July.2017.
 * First release of the plugin.
 
 == Upgrade Notice ==
 
+= 3.1 =
+* Date: 24.March.2022. 
+* Tested with WordPress 5.9.2. 
+* New Feature: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog) 
+* Enhancement: Compatibility with Image Attributes Pro version 3.0. [Check what's new in 3.0.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
+
 = 3.0 =
-* Date: 19.January.2022
+* Date: 19.January.2022.
 * Tested with WordPress 5.8.3.
 * Enhancement: Removed "Global Switch" option as part of cleaning up the user interface. This option was redundant and the same can be accomplished either by deactivating the plugin or by disabling every option in "General Settings". Please take a note of this change if you have disabled "Global Switch" on your website.
 * UI Enhancement: Added description text to clarity settings to improve usability. 
 * UI Enhancement: Added [demo video link](https://imageattributespro.com/demo/?utm_source=wordpress.org&utm_medium=changelog) in plugin settings page. 
 
 = 2.1 =
-* Date: 02.July.2021
+* Date: 02.July.2021.
 * Enhancement: Compatibility with Image Attributes Pro v2.0. 
 
 = 2.0 =
@@ -250,7 +261,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * Enhancement: Added an activation notice with link to the settings page for better on-boarding experience. 
 
 = 1.4 =
-* Date: 22.November.2017
+* Date: 22.November.2017.
 * NEW: Global switch to enable or disable the plugin.
 * NEW: Test button.
 * NEW: Stop Bulk Updater button.

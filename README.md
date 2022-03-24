@@ -47,7 +47,7 @@ What the pro add-on you get these additional features:
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
 * Clear any image attribute by setting it as blank / empty. 
 * Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used.
@@ -68,7 +68,7 @@ What the pro add-on you get these additional features:
 * Clean the actual image filename after upload.
 * Choose to turn off any of the above mentioned features.
 
-With the pro bulk updater you can:
+With the Image Attributes Pro bulk updater you can:
 
 * Update image title and alt text for images inserted into posts and custom post types. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=github&utm_medium=readme.md)
 * Fine tune all settings. Choose what to update.
@@ -76,12 +76,17 @@ With the pro bulk updater you can:
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%yoastfocuskw%`, `%rankmathfocuskw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
 * Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=github&utm_medium=readme.md).
 * Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=github&utm_medium=readme.md)
+
+Other Image Attributes Pro features:
+
+* Bulk Update image attributes from WordPress Media Library. Select images and choose `Update image attributes` Bulk action in Media Library (list view). [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=github&utm_medium=readme.md)
+* Bulk Update image attributes from WordPress admin page for Posts, Pages and WooCommerce Products. Select the posts, pages or WooCommerce products in bulk and choose "Update image attributes" Bulk action. [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=github&utm_medium=readme.md)
 
 For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 
