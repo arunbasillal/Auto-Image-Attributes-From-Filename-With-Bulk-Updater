@@ -81,9 +81,12 @@ function iaff_rename_old_image() {
 	
 	// Image Attributes Pro
 	if ( iaff_is_pro() ) {
+
+		// Get the object of the image form image ID.
+		$image_object = get_post( $image->ID );
 		
 		// Running the pro module
-		iaffpro_auto_image_attributes_pro($image, true);
+		iaffpro_auto_image_attributes_pro( $image_object, true );
 		
 	} else {
 		
@@ -192,6 +195,11 @@ function iaff_before_bulk_updater() {
 	// Security Check
 	check_ajax_referer( 'iaff_before_bulk_updater_nonce', 'security' );
 	
+	/**
+	 * Action hook that is fired at the start of the Bulk Updater before updating any image.
+	 * 
+	 * @link https://imageattributespro.com/codex/iaff_before_bulk_updater/
+	 */
 	do_action('iaff_before_bulk_updater');
 }
 add_action( 'wp_ajax_iaff_before_bulk_updater', 'iaff_before_bulk_updater' );
@@ -206,9 +214,40 @@ function iaff_after_bulk_updater() {
 	// Security Check
 	check_ajax_referer( 'iaff_after_bulk_updater_nonce', 'security' );
 	
+	/**
+	 * Action hook that is fired at the end of the Bulk Updater after updating all images.
+	 * 
+	 * @link https://imageattributespro.com/codex/iaff_after_bulk_updater/
+	 */
 	do_action('iaff_after_bulk_updater');
 }
 add_action( 'wp_ajax_iaff_after_bulk_updater', 'iaff_after_bulk_updater');
+
+/**
+ * Increment the counter by one to skip one image.
+ * 
+ * @since 3.1
+ */
+function iaff_bulk_updater_skip_image() {
+	
+	// Security Check
+	check_ajax_referer( 'iaff_bulk_updater_skip_image_nonce', 'security' );
+	
+	// Retrieve Counter
+	$counter = get_option( 'iaff_bulk_updater_counter' );
+	$counter = intval ( $counter );
+
+	// Increment counter and update it
+	$counter++;
+	update_option( 'iaff_bulk_updater_counter', $counter );
+	
+	$response = array(
+		'message'			=> __( 'One image skipped.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'remaining_images'	=> iaff_count_remaining_images( true ),
+	);
+	wp_send_json( $response );
+}
+add_action( 'wp_ajax_iaff_bulk_updater_skip_image', 'iaff_bulk_updater_skip_image' );
 
 /**
  * Bulk Updater Ajax
@@ -395,6 +434,21 @@ function iaff_image_bulk_updater() {
 				}
 			});
 			$('#iaff-reset-counter-dialog').dialog('open');
+		});
+
+		// Skip Image Button
+		$('.iaff_skip_image_button').click( function() {
+			
+			data = {
+				action: 'iaff_bulk_updater_skip_image',
+				security: '<?php echo wp_create_nonce( "iaff_bulk_updater_skip_image_nonce" ); ?>'
+			};
+
+			$.post(ajaxurl, data, function (response) {
+				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-yes"></span>' + response.message + '</p>');
+				$('#bulk-updater-log').append('<p>Number of Images Remaining: ' + response.remaining_images + '</p>');
+				$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
+			});
 		});
 		
 	});	

@@ -1050,13 +1050,21 @@ function iaff_admin_interface_render () {
 						<input class="button-secondary iaff-bulk-updater-buttons iaff_stop_bulk_updater_button" type="submit" name="Stop Bulk Updater" value="<?php _e( 'Stop Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" disabled />
 					</p>
 					
-					<h2 class="showh2"><?php _e('Reset Counter', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
+					<h2 class="showh2"><?php _e('Tools', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
 					
-					<p><?php _e('To restart processing images from the beginning (the oldest upload first), reset the counter.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p> 
-					
-					<span class="reset-counter-button">
-						<?php submit_button( __('Reset Counter', 'auto-image-attributes-from-filename-with-bulk-updater'), 'iaff_reset_counter_button' ); ?>
-					</span>
+					<p><?php _e('To restart processing images from the beginning (the oldest upload first), reset the counter.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
+
+					<?php if ( apply_filters( 'iaff_debug_mode', false ) ) { ?>
+						<p><?php printf( __( 'If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=iaff-basic&utm_medium=skip-image-button' ); ?></p>
+					<?php } ?>
+
+					<p class="submit">
+						<input class="button-secondary iaff-bulk-updater-buttons iaff_reset_counter_button" type="submit" name="Reset Counter" value="<?php _e( 'Reset Counter', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						
+						<?php if ( apply_filters( 'iaff_debug_mode', false ) ) { ?>
+							<input class="button-secondary iaff-bulk-updater-buttons iaff_skip_image_button" type="submit" name="Skip Image" value="<?php _e( 'Skip Image', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						<?php } ?>
+					</p>
 					
 					<!-- Event log -->
 					<div id="bulk-updater-results">
