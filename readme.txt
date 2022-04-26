@@ -150,9 +150,14 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 3.1 =
+* Date: 
+* Tested with WordPress 5.9.3.
+* Enhancement: Log message for `Skip Image` button now specifies which image is skipped and links to the `Edit Media` page for that image.
+
+= 3.1 =
 * Date: 24.March.2022.
 * Tested with WordPress 5.9.2.
-* New Feature: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
+* New Feature: Added `Skip Image` button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
 * Enhancement: Compatibility with Image Attributes Pro version 3.0. [Check what's new in 3.0.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
 
 = 3.0 =

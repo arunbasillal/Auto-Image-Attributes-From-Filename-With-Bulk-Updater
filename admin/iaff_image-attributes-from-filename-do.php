@@ -237,12 +237,30 @@ function iaff_bulk_updater_skip_image() {
 	$counter = get_option( 'iaff_bulk_updater_counter' );
 	$counter = intval ( $counter );
 
+	global $wpdb;
+	$image = $wpdb->get_row("SELECT ID, post_parent FROM {$wpdb->prefix}posts WHERE post_type='attachment' AND post_mime_type LIKE 'image%' ORDER BY post_date LIMIT 1 OFFSET {$counter}");
+	
+	/**
+	 * Die if no image.
+	 * This happens if there are no more images to skip. 
+	 */
+	if ( $image === NULL ) {
+		$response = array(
+			'message'			=> __( 'No more images to skip.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+			'remaining_images'	=> iaff_count_remaining_images( true ),
+		);
+		wp_send_json( $response );
+	}
+
+	// Extract the image url
+	$image_url = wp_get_attachment_url($image->ID);
+
 	// Increment counter and update it
 	$counter++;
 	update_option( 'iaff_bulk_updater_counter', $counter );
 	
 	$response = array(
-		'message'			=> __( 'One image skipped.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'message'			=> __( 'Image skipped: ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '<a href="'. get_edit_post_link( $image->ID ) .'">'. $image_url .'</a>',
 		'remaining_images'	=> iaff_count_remaining_images( true ),
 	);
 	wp_send_json( $response );
@@ -445,7 +463,7 @@ function iaff_image_bulk_updater() {
 			};
 
 			$.post(ajaxurl, data, function (response) {
-				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-yes"></span>' + response.message + '</p>');
+				$('#bulk-updater-log').append('<p class="iaff-red"><span class="dashicons dashicons-remove"></span> ' + response.message + '</p>');
 				$('#bulk-updater-log').append('<p>Number of Images Remaining: ' + response.remaining_images + '</p>');
 				$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
 			});
