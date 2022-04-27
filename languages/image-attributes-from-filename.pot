@@ -1,0 +1,647 @@
+# Copyright (C) 2022 Arun Basil Lal
+# This file is distributed under the GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 3.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-04-27T10:13:18+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: auto-image-attributes-from-filename-with-bulk-updater\n"
+
+#. Plugin Name of the plugin
+msgid "Auto Image Attributes From Filename With Bulk Updater"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=plugin-uri"
+msgstr ""
+
+#. Description of the plugin
+msgid "Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images."
+msgstr ""
+
+#. Author of the plugin
+msgid "Arun Basil Lal"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:55
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:987
+msgid "Basic Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:63
+msgid "General Settings<p class=\"iaff-description\">Select image attributes that should be automatically generated when you upload a new image.</p>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:72
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:199
+msgid "Filter Settings<p class=\"iaff-description\">Selected characters will be removed from filename text before using them as image attributes.</p>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:81
+msgid "Basic SEO Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:92
+msgid "Preview Pro Features"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:102
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1002
+msgid "Advanced Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:110
+msgid "Advanced Filter<p class=\"iaff-description\">Selected characters will be removed from filename text before using them as image attributes.</p>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:119
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:208
+msgid "Custom Filter"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:128
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:217
+msgid "Capitalization Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:137
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:226
+msgid "Image Title Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:146
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:235
+msgid "Image Alt Text Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:155
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:244
+msgid "Image Caption Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:164
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:253
+msgid "Image Description Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:173
+msgid "Miscellaneous Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:182
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:974
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1017
+msgid "Bulk Updater Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:190
+msgid "General Settings<p class=\"iaff-description\">Select image attributes that should be updated when you run the Bulk Updater.</p>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:401
+msgid "Image filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:402
+msgid "Title of the post, page or product where the image is used"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:403
+msgid "Site Title defined in WordPress General Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:404
+msgid "Post or Product Category"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-setup.php:405
+msgid "Post or Product Tag"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:50
+msgid "Set Image Title for new uploads"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:56
+msgid "Set Image Alt Text for new uploads"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:62
+msgid "Set Image Caption for new uploads"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:68
+msgid "Set Image Description for new uploads"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:93
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:543
+msgid "Remove hyphens ( - ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:99
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:549
+msgid "Remove underscores ( _ ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:105
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:555
+msgid "Remove full stops ( . ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:111
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:561
+msgid "Remove commas ( , ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:117
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:567
+msgid "Remove all numbers ( 0-9 ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:141
+msgid "Insert Image Title into post HTML. This will add title=\"Image Title\" in the &lt;img&gt; tag."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:165
+msgid "Check to see a preview of all the options that ship with <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:191
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:573
+msgid "Remove apostrophe ( ' ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:197
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:579
+msgid "Remove tilde ( ~ ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:203
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:585
+msgid "Remove plus ( + ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:209
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:591
+msgid "Remove pound ( # ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:215
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:597
+msgid "Remove ampersand ( & ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:221
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:603
+msgid "Remove round brackets ( ( ) ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:227
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:609
+msgid "Remove square brackets ( [ ] ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:233
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:615
+msgid "Remove curly brackets ( { } ) from filename"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:254
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:636
+msgid "Enter words or characters to filter separated by commas. Filter is case sensitive. <a href=\"%s\" target=\"_blank\">Read more.</a>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:257
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:639
+msgid "Filter with regular expression"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:281
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:663
+msgid "Leave unchanged"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:287
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:669
+msgid "convert to lowercase"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:293
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:675
+msgid "CONVERT TO UPPERCASE"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:299
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:681
+msgid "Use title casing. First Letter Of Each Word Will Be Capitalized."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:305
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:687
+msgid "Use sentence casing. First letter of a sentence will be capitalized."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:328
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:710
+msgid "Use image filename as title text"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:333
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:715
+msgid "Use post title as title text. If image is not uploaded to a post, image filename will be used instead."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:338
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:375
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:412
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:449
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:720
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:774
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:828
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:877
+msgid "Use custom attribute"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:365
+msgid "Use image filename as alt text"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:370
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:769
+msgid "Use post title as alt text. If image is not uploaded to a post, image filename will be used instead."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:402
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:818
+msgid "Use image filename as caption"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:407
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:823
+msgid "Use post title as caption. If image is not uploaded to a post, image filename will be used instead."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:439
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:867
+msgid "Use image filename as description"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:444
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:872
+msgid "Use post title as description. If image is not uploaded to a post, image filename will be used instead."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:477
+msgid "Clean actual image filename after upload."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:501
+msgid "Update Image Title"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:507
+msgid "Update Image Alt Text"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:513
+msgid "Update Image Caption"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:519
+msgid "Update Image Description"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:727
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:781
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:835
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:884
+msgid "Bulk Updater Behaviour"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:731
+msgid "Update image titles in media library only. Image titles in posts will be left unchanged."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:736
+msgid "Update all image titles in media library and posts."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:741
+msgid "Update image titles in media library and posts only if no title is set. Existing image titles will not be changed."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:764
+msgid "Use filename as alt text."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:785
+msgid "Update alt text in media library only. Alt text in posts will be left unchanged."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:790
+msgid "Update all alt text in media library and posts."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:795
+msgid "Update alt text in media library and posts only if no alt text is set. Existing alt text will not be changed."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:839
+msgid "Update all captions in media library. Existing captions will be overwritten."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:844
+msgid "Update captions in media library if no caption is set. Existing captions will not be changed."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:888
+msgid "Update all descriptions in media library. Existing descriptions will be overwritten."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:893
+msgid "Update description in media library if no description is set. Existing descriptions will not be changed."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:917
+msgid "The following tags when used in a custom attribute will be replaced with their corresponding value."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:935
+msgid "For example, if you set custom attribute as <code>%posttitle% - Your Name</code>, the <code>%posttitle%</code> will be replaced by the title of the post to which the image is uploaded to. "
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:971
+msgid "Basic"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:973
+msgid "Advanced"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:976
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1028
+msgid "Bulk Updater"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:977
+msgid "Support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:988
+msgid "Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads. <a href=\"%s\" target=\"_blank\">Take a tour</a>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:990
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1005
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1020
+msgid "Save Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:998
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1013
+msgid "The options below is a preview of the features included in <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>. Please upgrade to use them."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1003
+msgid "Advanced settings for new uploads."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1018
+msgid "Options set here will be used while running the Bulk Updater."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1030
+msgid "Run this bulk updater to update Image Title, Caption, Description and Alt Text for all images."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1033
+msgid "It seems that JavaScript is disabled in your browser. Please enable JavasScript or use a different browser to use the bulk updater."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1035
+msgid "IMPORTANT: Please backup your database before running the bulk updater."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1037
+msgid "Use <code>Test Bulk Updater</code> button to update one image at a time and verify the results."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1040
+msgid "The Bulk Updater will update every attribute. If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Alt Text, Caption and Description will be: <em>a lot like love</em>. <a href=\"%s\" target=\"_blank\">Upgrade to Pro</a> for more options."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1046
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1086
+msgid "Run Bulk Updater"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1048
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1091
+msgid "Test Bulk Updater"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1050
+msgid "Stop Bulk Updater"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1053
+msgid "Tools"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1055
+msgid "To restart processing images from the beginning (the oldest upload first), reset the counter."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1058
+msgid "If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href=\"%s\" target=\"_blank\">Read more.</a>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1062
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1096
+msgid "Reset Counter"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1065
+msgid "Skip Image"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1072
+msgid "Event Log"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1075
+msgid "Number of Images Remaining: "
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1077
+msgid "Number of Images Updated: "
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1087
+msgid "You are about to run the bulk updater. This will update all images and cannot be undone. Please make a database backup before you proceed. Press OK to confirm."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1092
+msgid "The bulk updater will do a test run by updating one image. Note that this is a live test and actual values will be updated in the database. Please make a database backup before you proceed. Press Ok to confirm."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1097
+msgid "You are about to reset the bulk updater counter. The bulk updater will start from scratch in the next run. Press Ok to confirm."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1107
+msgid "Support And Documentation"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1109
+msgid "Looking for help? Here are the available options."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1114
+msgid "Free Support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1116
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1129
+msgid "Documentation"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1117
+msgid "Read the FAQ"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1118
+msgid "Free Support Forum"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1127
+msgid "Premium Support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1130
+msgid "Priority Email Support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1131
+msgid "Contact Support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1143
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1145
+msgid "Priority support"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1146
+msgid "Advanced features"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1147
+msgid "Support ongoing development"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1164
+msgid "Unlock Traffic"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1166
+msgid "Get more traffic from Google Images"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1167
+msgid "Use post / product title as attributes"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1168
+msgid "Preserve existing attributes"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1169
+msgid "Update attributes within posts"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1170
+msgid "Build custom attributes and fine tune settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1180
+msgid "Fast &amp; Simple Time Saver"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1188
+msgid "This plugin will save me a LOT of time! Great plugin!"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1197
+msgid "SEO Newsletter"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1201
+msgid "Stay tuned to the latest image SEO news and receive helpful product updates."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1205
+msgid "Your Email"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1210
+msgid "Subscribe"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1214
+msgid "Your email will be kept private and will not be shared or spammed."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:51
+msgid "Settings"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:90
+msgid "Thank you for installing <strong>Auto Image Attributes From Filename With Bulk Updater</strong>! <a href=\"%s\">Change settings &rarr;</a>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:102
+msgid "<strong>Auto Image Attributes From Filename With Bulk Updater</strong> successfully updated. "
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:102
+msgid "<br>Stay tuned to the latest image SEO news and receive helpful product updates. Subscribe to the <a href=\"%s\" target=\"_blank\">Image SEO Newsletter &rarr;</a>"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:126
+msgid "If you like this plugin, please <a href=\"%s\" target=\"_blank\">upgrade to pro</a> or leave a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!"
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-basic-setup.php:132
+msgid "Thank you for choosing Image Attributes Pro! Use the support tab if you have any questions or feedback."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-do.php:108
+msgid "Image attributes updated for: "
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-do.php:181
+msgid "Counter reset. The bulk updater will start from scratch in the next run."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-do.php:249
+msgid "No more images to skip."
+msgstr ""
+
+#: admin/iaff_image-attributes-from-filename-do.php:263
+msgid "Image skipped: "
+msgstr ""
