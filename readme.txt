@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 5.9.2
+Tested up to: 5.9.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -149,10 +149,15 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 3.2 =
+* Date: 27.April.2022.
+* Tested with WordPress 5.9.3.
+* Enhancement: Log message for `Skip Image` button now specifies which image is skipped and links to the `Edit Media` page for that image.
+
 = 3.1 =
 * Date: 24.March.2022.
 * Tested with WordPress 5.9.2.
-* New Feature: Added 'Skip Image' button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
+* New Feature: Added `Skip Image` button for the Bulk Updater. Useful during troubleshooting. [Read more.](https://imageattributespro.com/fix-bulk-updater-stuck-on-same-image/?utm_source=wordpress.org&utm_medium=changelog)
 * Enhancement: Compatibility with Image Attributes Pro version 3.0. [Check what's new in 3.0.](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog)
 
 = 3.0 =
@@ -226,6 +231,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 3.2 =
+* Date: 27.April.2022. 
+* Tested with WordPress 5.9.3. 
+* Enhancement: Log message for `Skip Image` button now specifies which image is skipped and links to the `Edit Media` page for that image. 
 
 = 3.1 =
 * Date: 24.March.2022. 
