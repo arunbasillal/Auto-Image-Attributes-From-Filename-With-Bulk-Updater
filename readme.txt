@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 6.0
+Tested up to: 6.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -149,6 +149,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 3.3 =
+* Date: 10.November.2022.
+* Tested with WordPress 6.1.
+* Enhancement: Compatibility with Image Attributes Pro version 3.2. [Check what's new in 3.2](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+* Bug Fix: Fixed a UI issue where the buttons for Custom Attribute Tags were not working in certain cases.
+* I18n: Plugin is translated to Polish thanks to Robert from [RobertLajka.pl](https://robertlajka.pl/).
+
 = 3.2 =
 * Date: 27.April.2022.
 * Tested with WordPress 5.9.3.
@@ -231,6 +238,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 3.3 =
+* Date: 10.November.2022.
+* Tested with WordPress 6.1.
+* Enhancement: Compatibility with Image Attributes Pro version 3.2. [Check what's new in 3.2](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+* Bug Fix: Fixed a UI issue where the buttons for Custom Attribute Tags were not working in certain cases.
+* I18n: Plugin is translated to Polish thanks to Robert from [RobertLajka.pl](https://robertlajka.pl/).
 
 = 3.2 =
 * Date: 27.April.2022. 
