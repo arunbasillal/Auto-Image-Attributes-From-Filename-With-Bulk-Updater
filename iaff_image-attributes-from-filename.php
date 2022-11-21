@@ -21,14 +21,12 @@
  * ~ Directory Structure ~
  *
  * /admin/ 						- Plugin backend stuff.
- * /includes/					- External third party classes and libraries.
- * /languages/					- Translation files go here. 
- * /public/						- Front end files go here.
+ * /languages/					- Translation files go here.
  * index.php					- Dummy file.
  * license.txt					- GPL v2
  * iaff_starter-plugin.php		- File containing plugin name and other version info for WordPress.
  * readme.txt					- Readme for WordPress plugin repository. https://wordpress.org/plugins/files/2017/03/readme.txt
- * uninstall.php				- Fired when the plugin is uninstalled. 
+ * uninstall.php				- Fired when the plugin is uninstalled.
  */
 
 // Exit if accessed directly
