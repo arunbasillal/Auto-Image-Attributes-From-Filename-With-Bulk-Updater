@@ -203,6 +203,8 @@ function iaff_before_bulk_updater() {
 	 * @link https://imageattributespro.com/codex/iaff_before_bulk_updater/
 	 */
 	do_action('iaff_before_bulk_updater');
+
+	wp_die();
 }
 add_action( 'wp_ajax_iaff_before_bulk_updater', 'iaff_before_bulk_updater' );
 
@@ -222,6 +224,8 @@ function iaff_after_bulk_updater() {
 	 * @link https://imageattributespro.com/codex/iaff_after_bulk_updater/
 	 */
 	do_action('iaff_after_bulk_updater');
+
+	wp_die();
 }
 add_action( 'wp_ajax_iaff_after_bulk_updater', 'iaff_after_bulk_updater');
 
@@ -286,6 +290,9 @@ function iaff_image_bulk_updater() {
 	jQuery(document).ready(function($) {
 		
 		var iaff_stop = false;
+		var iaffpro_bu_exists = <?php echo function_exists( 'iaffpro_bu_bulk_updater_init' ) ? 'true' : 'false'; ?>;
+
+		$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
 		
 		// Bulk Updater
 		function iaff_do_bulk_updater(iaff_test=false) {
@@ -304,7 +311,12 @@ function iaff_image_bulk_updater() {
 			$('.iaff_stop_bulk_updater_button').addClass("button-primary"); // Turn stop button primary
 			
 			// Notice to the user
-			$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Initializing bulk updater. Please be patient and do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.</p>');
+			if( ( iaffpro_bu_exists === true ) && ( iaff_test === false ) ) {
+				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Bulk Updater will now run in the background. You can close this page and check back later to see progress.</p>');
+			} else {
+				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Initializing bulk updater. Please be patient and do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.</p>');
+			}
+
 			$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
 
 			// Count Remaining Images To Process
@@ -319,6 +331,17 @@ function iaff_image_bulk_updater() {
 			
 			// set remaining count as 1 when running in test mode
 			reamining_images_count.done(function() {
+
+				// Run the background bulk updater (since IAP 4.0) if it's available.
+				if( ( iaffpro_bu_exists === true ) && ( iaff_test === false ) ) {
+					data = {
+						action: 'iaffpro_bu_bulk_updater_init',
+						security: '<?php echo wp_create_nonce( "iaffpro_bu_bulk_updater_init_nonce" ); ?>'
+					};
+					$.post(ajaxurl, data);
+
+					return;
+				}
 				
 				if((iaff_test===true)&&(remaining_images>1)) {
 					remaining_images = 1;
@@ -336,7 +359,7 @@ function iaff_image_bulk_updater() {
 				
 					if((remaining_images > 0)&&(iaff_stop===false)){
 						data = {
-							action: '<?php echo function_exists( 'iaffpro_bu_bulk_updater_init' ) ? 'iaffpro_bu_bulk_updater_init' : 'iaff_rename_old_image'; ?>',
+							action: 'iaff_rename_old_image',
 							security: '<?php echo wp_create_nonce( "iaff_rename_old_image_nonce" ); ?>'
 						};
 						
