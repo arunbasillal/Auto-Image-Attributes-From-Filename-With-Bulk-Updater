@@ -334,7 +334,7 @@ function iaff_image_bulk_updater() {
 				
 					if((remaining_images > 0)&&(iaff_stop===false)){
 						data = {
-							action: 'iaff_rename_old_image',
+							action: '<?php echo function_exists( 'iaffpro_bu_bulk_updater_init' ) ? 'iaffpro_bu_bulk_updater_init' : 'iaff_rename_old_image'; ?>',
 							security: '<?php echo wp_create_nonce( "iaff_rename_old_image_nonce" ); ?>'
 						};
 						
