@@ -455,7 +455,10 @@ function iaff_image_bulk_updater() {
 					action: 'iaffpro_bu_stop_bulk_updater',
 					security: '<?php echo wp_create_nonce( "iaffpro_bu_stop_bulk_updater_nonce" ); ?>'
 				};
-				$.post(ajaxurl, data);
+				
+				$.post(ajaxurl, data, function() {
+					iaff_stop_bulk_updater_button_switch( false );
+				});
 			}
 		});
 		
