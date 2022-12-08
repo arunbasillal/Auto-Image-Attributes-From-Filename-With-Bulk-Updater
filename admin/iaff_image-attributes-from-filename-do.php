@@ -138,31 +138,33 @@ function iaff_total_number_of_images() {
 }
 
 /**
- * Count remaining number of images to process
+ * Count remaining number of images to process.
  *
- * @since	1.0
- * @return 	integer			Returns the number of remaining images to process. 
- * @param 	$force_return	When set as true the function will always return a value even when called from ajax. 
+ * @since 1.0
+ * @since 4.0 Removed the $force_return param which when set to false would echo the result. Created iaff_echo_count_remaining_images() for that.
+ * 
+ * @return (integer) Returns the number of remaining images to process. 
  */
-function iaff_count_remaining_images( $force_return = false ) {
+function iaff_count_remaining_images() {
 	
 	$total_no_of_images = iaff_total_number_of_images();
 	
 	$no_of_images_processed = get_option('iaff_bulk_updater_counter');
-	$no_of_images_processed = intval ($no_of_images_processed);
+	$no_of_images_processed = intval( $no_of_images_processed );
 	
-	$reamining_images = max($total_no_of_images - $no_of_images_processed, 0);
-	
-	// If called from Ajax echo the result. Else return as an integer. 
-	// :TODO: Calling iaff_count_remaining_images() from Ajax for ignores the default value of $force_return for some reason. When I set if ( wp_doing_ajax() && $force_return === false ) this does not work even though they are logically equivalent. If you know why it is so, please email me - arunbasillal@gmail.com
-	if ( wp_doing_ajax() && $force_return !== true ) {
-		echo $reamining_images;
-		wp_die();
-	} else {
-		return $reamining_images;
-	}
+	return max( $total_no_of_images - $no_of_images_processed, 0 );
 }
-add_action( 'wp_ajax_iaff_count_remaining_images', 'iaff_count_remaining_images' );
+
+/**
+ * Wrapper for iaff_count_remaining_images() to echo the result.
+ *
+ * @since 4.0
+ */
+function iaff_echo_count_remaining_images() {
+	echo iaff_count_remaining_images();
+	wp_die();
+}
+add_action( 'wp_ajax_iaff_count_remaining_images', 'iaff_echo_count_remaining_images' );
 
 
 /**
@@ -179,7 +181,7 @@ function iaff_reset_bulk_updater_counter() {
 	
 	$response = array(
 		'message'			=> __('Counter reset. The bulk updater will start from scratch in the next run.', 'auto-image-attributes-from-filename-with-bulk-updater'),
-		'remaining_images'	=> iaff_count_remaining_images(true),
+		'remaining_images'	=> iaff_count_remaining_images(),
 	);
 	wp_send_json($response);
 }
@@ -247,7 +249,7 @@ function iaff_bulk_updater_skip_image() {
 	if ( $image === NULL ) {
 		$response = array(
 			'message'			=> __( 'No more images to skip.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-			'remaining_images'	=> iaff_count_remaining_images( true ),
+			'remaining_images'	=> iaff_count_remaining_images(),
 		);
 		wp_send_json( $response );
 	}
@@ -261,7 +263,7 @@ function iaff_bulk_updater_skip_image() {
 	
 	$response = array(
 		'message'			=> __( 'Image skipped: ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '<a href="'. get_edit_post_link( $image->ID ) .'">'. $image_url .'</a>',
-		'remaining_images'	=> iaff_count_remaining_images( true ),
+		'remaining_images'	=> iaff_count_remaining_images(),
 	);
 	wp_send_json( $response );
 }
