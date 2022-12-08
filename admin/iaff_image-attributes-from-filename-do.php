@@ -448,6 +448,15 @@ function iaff_image_bulk_updater() {
 		// Stop Bulk Updater
 		$('.iaff_stop_bulk_updater_button').click(function() {
 			iaff_stop=true;
+
+			// Stop background processing
+			if( iaffpro_bu_exists === true ) {
+				data = {
+					action: 'iaffpro_bu_stop_bulk_updater',
+					security: '<?php echo wp_create_nonce( "iaffpro_bu_stop_bulk_updater_nonce" ); ?>'
+				};
+				$.post(ajaxurl, data);
+			}
 		});
 		
 		// Reset Bulk Updater Counter
