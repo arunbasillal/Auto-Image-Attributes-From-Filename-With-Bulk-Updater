@@ -138,31 +138,33 @@ function iaff_total_number_of_images() {
 }
 
 /**
- * Count remaining number of images to process
+ * Count remaining number of images to process.
  *
- * @since	1.0
- * @return 	integer			Returns the number of remaining images to process. 
- * @param 	$force_return	When set as true the function will always return a value even when called from ajax. 
+ * @since 1.0
+ * @since 4.0 Removed the $force_return param which when set to false would echo the result. Created iaff_echo_count_remaining_images() for that.
+ * 
+ * @return (integer) Returns the number of remaining images to process. 
  */
-function iaff_count_remaining_images( $force_return = false ) {
+function iaff_count_remaining_images() {
 	
 	$total_no_of_images = iaff_total_number_of_images();
 	
 	$no_of_images_processed = get_option('iaff_bulk_updater_counter');
-	$no_of_images_processed = intval ($no_of_images_processed);
+	$no_of_images_processed = intval( $no_of_images_processed );
 	
-	$reamining_images = max($total_no_of_images - $no_of_images_processed, 0);
-	
-	// If called from Ajax echo the result. Else return as an integer. 
-	// :TODO: Calling iaff_count_remaining_images() from Ajax for ignores the default value of $force_return for some reason. When I set if ( wp_doing_ajax() && $force_return === false ) this does not work even though they are logically equivalent. If you know why it is so, please email me - arunbasillal@gmail.com
-	if ( wp_doing_ajax() && $force_return !== true ) {
-		echo $reamining_images;
-		wp_die();
-	} else {
-		return $reamining_images;
-	}
+	return max( $total_no_of_images - $no_of_images_processed, 0 );
 }
-add_action( 'wp_ajax_iaff_count_remaining_images', 'iaff_count_remaining_images' );
+
+/**
+ * Wrapper for iaff_count_remaining_images() to echo the result.
+ *
+ * @since 4.0
+ */
+function iaff_echo_count_remaining_images() {
+	echo iaff_count_remaining_images();
+	wp_die();
+}
+add_action( 'wp_ajax_iaff_count_remaining_images', 'iaff_echo_count_remaining_images' );
 
 
 /**
@@ -179,7 +181,7 @@ function iaff_reset_bulk_updater_counter() {
 	
 	$response = array(
 		'message'			=> __('Counter reset. The bulk updater will start from scratch in the next run.', 'auto-image-attributes-from-filename-with-bulk-updater'),
-		'remaining_images'	=> iaff_count_remaining_images(true),
+		'remaining_images'	=> iaff_count_remaining_images(),
 	);
 	wp_send_json($response);
 }
@@ -201,6 +203,8 @@ function iaff_before_bulk_updater() {
 	 * @link https://imageattributespro.com/codex/iaff_before_bulk_updater/
 	 */
 	do_action('iaff_before_bulk_updater');
+
+	wp_die();
 }
 add_action( 'wp_ajax_iaff_before_bulk_updater', 'iaff_before_bulk_updater' );
 
@@ -220,6 +224,8 @@ function iaff_after_bulk_updater() {
 	 * @link https://imageattributespro.com/codex/iaff_after_bulk_updater/
 	 */
 	do_action('iaff_after_bulk_updater');
+
+	wp_die();
 }
 add_action( 'wp_ajax_iaff_after_bulk_updater', 'iaff_after_bulk_updater');
 
@@ -247,7 +253,7 @@ function iaff_bulk_updater_skip_image() {
 	if ( $image === NULL ) {
 		$response = array(
 			'message'			=> __( 'No more images to skip.', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-			'remaining_images'	=> iaff_count_remaining_images( true ),
+			'remaining_images'	=> iaff_count_remaining_images(),
 		);
 		wp_send_json( $response );
 	}
@@ -261,7 +267,7 @@ function iaff_bulk_updater_skip_image() {
 	
 	$response = array(
 		'message'			=> __( 'Image skipped: ', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '<a href="'. get_edit_post_link( $image->ID ) .'">'. $image_url .'</a>',
-		'remaining_images'	=> iaff_count_remaining_images( true ),
+		'remaining_images'	=> iaff_count_remaining_images(),
 	);
 	wp_send_json( $response );
 }
@@ -284,6 +290,14 @@ function iaff_image_bulk_updater() {
 	jQuery(document).ready(function($) {
 		
 		var iaff_stop = false;
+		var iaffpro_bu_exists = <?php echo function_exists( 'iaffpro_bu_bulk_updater_init' ) ? 'true' : 'false'; ?>;
+
+		$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
+
+		// Enable "Stop Bulk Updater" button if Bulk Updater is running in the background.
+		<?php if ( function_exists( 'as_has_scheduled_action' ) && ( as_has_scheduled_action( 'iaffpro_bu_bulk_updater' ) === true ) ) {
+			echo "iaff_stop_bulk_updater_button_switch( true );";
+		}?>
 		
 		// Bulk Updater
 		function iaff_do_bulk_updater(iaff_test=false) {
@@ -297,12 +311,15 @@ function iaff_image_bulk_updater() {
 				focused = false;
 			};
 			$('.iaff-spinner').addClass("spinner"); // Turn spinner on
-			$('.iaff_stop_bulk_updater_button').prop('disabled', false); // Enable stop button
-			$('.iaff_stop_bulk_updater_button').removeClass("button-secondary");
-			$('.iaff_stop_bulk_updater_button').addClass("button-primary"); // Turn stop button primary
+			iaff_stop_bulk_updater_button_switch( true ); // Enable stop button
 			
 			// Notice to the user
-			$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Initializing bulk updater. Please be patient and do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.</p>');
+			if( ( iaffpro_bu_exists === true ) && ( iaff_test === false ) ) {
+				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Bulk Updater will now run in the background. You can close this page and check back later to see progress.</p>');
+			} else {
+				$('#bulk-updater-log').append('<p class="iaff-green"><span class="dashicons dashicons-controls-play"></span>Initializing bulk updater. Please be patient and do not close the browser while it\'s running. In case you do, you can always resume by returning to this page later.</p>');
+			}
+
 			$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
 
 			// Count Remaining Images To Process
@@ -317,6 +334,17 @@ function iaff_image_bulk_updater() {
 			
 			// set remaining count as 1 when running in test mode
 			reamining_images_count.done(function() {
+
+				// Run the background bulk updater (since IAP 4.0) if it's available.
+				if( ( iaffpro_bu_exists === true ) && ( iaff_test === false ) ) {
+					data = {
+						action: 'iaffpro_bu_bulk_updater_init',
+						security: '<?php echo wp_create_nonce( "iaffpro_bu_bulk_updater_init_nonce" ); ?>'
+					};
+					$.post(ajaxurl, data);
+
+					return;
+				}
 				
 				if((iaff_test===true)&&(remaining_images>1)) {
 					remaining_images = 1;
@@ -369,9 +397,7 @@ function iaff_image_bulk_updater() {
 						}
 						
 						$('.iaff-spinner').removeClass('spinner'); // Turn spinner off
-						$('.iaff_stop_bulk_updater_button').removeClass("button-primary");
-						$('.iaff_stop_bulk_updater_button').addClass("button-secondary"); // Turn stop button secondary
-						$('.iaff_stop_bulk_updater_button').prop('disabled', true); // Disable stop button
+						iaff_stop_bulk_updater_button_switch( false ); // Disable stop button
 					}
 				});
 			});
@@ -422,6 +448,18 @@ function iaff_image_bulk_updater() {
 		// Stop Bulk Updater
 		$('.iaff_stop_bulk_updater_button').click(function() {
 			iaff_stop=true;
+
+			// Stop background processing
+			if( iaffpro_bu_exists === true ) {
+				data = {
+					action: 'iaffpro_bu_stop_bulk_updater',
+					security: '<?php echo wp_create_nonce( "iaffpro_bu_stop_bulk_updater_nonce" ); ?>'
+				};
+				
+				$.post(ajaxurl, data, function() {
+					iaff_stop_bulk_updater_button_switch( false );
+				});
+			}
 		});
 		
 		// Reset Bulk Updater Counter
@@ -468,6 +506,28 @@ function iaff_image_bulk_updater() {
 				$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
 			});
 		});
+
+		/**
+		 * Enable or disable "Stop Bulk Updater" button.
+		 * 
+		 * @param state (bool) True to enable button, false to disable.
+		 */
+		function iaff_stop_bulk_updater_button_switch( state ) {
+			switch ( state ) {
+				case true:
+					$('.iaff_stop_bulk_updater_button').prop('disabled', false); // Enable stop button
+					$('.iaff_stop_bulk_updater_button').removeClass("button-secondary");
+					$('.iaff_stop_bulk_updater_button').addClass("button-primary"); // Turn stop button primary
+					break;
+
+				case false:
+				default:
+					$('.iaff_stop_bulk_updater_button').removeClass("button-primary");
+					$('.iaff_stop_bulk_updater_button').addClass("button-secondary"); // Turn stop button secondary
+					$('.iaff_stop_bulk_updater_button').prop('disabled', true); // Disable stop button
+					break;
+			}
+		}
 		
 	});	
 	</script> <?php

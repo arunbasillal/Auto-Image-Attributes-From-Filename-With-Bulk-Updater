@@ -1072,9 +1072,21 @@ function iaff_admin_interface_render () {
 							<legend><span class="dashicons dashicons-welcome-write-blog"></span>&nbsp;<strong><?php _e('Event Log', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></strong>&nbsp;<div class="iaff-spinner is-active" style="margin-top:0px;"></div></legend>
 							
 							<div id="bulk-updater-log">
+
+								<?php 
+								if ( function_exists( 'iaffpro_event_log_read' ) ) {
+									$event_log = iaffpro_event_log_read();
+
+									foreach ( $event_log as $log ) {
+										echo '<p>' . $log . '</p>';
+									}
+								}
+								?>
+
 								<p id="iaff_remaining_images_text"><?php _e('Number of Images Remaining: ', 'auto-image-attributes-from-filename-with-bulk-updater') ?><?php echo iaff_count_remaining_images(); ?></p>
 								
 								<p><?php _e('Number of Images Updated: ', 'auto-image-attributes-from-filename-with-bulk-updater') ?><?php echo iaff_number_of_images_updated(); ?></p>
+								
 							</div>
 						</fieldset>
 					</div>

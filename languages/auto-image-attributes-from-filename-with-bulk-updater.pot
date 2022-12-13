@@ -2,16 +2,16 @@
 # This file is distributed under the GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 3.3\n"
+"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-11-10T06:08:21+00:00\n"
+"POT-Creation-Date: 2022-12-13T09:18:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: auto-image-attributes-from-filename-with-bulk-updater\n"
 
 #. Plugin Name of the plugin
@@ -447,12 +447,12 @@ msgid "The Bulk Updater will update every attribute. If your image is named <em>
 msgstr ""
 
 #: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1046
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1086
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1098
 msgid "Run Bulk Updater"
 msgstr ""
 
 #: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1048
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1091
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1103
 msgid "Test Bulk Updater"
 msgstr ""
 
@@ -473,7 +473,7 @@ msgid "If Bulk Updater is stuck, refresh the page, skip current image and try ru
 msgstr ""
 
 #: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1062
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1096
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1108
 msgid "Reset Counter"
 msgstr ""
 
@@ -485,128 +485,128 @@ msgstr ""
 msgid "Event Log"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1075
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1086
 msgid "Number of Images Remaining: "
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1077
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1088
 msgid "Number of Images Updated: "
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1087
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1099
 msgid "You are about to run the bulk updater. This will update all images and cannot be undone. Please make a database backup before you proceed. Press OK to confirm."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1092
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1104
 msgid "The bulk updater will do a test run by updating one image. Note that this is a live test and actual values will be updated in the database. Please make a database backup before you proceed. Press Ok to confirm."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1097
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1109
 msgid "You are about to reset the bulk updater counter. The bulk updater will start from scratch in the next run. Press Ok to confirm."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1107
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1119
 msgid "Support And Documentation"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1109
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1121
 msgid "Looking for help? Here are the available options."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1114
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1126
 msgid "Free Support"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1116
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1129
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1128
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1141
 msgid "Documentation"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1117
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1129
 msgid "Read the FAQ"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1118
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1130
 msgid "Free Support Forum"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1127
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1139
 msgid "Premium Support"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1130
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1142
 msgid "Priority Email Support"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1131
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1143
 msgid "Contact Support"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1143
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1155
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1145
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1157
 msgid "Priority support"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1146
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1158
 msgid "Advanced features"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1147
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1159
 msgid "Support ongoing development"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1164
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1176
 msgid "Unlock Traffic"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1166
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1178
 msgid "Get more traffic from Google Images"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1167
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1179
 msgid "Use post / product title as attributes"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1168
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1180
 msgid "Preserve existing attributes"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1169
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1181
 msgid "Update attributes within posts"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1170
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1182
 msgid "Build custom attributes and fine tune settings"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1180
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1192
 msgid "Fast &amp; Simple Time Saver"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1188
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1200
 msgid "This plugin will save me a LOT of time! Great plugin!"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1197
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1209
 msgid "SEO Newsletter"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1201
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1213
 msgid "Stay tuned to the latest image SEO news and receive helpful product updates."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1205
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1217
 msgid "Your Email"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1210
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1222
 msgid "Subscribe"
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1214
+#: admin/iaff_image-attributes-from-filename-admin-ui-render.php:1226
 msgid "Your email will be kept private and will not be shared or spammed."
 msgstr ""
 
@@ -638,14 +638,14 @@ msgstr ""
 msgid "Image attributes updated for: "
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-do.php:181
+#: admin/iaff_image-attributes-from-filename-do.php:183
 msgid "Counter reset. The bulk updater will start from scratch in the next run."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-do.php:249
+#: admin/iaff_image-attributes-from-filename-do.php:255
 msgid "No more images to skip."
 msgstr ""
 
-#: admin/iaff_image-attributes-from-filename-do.php:263
+#: admin/iaff_image-attributes-from-filename-do.php:269
 msgid "Image skipped: "
 msgstr ""
