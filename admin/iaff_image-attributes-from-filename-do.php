@@ -528,6 +528,20 @@ function iaff_image_bulk_updater() {
 					break;
 			}
 		}
+
+		// Delete Event Log
+		$('#bulk-updater-delete-log-button').click( function() {
+				
+			data = {
+				action: 'iaff_bulk_updater_delete_log',
+				security: '<?php echo wp_create_nonce( "iaff_bulk_updater_delete_log_nonce" ); ?>'
+			};
+	
+			$.post(ajaxurl, data, function (response) {
+				$('#bulk-updater-log').append('<p class="iaff-red"><span class="dashicons dashicons-trash"></span> ' + response.message + '</p>');
+				$("#bulk-updater-log").animate({scrollTop:$("#bulk-updater-log")[0].scrollHeight - $("#bulk-updater-log").height()},200);
+			});
+		});
 		
 	});	
 	</script> <?php

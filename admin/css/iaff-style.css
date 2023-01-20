@@ -35,6 +35,11 @@
     overflow: auto;
 }
 
+#bulk-updater-delete-log-button:hover {
+	opacity: 1 !important;
+	cursor: pointer;
+}
+
 #iaff-pro #bulk-updater-log > p {
     margin: 0;
     padding: 3px 5px;

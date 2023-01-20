@@ -1070,6 +1070,10 @@ function iaff_admin_interface_render () {
 					<div id="bulk-updater-results">
 						<fieldset id="bulk-updater-log-wrapper">
 							<legend><span class="dashicons dashicons-welcome-write-blog"></span>&nbsp;<strong><?php _e('Event Log', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></strong>&nbsp;<div class="iaff-spinner is-active" style="margin-top:0px;"></div></legend>
+
+							<?php if ( function_exists( 'iaffpro_event_log_delete' ) ) { ?>
+								<div id="bulk-updater-delete-log-button" class="dashicons dashicons-trash" title="<?php _e( 'Delete Event Log', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" style="float: right; opacity: 0.7; margin-top: -25px; font-size: 18px;"></div>
+							<?php } ?>
 							
 							<div id="bulk-updater-log">
 

@@ -150,6 +150,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 4.0 =
+* Date: .
+* Enhancement: Compatibility with Image Attributes Pro version 4.1. [Check what's new in 4.1](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+
+= 4.0 =
 * Date: 13.December.2022.
 * Tested with WordPress 6.1.1.
 * Enhancement: Compatibility with Image Attributes Pro version 4.0. [Check what's new in 4.0](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
