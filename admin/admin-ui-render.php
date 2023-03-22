@@ -1041,11 +1041,29 @@ function iaff_admin_interface_render () {
 						<?php } ?>
 						
 					</div>
+
+					<?php 
+					$disabled_attribute = '';
+
+					if ( function_exists( 'iaffpro_get_settings' ) ) {
+						$settings = iaffpro_get_settings();
+
+						if ( empty( $settings['registered_email'] ) || empty( $settings['license_key'] ) ) {
+							$disabled_attribute = 'disabled';
+						}
+					}
+					?>
+						
+					<?php if ( $disabled_attribute === 'disabled' ) { ?>
+						<div class="error inline"> 
+							<p><strong><?php printf( __( '<a href="%s">Please enter license info</a> to activate the plugin and run the bulk updater.' ), admin_url( 'options-general.php?page=image-attributes-pro-activation' ) ); ?></strong></p>
+						</div>
+					<?php } ?>
 					
 					<p class="submit">
-						<input class="button-primary iaff-bulk-updater-buttons iaff_run_bulk_updater_button" type="submit" name="Run Bulk Updater" value="<?php _e( 'Run Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						<input class="button-primary iaff-bulk-updater-buttons iaff_run_bulk_updater_button" type="submit" name="Run Bulk Updater" value="<?php _e( 'Run Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" <?php echo $disabled_attribute; ?>/>
 						
-						<input class="button-secondary iaff-bulk-updater-buttons iaff_test_bulk_updater_button" type="submit" name="Test Bulk Updater" value="<?php _e( 'Test Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" />
+						<input class="button-secondary iaff-bulk-updater-buttons iaff_test_bulk_updater_button" type="submit" name="Test Bulk Updater" value="<?php _e( 'Test Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" <?php echo $disabled_attribute; ?>/>
 						
 						<input class="button-secondary iaff-bulk-updater-buttons iaff_stop_bulk_updater_button" type="submit" name="Stop Bulk Updater" value="<?php _e( 'Stop Bulk Updater', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" disabled />
 					</p>
