@@ -149,6 +149,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 4.2 =
+* Date: 
+* Enhancement: `!IMPORTANT!` Files were renamed and moved around for better organization. If you see any PHP errors, it should be temporary and deactivating and activation the plugin should fix it.
+
 = 4.1 =
 * Date: 01.February.2023.
 * Enhancement: Compatibility with Image Attributes Pro version 4.1. [Check what's new in 4.1](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).

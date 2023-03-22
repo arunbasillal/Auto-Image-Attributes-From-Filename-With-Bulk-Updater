@@ -122,7 +122,7 @@ function iaff_upgrader() {
 add_action( 'admin_init', 'iaff_upgrader' );
 
 // Load everything
-require_once( IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/admin/iaff_image-attributes-from-filename-loader.php');
+require_once( IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/loader.php');
 
 // Register activation hook
 register_activation_hook( __FILE__ , 'iaff_activate_plugin' );
