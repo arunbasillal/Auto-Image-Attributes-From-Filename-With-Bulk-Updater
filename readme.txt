@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,8 +100,9 @@ The pro add-on can update the image attributes from not just the image filename,
 * Update image titles / alt text in media library and existing posts.
 * Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
+* Bulk update image attributes in [ACF's WYSIWYG Editor](https://imageattributespro.com/acf-compatibility/?utm_source=wordpress.org&utm_medium=readme) and [Divi theme](https://imageattributespro.com/divi-compatibility/?utm_source=wordpress.org&utm_medium=readme).
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=wordpress.org&utm_medium=readme).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=wordpress.org&utm_medium=readme).
 * Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=wordpress.org&utm_medium=readme).
@@ -150,9 +151,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 4.2 =
-* Date: 
+* Date: 28.March.2023.
+* Tested with WordPress 6.2.
 * Enhancement: `!IMPORTANT!` Files were renamed and moved around for better organization. If you see any PHP errors, it should be temporary and deactivating and activation the plugin should fix it.
 * Enhancement: Compatibility with Image Attributes Pro version 4.2. [Check what's new in 4.2](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+* I18n: Plugin is translated to [Ukrainian](https://translate.wordpress.org/locale/uk/default/wp-plugins/auto-image-attributes-from-filename-with-bulk-updater/) thanks to [@kleindberg](https://profiles.wordpress.org/kleindberg/).
 
 = 4.1 =
 * Date: 01.February.2023.
@@ -252,6 +255,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.2 =
+* Date: 28.March.2023.
+* Tested with WordPress 6.2.
+* Enhancement: `!IMPORTANT!` Files were renamed and moved around for better organization. If you see any PHP errors, it should be temporary and deactivating and activation the plugin should fix it.
+* Enhancement: Compatibility with Image Attributes Pro version 4.2. [Check what's new in 4.2](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+* I18n: Plugin is translated to [Ukrainian](https://translate.wordpress.org/locale/uk/default/wp-plugins/auto-image-attributes-from-filename-with-bulk-updater/) thanks to [@kleindberg](https://profiles.wordpress.org/kleindberg/).
 
 = 4.1 =
 * Date: 01.February.2023.
