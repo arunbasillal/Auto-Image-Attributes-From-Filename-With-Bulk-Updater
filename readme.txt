@@ -71,7 +71,7 @@ The pro add-on can update the image attributes from not just the image filename,
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
 * Clear any image attribute by setting it as blank / empty. 
 * Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used. 
