@@ -398,12 +398,13 @@ add_action( 'admin_enqueue_scripts', 'iaff_enqueue_js_and_css' );
 function iaff_custom_attribute_tags() {
 	
 	$available_tags = array(
-		'filename'		=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'posttitle'		=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'sitetitle'		=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'category'		=> __( 'Post or product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'tag'			=> __( 'Post or product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'excerpt'		=> __( 'Excerpt or product short description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'filename'			=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'posttitle'			=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'sitetitle'			=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'category'			=> __( 'Post or product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'tag'				=> __( 'Post or product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'excerpt'			=> __( 'Excerpt or product short description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'copymedialibrary'	=> __( 'Copy attribute from Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
 	/**

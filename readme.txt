@@ -150,6 +150,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 4.3 =
+* Date: April.2023.
+* Enhancement: Compatibility with Image Attributes Pro version 4.3. [Check what's new in 4.3](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+
 = 4.2 =
 * Date: 28.March.2023.
 * Tested with WordPress 6.2.
