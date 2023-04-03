@@ -245,21 +245,17 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	
 	// Sanitize Custom Filter
 	$settings['custom_filter']	= sanitize_text_field( $settings['custom_filter'] );
+
+	// Validating Regex
+	if ( @preg_match( $settings['regex_filter'], null ) === false ) {
+		unset( $settings['regex_filter'] );
+	}
 	
 	// Sanitize Custom Attributes
 	$settings['custom_attribute_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_title'] );
-	$settings['custom_attribute_bu_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_bu_title'] );
 	$settings['custom_attribute_alt_text'] 			= iaff_sanitize_text_field( $settings['custom_attribute_alt_text'] );
-	$settings['custom_attribute_bu_alt_text'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_alt_text'] );
 	$settings['custom_attribute_caption'] 			= iaff_sanitize_text_field( $settings['custom_attribute_caption'] );
-	$settings['custom_attribute_bu_caption'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_caption'] );
 	$settings['custom_attribute_description'] 		= iaff_sanitize_text_field( $settings['custom_attribute_description'] );
-	$settings['custom_attribute_bu_description'] 	= iaff_sanitize_text_field( $settings['custom_attribute_bu_description'] );
-	
-	// Validating Regex
-	if( @preg_match( $settings['regex_filter'], null ) === false ) {
-		unset( $settings['regex_filter'] );
-	}
 	
 	return $settings;
 }
@@ -313,13 +309,9 @@ function iaff_get_settings() {
 		'bu_image_caption' 		=> '1',
 		'bu_image_description' 		=> '1',
 		'bu_image_alttext' 		=> '1',
-		'bu_title_source'		=> '0',
 		'bu_titles_in_post'		=> '2',
-		'bu_alt_text_source'		=> '0',
 		'bu_alt_text_in_post'		=> '2',
-		'bu_caption_source'		=> '0',
 		'bu_caption_behaviour'		=> '1',
-		'bu_description_source'		=> '0',
 		'bu_description_behaviour'	=> '1',
 	);
 

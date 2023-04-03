@@ -533,25 +533,6 @@ function iaff_bu_image_title_settings_callback() {
 	?>
 		
 	<fieldset>
-	
-		<label>
-			<input type="radio" name="iaff_settings[bu_title_source]" value="0" <?php if ( isset($settings['bu_title_source']) ) checked( '0', $settings['bu_title_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use image filename as title text', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_title_source]" value="1" <?php if ( isset($settings['bu_title_source']) ) checked( '1', $settings['bu_title_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as title text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" id="radio_custom_attribute_bu_title" class="radio_custom_attribute" data-attribute="bu_title" name="iaff_settings[bu_title_source]" value="2" <?php if ( isset( $settings['bu_title_source'] ) ) checked( '2', $settings['bu_title_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-			
-			<input type="text" id="text_custom_attribute_bu_title" class="text_custom_attribute regular-text code" data-attribute="bu_title" name="iaff_settings[custom_attribute_bu_title]" value="<?php if ( isset( $settings['custom_attribute_bu_title'] ) && ( ! empty( $settings['custom_attribute_bu_title'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_title'] ); ?>" />
-		</label><br>
-		
-		<?php iaff_custom_attribute_tags_ui_render( 'bu_title' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
@@ -587,25 +568,6 @@ function iaff_bu_alt_text_settings_callback() {
 	?>
 		
 	<fieldset>
-	
-		<label>
-			<input type="radio" name="iaff_settings[bu_alt_text_source]" value="0" <?php if ( isset($settings['bu_alt_text_source']) ) checked( '0', $settings['bu_alt_text_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use filename as alt text.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_alt_text_source]" value="1" <?php if ( isset($settings['bu_alt_text_source']) ) checked( '1', $settings['bu_alt_text_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as alt text. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" id="radio_custom_attribute_bu_alt_text" class="radio_custom_attribute" data-attribute="bu_alt_text" name="iaff_settings[bu_alt_text_source]" value="2" <?php if ( isset( $settings['bu_alt_text_source'] ) ) checked( '2', $settings['bu_alt_text_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-			
-			<input type="text" id="text_custom_attribute_bu_alt_text" class="text_custom_attribute regular-text code" data-attribute="bu_alt_text" name="iaff_settings[custom_attribute_bu_alt_text]" value="<?php if ( isset( $settings['custom_attribute_bu_alt_text'] ) && ( ! empty( $settings['custom_attribute_bu_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_alt_text'] ); ?>" />
-		</label><br>
-		
-		<?php iaff_custom_attribute_tags_ui_render( 'bu_alt_text' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
@@ -641,25 +603,6 @@ function iaff_bu_image_caption_settings_callback() {
 	?>
 		
 	<fieldset>
-	
-		<label>
-			<input type="radio" name="iaff_settings[bu_caption_source]" value="0" <?php if ( isset($settings['bu_caption_source']) ) checked( '0', $settings['bu_caption_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use image filename as caption', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_caption_source]" value="1" <?php if ( isset($settings['bu_caption_source']) ) checked( '1', $settings['bu_caption_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as caption. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" id="radio_custom_attribute_bu_caption" class="radio_custom_attribute" data-attribute="bu_caption" name="iaff_settings[bu_caption_source]" value="2" <?php if ( isset( $settings['bu_caption_source'] ) ) checked( '2', $settings['bu_caption_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-			
-			<input type="text" id="text_custom_attribute_bu_caption" class="text_custom_attribute regular-text code" data-attribute="bu_caption" name="iaff_settings[custom_attribute_bu_caption]" value="<?php if ( isset( $settings['custom_attribute_bu_caption'] ) && ( ! empty( $settings['custom_attribute_bu_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_caption'] ); ?>" />
-		</label><br>
-
-		<?php iaff_custom_attribute_tags_ui_render( 'bu_caption' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
@@ -690,25 +633,6 @@ function iaff_bu_image_description_settings_callback() {
 	?>
 		
 	<fieldset>
-	
-		<label>
-			<input type="radio" name="iaff_settings[bu_description_source]" value="0" <?php if ( isset($settings['bu_description_source']) ) checked( '0', $settings['bu_description_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use image filename as description', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_description_source]" value="1" <?php if ( isset($settings['bu_description_source']) ) checked( '1', $settings['bu_description_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use post title as description. If image is not uploaded to a post, image filename will be used instead.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<label>
-			<input type="radio" id="radio_custom_attribute_bu_description" class="radio_custom_attribute" data-attribute="bu_description" name="iaff_settings[bu_description_source]" value="2" <?php if ( isset( $settings['bu_description_source'] ) ) checked( '2', $settings['bu_description_source'] ); ?>/>
-			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-			
-			<input type="text" id="text_custom_attribute_bu_description" class="text_custom_attribute regular-text code" data-attribute="bu_description" name="iaff_settings[custom_attribute_bu_description]" value="<?php if ( isset( $settings['custom_attribute_bu_description'] ) && ( ! empty( $settings['custom_attribute_bu_description'] ) ) ) echo esc_attr( $settings['custom_attribute_bu_description'] ); ?>" />
-		</label><br>
-
-		<?php iaff_custom_attribute_tags_ui_render( 'bu_description' ); ?>
 		
 		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
 		
