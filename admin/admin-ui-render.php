@@ -16,7 +16,6 @@
  * @function	iaff_advanced_image_description_callback()	Image Description Settings Callback
  * @function	iaff_miscellaneous_callback()				Miscellaneous Settings Callback
  * @function	iaff_bu_general_settings_callback()			Bulk Updater General Settings Callback
- * @function	iaff_bu_capitalization_settings_callback()	Bulk Updater Capitalization Settings Callback
  * @function	iaff_bu_image_title_settings_callback()		Bulk Updater Image Title Settings Callback
  * @function	iaff_bu_alt_text_settings_callback()		Bulk Updater Image Alt Text Settings Callback
  * @function	iaff_bu_image_caption_settings_callback()	Bulk Updater Image Caption Settings Callback
@@ -523,54 +522,6 @@ function iaff_bu_general_settings_callback() {
 }
 
 /**
- * Bulk Updater Capitalization Settings Callback
- *
- * @since 	1.4
- */
-function iaff_bu_capitalization_settings_callback() {	
-
-	// Get Settings
-	$settings = iaff_get_settings();
-	?>
-		
-	<fieldset>
-	
-		<!-- No bu_capitalization -->
-		<label>
-			<input type="radio" name="iaff_settings[bu_capitalization]" value="0" <?php if ( isset($settings['bu_capitalization']) ) checked( '0', $settings['bu_capitalization'] ); ?>/>
-			<span><?php esc_attr_e( 'Leave unchanged', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<!-- Lowercase -->
-		<label>
-			<input type="radio" name="iaff_settings[bu_capitalization]" value="1" <?php if ( isset($settings['bu_capitalization']) ) checked( '1', $settings['bu_capitalization'] ); ?>/>
-			<span><?php esc_attr_e( 'convert to lowercase', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<!-- Uppercase -->
-		<label>
-			<input type="radio" name="iaff_settings[bu_capitalization]" value="2" <?php if ( isset($settings['bu_capitalization']) ) checked( '2', $settings['bu_capitalization'] ); ?>/>
-			<span><?php esc_attr_e( 'CONVERT TO UPPERCASE', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<!-- Title Casing -->
-		<label>
-			<input type="radio" name="iaff_settings[bu_capitalization]" value="3" <?php if ( isset($settings['bu_capitalization']) ) checked( '3', $settings['bu_capitalization'] ); ?>/>
-			<span><?php esc_attr_e( 'Use title casing. First Letter Of Each Word Will Be Capitalized.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-		<!-- Sentence Casing -->
-		<label>
-			<input type="radio" name="iaff_settings[bu_capitalization]" value="4" <?php if ( isset($settings['bu_capitalization']) ) checked( '4', $settings['bu_capitalization'] ); ?>/>
-			<span><?php esc_attr_e( 'Use sentence casing. First letter of a sentence will be capitalized.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
-	</fieldset>
-		
-	<?php
-}
-
-/**
  * Bulk Updater Image Title Settings Callback
  *
  * @since 	1.4
@@ -878,7 +829,6 @@ function iaff_admin_interface_render () {
 						<?php } ?>
 						
 						<h2 class="showh2"><?php _e('Advanced Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ?></h2>
-						<p><?php _e('Advanced settings for new uploads.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
 						<?php do_settings_sections( 'iaff_advanced_settings_section' ); ?>
 						<?php if( iaff_is_pro() ) submit_button( __('Save Settings', 'auto-image-attributes-from-filename-with-bulk-updater') ); ?>
 					</div>

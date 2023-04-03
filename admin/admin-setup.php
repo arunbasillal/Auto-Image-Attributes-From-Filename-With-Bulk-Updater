@@ -193,15 +193,6 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id'					// Settings Section ID
 		);
 		
-		// Capitalization Settings
-		add_settings_field(
-			'iaff_bu_capitalization_settings',				// ID
-			__('Capitalization Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
-			'iaff_bu_capitalization_settings_callback',		// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
 		// Image Title Settings
 		add_settings_field(
 			'iaff_bu_image_title_settings',					// ID
@@ -270,11 +261,6 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 		unset( $settings['regex_filter'] );
 	}
 	
-	// Validating Bulk Updater Regex
-	if( @preg_match( $settings['bu_regex_filter'], null ) === false ) {
-		unset( $settings['bu_regex_filter'] );
-	}
-	
 	return $settings;
 }
 
@@ -327,7 +313,6 @@ function iaff_get_settings() {
 		'bu_image_caption' 		=> '1',
 		'bu_image_description' 		=> '1',
 		'bu_image_alttext' 		=> '1',
-		'bu_capitalization'		=> '0',
 		'bu_title_source'		=> '0',
 		'bu_titles_in_post'		=> '2',
 		'bu_alt_text_source'		=> '0',
