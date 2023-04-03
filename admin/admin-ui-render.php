@@ -16,8 +16,6 @@
  * @function	iaff_advanced_image_description_callback()	Image Description Settings Callback
  * @function	iaff_miscellaneous_callback()				Miscellaneous Settings Callback
  * @function	iaff_bu_general_settings_callback()			Bulk Updater General Settings Callback
- * @function	iaff_bu_filter_settings_callback()			Bulk Updater Filter Settings Callback
- * @function	iaff_bu_custom_filter_callback()			Bulk Updater Custom Filter Callback
  * @function	iaff_bu_capitalization_settings_callback()	Bulk Updater Capitalization Settings Callback
  * @function	iaff_bu_image_title_settings_callback()		Bulk Updater Image Title Settings Callback
  * @function	iaff_bu_alt_text_settings_callback()		Bulk Updater Image Alt Text Settings Callback
@@ -521,126 +519,6 @@ function iaff_bu_general_settings_callback() {
 		
 	</fieldset>
 
-	<?php
-}
-
-/**
- * Bulk Updater Filter Settings Callback
- *
- * @since 	1.4
- */
-function iaff_bu_filter_settings_callback() {	
-
-	// Get Settings
-	$settings = iaff_get_settings();
-	?>
-		
-	<fieldset>
-	
-		<!-- Filter Hyphens -->
-		<label for="iaff_settings[bu_hyphens]">
-			<input type="checkbox" name="iaff_settings[bu_hyphens]" id="iaff_settings[bu_hyphens]" value="1" <?php if ( isset($settings['bu_hyphens']) ) checked( '1', $settings['bu_hyphens'] ); ?>>
-			<span><?php _e('Remove hyphens ( - ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Filter Underscore  -->
-		<label for="iaff_settings[bu_under_score]">
-			<input type="checkbox" name="iaff_settings[bu_under_score]" id="iaff_settings[bu_under_score]" value="1" <?php if ( isset($settings['bu_under_score']) ) checked( '1', $settings['bu_under_score'] ); ?>>
-			<span><?php _e('Remove underscores ( _ ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Filter Full stops  -->
-		<label for="iaff_settings[bu_full_stop]">
-			<input type="checkbox" name="iaff_settings[bu_full_stop]" id="iaff_settings[bu_full_stop]" value="1" <?php if ( isset($settings['bu_full_stop']) ) checked( '1', $settings['bu_full_stop'] ); ?>>
-			<span><?php _e('Remove full stops ( . ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Filter Commas  -->
-		<label for="iaff_settings[bu_commas]">
-			<input type="checkbox" name="iaff_settings[bu_commas]" id="iaff_settings[bu_commas]" value="1" <?php if ( isset($settings['bu_commas']) ) checked( '1', $settings['bu_commas'] ); ?>>
-			<span><?php _e('Remove commas ( , ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-			
-		<!-- Filter Numbers  -->
-		<label for="iaff_settings[bu_all_numbers]">
-			<input type="checkbox" name="iaff_settings[bu_all_numbers]" id="iaff_settings[bu_all_numbers]" value="1" <?php if ( isset($settings['bu_all_numbers']) ) checked( '1', $settings['bu_all_numbers'] ); ?>>
-			<span><?php _e('Remove all numbers ( 0-9 ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Apostrophe -->
-		<label for="iaff_settings[bu_apostrophe]">
-			<input type="checkbox" name="iaff_settings[bu_apostrophe]" id="iaff_settings[bu_apostrophe]" value="1" <?php if ( isset($settings['bu_apostrophe']) ) checked( '1', $settings['bu_apostrophe'] ); ?>>
-			<span><?php _e('Remove apostrophe ( \' ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Tilde -->
-		<label for="iaff_settings[bu_tilde]">
-			<input type="checkbox" name="iaff_settings[bu_tilde]" id="iaff_settings[bu_tilde]" value="1" <?php if ( isset($settings['bu_tilde']) ) checked( '1', $settings['bu_tilde'] ); ?>>
-			<span><?php _e('Remove tilde ( ~ ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Plus -->
-		<label for="iaff_settings[bu_plus]">
-			<input type="checkbox" name="iaff_settings[bu_plus]" id="iaff_settings[bu_plus]" value="1" <?php if ( isset($settings['bu_plus']) ) checked( '1', $settings['bu_plus'] ); ?>>
-			<span><?php _e('Remove plus ( + ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Pound -->
-		<label for="iaff_settings[bu_pound]">
-			<input type="checkbox" name="iaff_settings[bu_pound]" id="iaff_settings[bu_pound]" value="1" <?php if ( isset($settings['bu_pound']) ) checked( '1', $settings['bu_pound'] ); ?>>
-			<span><?php _e('Remove pound ( # ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Ampersand -->
-		<label for="iaff_settings[bu_ampersand]">
-			<input type="checkbox" name="iaff_settings[bu_ampersand]" id="iaff_settings[bu_ampersand]" value="1" <?php if ( isset($settings['bu_ampersand']) ) checked( '1', $settings['bu_ampersand'] ); ?>>
-			<span><?php _e('Remove ampersand ( & ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Round Brackets -->
-		<label for="iaff_settings[bu_round_brackets]">
-			<input type="checkbox" name="iaff_settings[bu_round_brackets]" id="iaff_settings[bu_round_brackets]" value="1" <?php if ( isset($settings['bu_round_brackets']) ) checked( '1', $settings['bu_round_brackets'] ); ?>>
-			<span><?php _e('Remove round brackets ( ( ) ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Square Brackets -->
-		<label for="iaff_settings[bu_square_brackets]">
-			<input type="checkbox" name="iaff_settings[bu_square_brackets]" id="iaff_settings[bu_square_brackets]" value="1" <?php if ( isset($settings['bu_square_brackets']) ) checked( '1', $settings['bu_square_brackets'] ); ?>>
-			<span><?php _e('Remove square brackets ( [ ] ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-		<!-- Filter Curly Brackets -->
-		<label for="iaff_settings[bu_curly_brackets]">
-			<input type="checkbox" name="iaff_settings[bu_curly_brackets]" id="iaff_settings[bu_curly_brackets]" value="1" <?php if ( isset($settings['bu_curly_brackets']) ) checked( '1', $settings['bu_curly_brackets'] ); ?>>
-			<span><?php _e('Remove curly brackets ( { } ) from filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
-		</label><br>
-		
-	</fieldset>
-		
-	<?php
-}
-
-/**
- * Bulk Updater Custom Filter Callback
- *
- * @since 	1.4
- */
-function iaff_bu_custom_filter_callback() {	
-
-	// Get Settings
-	$settings = iaff_get_settings();
-	?>
-		
-	<fieldset>
-		
-		<p><?php printf( __( 'Enter words or characters to filter separated by commas. Filter is case sensitive. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/custom-filter-and-regex-filter/?utm_source=iaff-basic&utm_medium=bu-settings-tab' ); ?></p>
-		<input type="text" name="iaff_settings[bu_custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['bu_custom_filter'] ) && ( ! empty( $settings['bu_custom_filter'] ) ) ) echo esc_attr( $settings['bu_custom_filter'] ); ?>"/><br><br>
-		
-		<p><?php _e('Filter with regular expression', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
-		<input type="text" name="iaff_settings[bu_regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['bu_regex_filter'] ) && ( ! empty( $settings['bu_regex_filter'] ) ) ) echo esc_attr( $settings['bu_regex_filter'] ); ?>"/><br>
-		
-	</fieldset>
-	
 	<?php
 }
 

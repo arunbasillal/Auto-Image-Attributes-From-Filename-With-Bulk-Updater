@@ -193,24 +193,6 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id'					// Settings Section ID
 		);
 		
-		// Filter Settings
-		add_settings_field(
-			'iaff_bu_filter_settings',						// ID
-			__( 'Filter Settings<p class="iaff-description">Selected characters will be removed from filename text before using them as image attributes.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),			// Title
-			'iaff_bu_filter_settings_callback',				// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
-		// Custom Filter
-		add_settings_field(
-			'iaff_bu_custom_filter_settings',				// ID
-			__('Custom Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),				// Title
-			'iaff_bu_custom_filter_callback',				// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
 		// Capitalization Settings
 		add_settings_field(
 			'iaff_bu_capitalization_settings',				// ID
@@ -272,7 +254,6 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	
 	// Sanitize Custom Filter
 	$settings['custom_filter']	= sanitize_text_field( $settings['custom_filter'] );
-	$settings['bu_custom_filter']	= sanitize_text_field( $settings['bu_custom_filter'] );
 	
 	// Sanitize Custom Attributes
 	$settings['custom_attribute_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_title'] );
