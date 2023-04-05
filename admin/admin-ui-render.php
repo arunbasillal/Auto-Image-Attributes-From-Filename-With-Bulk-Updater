@@ -533,22 +533,29 @@ function iaff_bu_image_title_settings_callback() {
 	?>
 		
 	<fieldset>
-		
-		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_titles_in_post]" value="0" <?php if ( isset($settings['bu_titles_in_post']) ) checked( '0', $settings['bu_titles_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update image titles in media library only. Image titles in posts will be left unchanged.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+
+		<h4 style="margin-top: 5px;"><?php _e( 'Update in:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
+
+		<label for="iaff_settings[bu_title_location_ml]">
+			<input type="checkbox" name="iaff_settings[bu_title_location_ml]" id="iaff_settings[bu_title_location_ml]" value="1" <?php if ( isset($settings['bu_title_location_ml']) ) checked( '1', $settings['bu_title_location_ml'] ); ?>>
+			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
+
+		<label for="iaff_settings[bu_title_location_post]">
+			<input type="checkbox" name="iaff_settings[bu_title_location_post]" id="iaff_settings[bu_title_location_post]" value="1" <?php if ( isset($settings['bu_title_location_post']) ) checked( '1', $settings['bu_title_location_post'] ); ?>>
+			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
+		</label><br>
+		
+		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_titles_in_post]" value="1" <?php if ( isset($settings['bu_titles_in_post']) ) checked( '1', $settings['bu_titles_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update all image titles in media library and posts.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_titles_in_post]" value="2" <?php if ( isset($settings['bu_titles_in_post']) ) checked( '2', $settings['bu_titles_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update image titles in media library and posts only if no title is set. Existing image titles will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -568,22 +575,29 @@ function iaff_bu_alt_text_settings_callback() {
 	?>
 		
 	<fieldset>
-		
-		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_alt_text_in_post]" value="0" <?php if ( isset($settings['bu_alt_text_in_post']) ) checked( '0', $settings['bu_alt_text_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update alt text in media library only. Alt text in posts will be left unchanged.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+
+		<h4 style="margin-top: 5px;"><?php _e( 'Update in:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
+
+		<label for="iaff_settings[bu_alt_text_location_ml]">
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_ml]" id="iaff_settings[bu_alt_text_location_ml]" value="1" <?php if ( isset($settings['bu_alt_text_location_ml']) ) checked( '1', $settings['bu_alt_text_location_ml'] ); ?>>
+			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
+		</label><br>
+
+		<label for="iaff_settings[bu_alt_text_location_post]">
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_post]" id="iaff_settings[bu_alt_text_location_post]" value="1" <?php if ( isset($settings['bu_alt_text_location_post']) ) checked( '1', $settings['bu_alt_text_location_post'] ); ?>>
+			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 		
+		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
+
 		<label>
 			<input type="radio" name="iaff_settings[bu_alt_text_in_post]" value="1" <?php if ( isset($settings['bu_alt_text_in_post']) ) checked( '1', $settings['bu_alt_text_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update all alt text in media library and posts.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<label>
 			<input type="radio" name="iaff_settings[bu_alt_text_in_post]" value="2" <?php if ( isset($settings['bu_alt_text_in_post']) ) checked( '2', $settings['bu_alt_text_in_post'] ); ?>/>
-			<span><?php esc_attr_e( 'Update alt text in media library and posts only if no alt text is set. Existing alt text will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -604,16 +618,16 @@ function iaff_bu_image_caption_settings_callback() {
 		
 	<fieldset>
 		
-		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="0" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '0', $settings['bu_caption_behaviour'] ); ?>/>
-			<span><?php esc_attr_e( 'Update all captions in media library. Existing captions will be overwritten.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
+		<h4 style="margin-top: 5px;"><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
+
 		<label>
 			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="1" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '1', $settings['bu_caption_behaviour'] ); ?>/>
-			<span><?php esc_attr_e( 'Update captions in media library if no caption is set. Existing captions will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
+
+		<label>
+			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="2" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '2', $settings['bu_caption_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>
@@ -634,16 +648,16 @@ function iaff_bu_image_description_settings_callback() {
 		
 	<fieldset>
 		
-		<h4><?php _e('Bulk Updater Behaviour', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></h4>
-		
-		<label>
-			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="0" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '0', $settings['bu_description_behaviour'] ); ?>/>
-			<span><?php esc_attr_e( 'Update all descriptions in media library. Existing descriptions will be overwritten.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
-		
+		<h4 style="margin-top: 5px;"><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
+
 		<label>
 			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="1" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '1', $settings['bu_description_behaviour'] ); ?>/>
-			<span><?php esc_attr_e( 'Update description in media library if no description is set. Existing descriptions will not be changed.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label><br>
+
+		<label>
+			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="2" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '2', $settings['bu_description_behaviour'] ); ?>/>
+			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 	</fieldset>

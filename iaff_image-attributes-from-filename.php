@@ -96,8 +96,138 @@ function iaff_upgrader() {
 		$settings = get_option( 'iaff_settings' );
 
 		if ( $settings !== false ) {
-			$settings['bu_caption_behaviour'] 	= 1;
-			$settings['bu_description_behaviour'] 	= 1;
+			$settings['bu_caption_behaviour'] = 1;
+			$settings['bu_description_behaviour'] = 1;
+
+			update_option('iaff_settings', $settings);
+		}
+	}
+
+	/**
+	 * @since 4.3
+	 * 
+	 * Some major changes were made in the UI:
+	 * - Removed Filter Settings and Custom Filter from Bulk Updater Settings. The bulk updater will use the same filters from the Advanced settings from here on.
+	 * - Removed Capitalization Settings from Bulk Updater Settings. The bulk updater will use the capitalization settings from the Advanced settings from here on.
+	 * - Removed image attribute configuration in Bulk Updater Settings. The image attributes set in the Advanced settings will be used by the bulk updater from here on.
+	 * - Choose where to update image title and alt text while running the Bulk Updater. Image attributes can be updated in Media Library, post HTML, or both.
+	 */
+	if ( version_compare( $current_ver, '4.2', '<=' ) ) {
+
+		// This will return false during first install since iaff_settings does not exist.
+		$settings = get_option( 'iaff_settings' );
+
+		if ( $settings !== false ) {
+
+			/**
+			 * Add "Update in: Media Library" setting for all attributes.
+			 * 
+			 * Up until now, there was no option to disable updating the Media Library.
+			 * So this setting being turned on is the default expected behaviour when users update.
+			 */
+			$settings['bu_title_location_ml'] = 1;
+			$settings['bu_alt_text_location_ml'] = 1;
+			$settings['bu_caption_location_ml'] = 1;
+			$settings['bu_description_location_ml'] = 1;
+
+			// Image Title Settings: Check current Bulk Updater Behaviour for image title and upgrade settings.
+			switch( $settings['bu_titles_in_post'] ) {
+
+				// Update image titles in media library only.
+				case '0':
+					$settings['bu_title_location_post'] = 0; // Disable updating in Post HTML.
+					$settings['bu_titles_in_post'] = 1; // New values of bu_titles_in_post is either 1 or 2. 
+					break;
+
+				// Update all image titles in media library and posts.
+				case '1':
+					$settings['bu_title_location_post'] = 1; // Enable updating in Post HTML.
+					break;
+
+				// Update image titles in media library and posts only if no title is set.
+				case '2':
+				default:
+					$settings['bu_title_location_post'] = 1; // Enable updating in Post HTML.
+			}
+
+			// Image Alt Text Settings: Check current Bulk Updater Behaviour for alt text and upgrade settings.
+			switch( $settings['bu_alt_text_in_post'] ) {
+
+				// Update alt text in media library only.
+				case '0':
+					$settings['bu_alt_text_location_post'] = 0; // Disable updating in Post HTML.
+					$settings['bu_alt_text_in_post'] = 1; // New values of bu_alt_text_in_post is either 1 or 2. 
+					break;
+
+				// Update all alt text in media library and posts.
+				case '1':
+					$settings['bu_alt_text_location_post'] = 1; // Enable updating in Post HTML.
+					break;
+
+				// Update alt text in media library and posts only if no alt text is set.
+				case '2':
+				default:
+					$settings['bu_alt_text_location_post'] = 1; // Enable updating in Post HTML.
+			}
+
+			// Image Caption Settings: Check current Bulk Updater Behaviour for caption and upgrade settings.
+			switch( $settings['bu_caption_behaviour'] ) {
+
+				// Update all captions in media library.
+				case '0':
+					$settings['bu_caption_behaviour'] = 1; // New values of bu_caption_behaviour is either 1 or 2. 
+					break;
+
+				// Update captions in media library if no caption is set.
+				case '1':
+				default:
+					$settings['bu_caption_behaviour'] = 2;
+					break;
+			}
+
+			// Image Description Settings: Check current Bulk Updater Behaviour for description and upgrade settings.
+			switch( $settings['bu_description_behaviour'] ) {
+
+				// Update all captions in media library.
+				case '0':
+					$settings['bu_description_behaviour'] = 1; // New values of bu_description_behaviour is either 1 or 2. 
+					break;
+
+				// Update captions in media library if no caption is set.
+				case '1':
+				default:
+					$settings['bu_description_behaviour'] = 2;
+					break;
+			}
+
+			// Remove deleted settings.
+			unset(
+				$settings['bu_hyphens'],
+				$settings['bu_under_score'],
+				$settings['bu_full_stop'],
+				$settings['bu_commas'],
+				$settings['bu_all_numbers'],
+				$settings['bu_apostrophe'],
+				$settings['bu_tilde'],
+				$settings['bu_plus'],
+				$settings['bu_pound'],
+				$settings['bu_ampersand'],
+				$settings['bu_round_brackets'],
+				$settings['bu_square_brackets'],
+				$settings['bu_curly_brackets'],
+				$settings['bu_custom_filter'],
+				$settings['bu_regex_filter'],
+				$settings['bu_capitalization'],
+				$settings['bu_title_source'],
+				$settings['custom_attribute_bu_title'],
+				$settings['bu_alt_text_source'],
+				$settings['custom_attribute_bu_alt_text'],
+				$settings['bu_caption_source'],
+				$settings['custom_attribute_bu_caption'],
+				$settings['bu_description_source'],
+				$settings['custom_attribute_bu_description'],
+			);
+
 			update_option('iaff_settings', $settings);
 		}
 	}
@@ -112,7 +242,7 @@ function iaff_upgrader() {
 	 */
 	if ( $current_ver !== '1.2' ) {
 		
-		// Set transient to show upgrade complete notice
+		// Set transient to show upgrade complete notice.
 		set_transient( 'iaff_upgrade_complete_admin_notice', true, 300 );
 	}
 	

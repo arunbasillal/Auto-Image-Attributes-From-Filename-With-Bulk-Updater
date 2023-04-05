@@ -196,7 +196,7 @@ function iaff_register_settings() {
 		// Image Title Settings
 		add_settings_field(
 			'iaff_bu_image_title_settings',					// ID
-			__('Image Title Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
+			sprintf( __( 'Image Title Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/' ),		// Title
 			'iaff_bu_image_title_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -205,7 +205,7 @@ function iaff_register_settings() {
 		// Image Alt Text Settings
 		add_settings_field(
 			'iaff_bu_alt_text_settings',					// ID
-			__('Image Alt Text Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
+			sprintf( __('Image Alt Text Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/' ),	// Title
 			'iaff_bu_alt_text_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -214,7 +214,7 @@ function iaff_register_settings() {
 		// Image Caption Settings
 		add_settings_field(
 			'iaff_bu_image_caption_settings',				// ID
-			__('Image Caption Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
+			__('Image Caption Settings<p class="iaff-description">Caption is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_image_caption_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -223,7 +223,7 @@ function iaff_register_settings() {
 		// Image Description Settings
 		add_settings_field(
 			'iaff_bu_image_description_settings',				// ID
-			__('Image Description Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
+			__('Image Description Settings<p class="iaff-description">Description is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_bu_image_description_settings_callback',	// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -291,31 +291,48 @@ function iaff_sanitize_text_field( $str ) {
 function iaff_get_settings() {
 
 	$iaff_defaults = array(
-		'image_title' 			=> '1',
-		'image_caption' 		=> '1',
+		'image_title' 				=> '1',
+		'image_caption' 			=> '1',
 		'image_description' 		=> '1',
-		'image_alttext' 		=> '1',
+		'image_alttext' 			=> '1',
+
 		'image_title_to_html' 		=> '1',
-		'preview_pro'			=> '0',
-		'hyphens' 			=> '1',
-		'under_score' 			=> '1',
-		'capitalization'		=> '0',
-		'title_source'			=> '0',
-		'alt_text_source'		=> '0',
-		'caption_source'		=> '0',
+
+		'preview_pro'				=> '0',
+
+		'hyphens' 					=> '1',
+		'under_score' 				=> '1',
+
+		'capitalization'			=> '0',
+
+		'title_source'				=> '0',
+		'alt_text_source'			=> '0',
+		'caption_source'			=> '0',
 		'description_source'		=> '0',
-		'clean_filename'		=> '1',
-		'bu_image_title' 		=> '1',
-		'bu_image_caption' 		=> '1',
+
+		'clean_filename'			=> '1',
+
+		'bu_image_title' 			=> '1',
+		'bu_image_caption' 			=> '1',
 		'bu_image_description' 		=> '1',
-		'bu_image_alttext' 		=> '1',
-		'bu_titles_in_post'		=> '2',
+		'bu_image_alttext' 			=> '1',
+
+		'bu_title_location_ml'		=> '1',
+		'bu_title_location_post'	=> '1',
+		'bu_titles_in_post'			=> '2',
+
+		'bu_alt_text_location_ml'	=> '1',
+		'bu_alt_text_location_post'	=> '1',
 		'bu_alt_text_in_post'		=> '2',
+
+		'bu_caption_location_ml'	=> '1',
 		'bu_caption_behaviour'		=> '1',
+
+		'bu_description_location_ml'=> '1',
 		'bu_description_behaviour'	=> '1',
 	);
 
-	$settings = get_option('iaff_settings', $iaff_defaults);
+	$settings = get_option( 'iaff_settings', $iaff_defaults );
 	
 	return $settings;
 }
