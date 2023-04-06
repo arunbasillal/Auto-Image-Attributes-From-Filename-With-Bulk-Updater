@@ -199,16 +199,22 @@ function iaff_register_settings() {
 			sprintf( __( 'Image Title Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),		// Title
 			'iaff_bu_image_title_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_title_settings',
+			),
 		);
 		
 		// Image Alt Text Settings
 		add_settings_field(
-			'iaff_bu_alt_text_settings',					// ID
+			'iaff_bu_image_alttext_settings',					// ID
 			sprintf( __('Image Alt Text Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),	// Title
-			'iaff_bu_alt_text_settings_callback',			// Callback function
+			'iaff_bu_image_alttext_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_alttext_settings',
+			),
 		);
 		
 		// Image Caption Settings
@@ -217,7 +223,10 @@ function iaff_register_settings() {
 			__('Image Caption Settings<p class="iaff-description">Caption is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_image_caption_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_caption_settings',
+			),
 		);
 		
 		// Image Description Settings
@@ -226,7 +235,10 @@ function iaff_register_settings() {
 			__('Image Description Settings<p class="iaff-description">Description is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_bu_image_description_settings_callback',	// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_description_settings',
+			),
 		);
 
 }

@@ -17,7 +17,7 @@
  * @function	iaff_miscellaneous_callback()				Miscellaneous Settings Callback
  * @function	iaff_bu_general_settings_callback()			Bulk Updater General Settings Callback
  * @function	iaff_bu_image_title_settings_callback()		Bulk Updater Image Title Settings Callback
- * @function	iaff_bu_alt_text_settings_callback()		Bulk Updater Image Alt Text Settings Callback
+ * @function	iaff_bu_image_alttext_settings_callback()		Bulk Updater Image Alt Text Settings Callback
  * @function	iaff_bu_image_caption_settings_callback()	Bulk Updater Image Caption Settings Callback
  * @function	iaff_bu_image_description_settings_callback() Bulk Updater Image Description Settings Callback		
  * @function	iaff_admin_interface_render()				Admin interface renderer	
@@ -581,7 +581,7 @@ function iaff_bu_image_title_settings_callback() {
  * @since 1.4
  * @since 4.3 Added "Update in:" checkboxes. "Bulk Updater Behaviour" is renamed to "Handling existing attributes:" and it's values are set to 1 and 2 to match existing values.
  */
-function iaff_bu_alt_text_settings_callback() {	
+function iaff_bu_image_alttext_settings_callback() {	
 
 	// Get Settings
 	$settings = iaff_get_settings();
