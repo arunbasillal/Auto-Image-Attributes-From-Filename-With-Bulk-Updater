@@ -143,9 +143,14 @@ function iaff_upgrader() {
 			 *
 			 * The value of "Update all attributes overwriting any existing attributes." is 1. 
 			 * Users can manage updating the Media Library using the "Update in:" setting.
+			 * 
+			 * bu_titles_in_post can have values 0, 1 or 2.
+			 * bu_titles_in_post is renamed to bu_title_behaviour in 4.3 and can have values 1 or 2.
 			 */
 			if ( $settings['bu_titles_in_post'] == '0' ) {
-				$settings['bu_titles_in_post'] = 1; // New values of bu_titles_in_post is either 1 or 2. 
+				$settings['bu_title_behaviour'] = 1;
+			} else {
+				$settings['bu_title_behaviour'] = $settings['bu_titles_in_post'];
 			}
 
 			/**
@@ -154,9 +159,14 @@ function iaff_upgrader() {
 			 *
 			 * The value of "Update all attributes overwriting any existing attributes." is 1. 
 			 * Users can manage updating the Media Library using the "Update in:" setting.
+			 * 
+			 * bu_alt_text_in_post can have values 0, 1 or 2.
+			 * bu_alt_text_in_post is renamed to bu_alt_text_behaviour in 4.3 and can have values 1 or 2.
 			 */
 			if ( $settings['bu_alt_text_in_post'] == '0' ) {
-				$settings['bu_alt_text_in_post'] = 1; // New values of bu_alt_text_in_post is either 1 or 2. 
+				$settings['bu_alt_text_behaviour'] = 1;
+			} else {
+				$settings['bu_alt_text_behaviour'] = $settings['bu_alt_text_in_post'];
 			}
 
 			// Remove deleted settings.

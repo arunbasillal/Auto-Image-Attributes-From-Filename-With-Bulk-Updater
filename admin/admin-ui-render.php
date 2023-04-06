@@ -561,12 +561,12 @@ function iaff_bu_image_title_settings_callback() {
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 		
 		<label>
-			<input type="radio" name="iaff_settings[bu_titles_in_post]" value="1" <?php if ( isset($settings['bu_titles_in_post']) ) checked( '1', $settings['bu_titles_in_post'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_title_behaviour]" value="1" <?php if ( isset($settings['bu_title_behaviour']) ) checked( '1', $settings['bu_title_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<label>
-			<input type="radio" name="iaff_settings[bu_titles_in_post]" value="2" <?php if ( isset($settings['bu_titles_in_post']) ) checked( '2', $settings['bu_titles_in_post'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_title_behaviour]" value="2" <?php if ( isset($settings['bu_title_behaviour']) ) checked( '2', $settings['bu_title_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
@@ -619,12 +619,12 @@ function iaff_bu_alt_text_settings_callback() {
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
 		<label>
-			<input type="radio" name="iaff_settings[bu_alt_text_in_post]" value="1" <?php if ( isset($settings['bu_alt_text_in_post']) ) checked( '1', $settings['bu_alt_text_in_post'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_alt_text_behaviour]" value="1" <?php if ( isset($settings['bu_alt_text_behaviour']) ) checked( '1', $settings['bu_alt_text_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
 		<label>
-			<input type="radio" name="iaff_settings[bu_alt_text_in_post]" value="2" <?php if ( isset($settings['bu_alt_text_in_post']) ) checked( '2', $settings['bu_alt_text_in_post'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_alt_text_behaviour]" value="2" <?php if ( isset($settings['bu_alt_text_behaviour']) ) checked( '2', $settings['bu_alt_text_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		

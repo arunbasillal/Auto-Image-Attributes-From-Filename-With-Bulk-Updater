@@ -319,11 +319,11 @@ function iaff_get_settings() {
 
 		'bu_title_location_ml'		=> '1',
 		'bu_title_location_post'	=> '1',
-		'bu_titles_in_post'			=> '2',
+		'bu_title_behaviour'		=> '2',
 
 		'bu_alt_text_location_ml'	=> '1',
 		'bu_alt_text_location_post'	=> '1',
-		'bu_alt_text_in_post'		=> '2',
+		'bu_alt_text_behaviour'		=> '2',
 
 		'bu_caption_location_ml'	=> '1',
 		'bu_caption_behaviour'		=> '1',
@@ -378,6 +378,13 @@ function iaff_get_settings() {
 				$settings[$deprecated_setting] = $settings[$replacement_setting];
 			}
 		}
+
+		/**
+		 * bu_titles_in_post became bu_title_behaviour in 4.3 and
+		 * bu_alt_text_in_post became bu_alt_text_behaviour in 4.3.
+		 */
+		$settings['bu_titles_in_post'] = $settings['bu_title_behaviour'];
+		$settings['bu_alt_text_in_post'] = $settings['bu_alt_text_behaviour'];
 	}
 	
 	return $settings;
