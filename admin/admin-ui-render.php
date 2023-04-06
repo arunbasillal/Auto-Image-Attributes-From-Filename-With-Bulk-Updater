@@ -524,7 +524,8 @@ function iaff_bu_general_settings_callback() {
 /**
  * Bulk Updater Image Title Settings Callback
  *
- * @since 	1.4
+ * @since 1.4
+ * @since 4.3 Added "Update in:" checkboxes. "Bulk Updater Behaviour" is renamed to "Handling existing attributes:" and it's values are set to 1 and 2 to match existing values.
  */
 function iaff_bu_image_title_settings_callback() {	
 
@@ -566,7 +567,8 @@ function iaff_bu_image_title_settings_callback() {
 /**
  * Bulk Updater Image Alt Text Settings Callback
  *
- * @since 	1.4
+ * @since 1.4
+ * @since 4.3 Added "Update in:" checkboxes. "Bulk Updater Behaviour" is renamed to "Handling existing attributes:" and it's values are set to 1 and 2 to match existing values.
  */
 function iaff_bu_alt_text_settings_callback() {	
 
@@ -621,12 +623,12 @@ function iaff_bu_image_caption_settings_callback() {
 		<h4 style="margin-top: 5px;"><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
 		<label>
-			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="1" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '1', $settings['bu_caption_behaviour'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="0" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '0', $settings['bu_caption_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 
 		<label>
-			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="2" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '2', $settings['bu_caption_behaviour'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_caption_behaviour]" value="1" <?php if ( isset($settings['bu_caption_behaviour']) ) checked( '1', $settings['bu_caption_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		
@@ -651,12 +653,12 @@ function iaff_bu_image_description_settings_callback() {
 		<h4 style="margin-top: 5px;"><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
 		<label>
-			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="1" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '1', $settings['bu_description_behaviour'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="0" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '0', $settings['bu_description_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Update all attributes overwriting any existing attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 
 		<label>
-			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="2" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '2', $settings['bu_description_behaviour'] ); ?>/>
+			<input type="radio" name="iaff_settings[bu_description_behaviour]" value="1" <?php if ( isset($settings['bu_description_behaviour']) ) checked( '1', $settings['bu_description_behaviour'] ); ?>/>
 			<span><?php esc_attr_e( 'Preserve existing attributes and add missing attributes only.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 		

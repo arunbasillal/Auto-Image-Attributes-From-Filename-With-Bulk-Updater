@@ -170,36 +170,6 @@ function iaff_upgrader() {
 					$settings['bu_alt_text_location_post'] = 1; // Enable updating in Post HTML.
 			}
 
-			// Image Caption Settings: Check current Bulk Updater Behaviour for caption and upgrade settings.
-			switch( $settings['bu_caption_behaviour'] ) {
-
-				// Update all captions in media library.
-				case '0':
-					$settings['bu_caption_behaviour'] = 1; // New values of bu_caption_behaviour is either 1 or 2. 
-					break;
-
-				// Update captions in media library if no caption is set.
-				case '1':
-				default:
-					$settings['bu_caption_behaviour'] = 2;
-					break;
-			}
-
-			// Image Description Settings: Check current Bulk Updater Behaviour for description and upgrade settings.
-			switch( $settings['bu_description_behaviour'] ) {
-
-				// Update all captions in media library.
-				case '0':
-					$settings['bu_description_behaviour'] = 1; // New values of bu_description_behaviour is either 1 or 2. 
-					break;
-
-				// Update captions in media library if no caption is set.
-				case '1':
-				default:
-					$settings['bu_description_behaviour'] = 2;
-					break;
-			}
-
 			// Remove deleted settings.
 			unset(
 				$settings['bu_hyphens'],
