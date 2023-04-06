@@ -552,6 +552,10 @@ function iaff_bu_image_title_settings_callback() {
 
 		<?php if ( $disabled == 'disabled' ) { ?>
 			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+
+			<!-- Hidden fields added to preserve values during a save -->
+			<input type="hidden" name="iaff_settings[bu_title_location_ml]" value="1">
+			<input type="hidden" name="iaff_settings[bu_title_location_post]" value="1">
 		<?php } ?>
 		
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
@@ -606,6 +610,10 @@ function iaff_bu_alt_text_settings_callback() {
 
 		<?php if ( $disabled == 'disabled' ) { ?>
 			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+
+			<!-- Hidden fields added to preserve values during a save -->
+			<input type="hidden" name="iaff_settings[bu_alt_text_location_ml]" value="1">
+			<input type="hidden" name="iaff_settings[bu_alt_text_location_post]" value="1">
 		<?php } ?>
 		
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
