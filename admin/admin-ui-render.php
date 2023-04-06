@@ -531,6 +531,9 @@ function iaff_bu_image_title_settings_callback() {
 
 	// Get Settings
 	$settings = iaff_get_settings();
+
+	// Disable "Update in:" checkboxes if Image Attributes Pro is version 4.2 or lower.
+	$disabled = defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ? 'disabled' : '';
 	?>
 		
 	<fieldset>
@@ -538,14 +541,18 @@ function iaff_bu_image_title_settings_callback() {
 		<h4 style="margin-top: 5px;"><?php _e( 'Update in:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
 		<label for="iaff_settings[bu_title_location_ml]">
-			<input type="checkbox" name="iaff_settings[bu_title_location_ml]" id="iaff_settings[bu_title_location_ml]" value="1" <?php if ( isset($settings['bu_title_location_ml']) ) checked( '1', $settings['bu_title_location_ml'] ); ?>>
+			<input type="checkbox" name="iaff_settings[bu_title_location_ml]" id="iaff_settings[bu_title_location_ml]" value="1" <?php if ( isset($settings['bu_title_location_ml']) ) checked( '1', $settings['bu_title_location_ml'] ); echo $disabled;?>>
 			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
 		<label for="iaff_settings[bu_title_location_post]">
-			<input type="checkbox" name="iaff_settings[bu_title_location_post]" id="iaff_settings[bu_title_location_post]" value="1" <?php if ( isset($settings['bu_title_location_post']) ) checked( '1', $settings['bu_title_location_post'] ); ?>>
+			<input type="checkbox" name="iaff_settings[bu_title_location_post]" id="iaff_settings[bu_title_location_post]" value="1" <?php if ( isset($settings['bu_title_location_post']) ) checked( '1', $settings['bu_title_location_post'] ); echo $disabled;?>>
 			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
+
+		<?php if ( $disabled == 'disabled' ) { ?>
+			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+		<?php } ?>
 		
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 		
@@ -574,21 +581,32 @@ function iaff_bu_alt_text_settings_callback() {
 
 	// Get Settings
 	$settings = iaff_get_settings();
+
+	// Disable "Update in:" checkboxes if Image Attributes Pro is version 4.2 or lower.
+	$disabled = defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ? 'disabled' : '';
 	?>
 		
 	<fieldset>
 
 		<h4 style="margin-top: 5px;"><?php _e( 'Update in:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
+		<?php
+		
+		?>
+
 		<label for="iaff_settings[bu_alt_text_location_ml]">
-			<input type="checkbox" name="iaff_settings[bu_alt_text_location_ml]" id="iaff_settings[bu_alt_text_location_ml]" value="1" <?php if ( isset($settings['bu_alt_text_location_ml']) ) checked( '1', $settings['bu_alt_text_location_ml'] ); ?>>
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_ml]" id="iaff_settings[bu_alt_text_location_ml]" value="1" <?php if ( isset($settings['bu_alt_text_location_ml']) ) checked( '1', $settings['bu_alt_text_location_ml'] ); echo $disabled;?>>
 			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
 		<label for="iaff_settings[bu_alt_text_location_post]">
-			<input type="checkbox" name="iaff_settings[bu_alt_text_location_post]" id="iaff_settings[bu_alt_text_location_post]" value="1" <?php if ( isset($settings['bu_alt_text_location_post']) ) checked( '1', $settings['bu_alt_text_location_post'] ); ?>>
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_post]" id="iaff_settings[bu_alt_text_location_post]" value="1" <?php if ( isset($settings['bu_alt_text_location_post']) ) checked( '1', $settings['bu_alt_text_location_post'] ); echo $disabled;?>>
 			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
+
+		<?php if ( $disabled == 'disabled' ) { ?>
+			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+		<?php } ?>
 		
 		<h4><?php _e( 'Handling existing attributes:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
