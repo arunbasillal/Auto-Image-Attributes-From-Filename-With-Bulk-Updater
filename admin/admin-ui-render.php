@@ -249,10 +249,10 @@ function iaff_custom_filter_callback() {
 	<fieldset>
 		
 		<p><?php printf( __( 'Enter words or characters to filter separated by commas. Filter is case sensitive. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/custom-filter-and-regex-filter/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
-		<input type="text" name="iaff_settings[custom_filter]" placeholder="DCIM, img" class="all-options" value="<?php if ( isset( $settings['custom_filter'] ) && ( ! empty( $settings['custom_filter'] ) ) ) echo esc_attr( $settings['custom_filter'] ); ?>"/><br><br>
+		<input type="text" name="iaff_settings[custom_filter]" placeholder="DCIM, img" class="regular-text code" value="<?php if ( isset( $settings['custom_filter'] ) && ( ! empty( $settings['custom_filter'] ) ) ) echo esc_attr( $settings['custom_filter'] ); ?>"/><br><br>
 		
 		<p><?php _e('Filter with regular expression', 'auto-image-attributes-from-filename-with-bulk-updater') ?></p>
-		<input type="text" name="iaff_settings[regex_filter]" placeholder="/regex/" class="all-options" value="<?php if ( isset( $settings['regex_filter'] ) && ( ! empty( $settings['regex_filter'] ) ) ) echo esc_attr( $settings['regex_filter'] ); ?>"/><br>
+		<input type="text" name="iaff_settings[regex_filter]" placeholder="/regex/" class="regular-text code" value="<?php if ( isset( $settings['regex_filter'] ) && ( ! empty( $settings['regex_filter'] ) ) ) echo esc_attr( $settings['regex_filter'] ); ?>"/><br>
 		
 	</fieldset>
 	
@@ -334,7 +334,7 @@ function iaff_advanced_image_title_callback() {
 			<input type="radio" id="radio_custom_attribute_title" class="radio_custom_attribute" data-attribute="title" name="iaff_settings[title_source]" value="2" <?php if ( isset( $settings['title_source'] ) ) checked( '2', $settings['title_source'] ); ?>/>
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
-			<input type="text" id="text_custom_attribute_title" class="text_custom_attribute regular-text code" data-attribute="title" name="iaff_settings[custom_attribute_title]" value="<?php if ( isset( $settings['custom_attribute_title'] ) && ( ! empty( $settings['custom_attribute_title'] ) ) ) echo esc_attr( $settings['custom_attribute_title'] ); ?>" />
+			<input type="text" id="text_custom_attribute_title" class="text_custom_attribute regular-text code" data-attribute="title" name="iaff_settings[custom_attribute_title]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_title'] ) && ( ! empty( $settings['custom_attribute_title'] ) ) ) echo esc_attr( $settings['custom_attribute_title'] ); ?>" />
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'title' ); ?>
@@ -371,7 +371,7 @@ function iaff_advanced_image_alt_text_callback() {
 			<input type="radio" id="radio_custom_attribute_alt_text" class="radio_custom_attribute" data-attribute="alt_text" name="iaff_settings[alt_text_source]" value="2" <?php if ( isset( $settings['alt_text_source'] ) ) checked( '2', $settings['alt_text_source'] ); ?>/>
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
-			<input type="text" id="text_custom_attribute_alt_text" class="text_custom_attribute regular-text code" data-attribute="alt_text" name="iaff_settings[custom_attribute_alt_text]" value="<?php if ( isset( $settings['custom_attribute_alt_text'] ) && ( ! empty( $settings['custom_attribute_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_alt_text'] ); ?>" />
+			<input type="text" id="text_custom_attribute_alt_text" class="text_custom_attribute regular-text code" data-attribute="alt_text" name="iaff_settings[custom_attribute_alt_text]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_alt_text'] ) && ( ! empty( $settings['custom_attribute_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_alt_text'] ); ?>" />
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'alt_text' ); ?>
@@ -408,7 +408,7 @@ function iaff_advanced_image_caption_callback() {
 			<input type="radio" id="radio_custom_attribute_caption" class="radio_custom_attribute" data-attribute="caption" name="iaff_settings[caption_source]" value="2" <?php if ( isset( $settings['caption_source'] ) ) checked( '2', $settings['caption_source'] ); ?>/>
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
-			<input type="text" id="text_custom_attribute_caption" class="text_custom_attribute regular-text code" data-attribute="caption" name="iaff_settings[custom_attribute_caption]" value="<?php if ( isset( $settings['custom_attribute_caption'] ) && ( ! empty( $settings['custom_attribute_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_caption'] ); ?>" />
+			<input type="text" id="text_custom_attribute_caption" class="text_custom_attribute regular-text code" data-attribute="caption" name="iaff_settings[custom_attribute_caption]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_caption'] ) && ( ! empty( $settings['custom_attribute_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_caption'] ); ?>" />
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'caption' ); ?>
@@ -445,7 +445,7 @@ function iaff_advanced_image_description_callback() {
 			<input type="radio" id="radio_custom_attribute_description" class="radio_custom_attribute" data-attribute="description" name="iaff_settings[description_source]" value="2" <?php if ( isset( $settings['description_source'] ) ) checked( '2', $settings['description_source'] ); ?>/>
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
-			<input type="text" id="text_custom_attribute_description" class="text_custom_attribute regular-text code" data-attribute="description" name="iaff_settings[custom_attribute_description]" value="<?php if ( isset( $settings['custom_attribute_description'] ) && ( ! empty( $settings['custom_attribute_description'] ) ) ) echo esc_attr( $settings['custom_attribute_description'] ); ?>" />
+			<input type="text" id="text_custom_attribute_description" class="text_custom_attribute regular-text code" data-attribute="description" name="iaff_settings[custom_attribute_description]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_description'] ) && ( ! empty( $settings['custom_attribute_description'] ) ) ) echo esc_attr( $settings['custom_attribute_description'] ); ?>" />
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'description' ); ?>
