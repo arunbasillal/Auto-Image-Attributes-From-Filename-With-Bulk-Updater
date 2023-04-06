@@ -196,7 +196,7 @@ function iaff_register_settings() {
 		// Image Title Settings
 		add_settings_field(
 			'iaff_bu_image_title_settings',					// ID
-			sprintf( __( 'Image Title Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/' ),		// Title
+			sprintf( __( 'Image Title Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),		// Title
 			'iaff_bu_image_title_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -205,7 +205,7 @@ function iaff_register_settings() {
 		// Image Alt Text Settings
 		add_settings_field(
 			'iaff_bu_alt_text_settings',					// ID
-			sprintf( __('Image Alt Text Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/' ),	// Title
+			sprintf( __('Image Alt Text Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),	// Title
 			'iaff_bu_alt_text_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
 			'iaff_bu_settings_section_id'					// Settings Section ID
@@ -333,6 +333,52 @@ function iaff_get_settings() {
 	);
 
 	$settings = get_option( 'iaff_settings', $iaff_defaults );
+
+	/**
+	 * Add compatibility for Image Attributes Pro 4.2 or lower. 
+	 * 
+	 * In a case where the basic plugin is version 4.3 or higher but Image Attributes Pro is 4.2 or lower,
+	 * make sure that the older settings are still available.
+	 */
+	if ( defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ) {
+
+		$deprecated_settings = array(
+			'bu_hyphens',
+			'bu_under_score',
+			'bu_full_stop',
+			'bu_commas',
+			'bu_all_numbers',
+			'bu_apostrophe',
+			'bu_tilde',
+			'bu_plus',
+			'bu_pound',
+			'bu_ampersand',
+			'bu_round_brackets',
+			'bu_square_brackets',
+			'bu_curly_brackets',
+			'bu_custom_filter',
+			'bu_regex_filter',
+			'bu_capitalization',
+			'bu_title_source',
+			'custom_attribute_bu_title',
+			'bu_alt_text_source',
+			'custom_attribute_bu_alt_text',
+			'bu_caption_source',
+			'custom_attribute_bu_caption',
+			'bu_description_source',
+			'custom_attribute_bu_description',
+		);
+
+		foreach( $deprecated_settings as $deprecated_setting ) {
+
+			// All these deprecated settings are replaced by their equivalent setting without the bu_ prefix.
+			$replacement_setting = str_replace( 'bu_', '', $deprecated_setting );
+
+			if ( isset( $settings[$replacement_setting] ) ) {
+				$settings[$deprecated_setting] = $settings[$replacement_setting];
+			}
+		}
+	}
 	
 	return $settings;
 }

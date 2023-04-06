@@ -120,54 +120,43 @@ function iaff_upgrader() {
 		if ( $settings !== false ) {
 
 			/**
-			 * Add "Update in: Media Library" setting for all attributes.
+			 * Add "Update in: Media Library and Post HTML" setting for all attributes.
 			 * 
 			 * Up until now, there was no option to disable updating the Media Library.
 			 * So this setting being turned on is the default expected behaviour when users update.
+			 * 
+			 * For Post HTML, users had the option to disable it before by selecting "Update image titles in media library only.".
+			 * Setting it to be enabled might be unexpected to some users. However a compromise had to be made.
+			 * Users can still choose to downgrade to version 4.2 of the basic plugin and use it.
 			 */
 			$settings['bu_title_location_ml'] = 1;
 			$settings['bu_alt_text_location_ml'] = 1;
 			$settings['bu_caption_location_ml'] = 1;
 			$settings['bu_description_location_ml'] = 1;
 
-			// Image Title Settings: Check current Bulk Updater Behaviour for image title and upgrade settings.
-			switch( $settings['bu_titles_in_post'] ) {
+			$settings['bu_title_location_post'] = 1;
+			$settings['bu_alt_text_location_post'] = 1;
 
-				// Update image titles in media library only.
-				case '0':
-					$settings['bu_title_location_post'] = 0; // Disable updating in Post HTML.
-					$settings['bu_titles_in_post'] = 1; // New values of bu_titles_in_post is either 1 or 2. 
-					break;
-
-				// Update all image titles in media library and posts.
-				case '1':
-					$settings['bu_title_location_post'] = 1; // Enable updating in Post HTML.
-					break;
-
-				// Update image titles in media library and posts only if no title is set.
-				case '2':
-				default:
-					$settings['bu_title_location_post'] = 1; // Enable updating in Post HTML.
+			/**
+			 * If current image title setting is set to "Update image titles in media library only.",
+			 * then set it to "Update all attributes overwriting any existing attributes.".
+			 *
+			 * The value of "Update all attributes overwriting any existing attributes." is 1. 
+			 * Users can manage updating the Media Library using the "Update in:" setting.
+			 */
+			if ( $settings['bu_titles_in_post'] == '0' ) {
+				$settings['bu_titles_in_post'] = 1; // New values of bu_titles_in_post is either 1 or 2. 
 			}
 
-			// Image Alt Text Settings: Check current Bulk Updater Behaviour for alt text and upgrade settings.
-			switch( $settings['bu_alt_text_in_post'] ) {
-
-				// Update alt text in media library only.
-				case '0':
-					$settings['bu_alt_text_location_post'] = 0; // Disable updating in Post HTML.
-					$settings['bu_alt_text_in_post'] = 1; // New values of bu_alt_text_in_post is either 1 or 2. 
-					break;
-
-				// Update all alt text in media library and posts.
-				case '1':
-					$settings['bu_alt_text_location_post'] = 1; // Enable updating in Post HTML.
-					break;
-
-				// Update alt text in media library and posts only if no alt text is set.
-				case '2':
-				default:
-					$settings['bu_alt_text_location_post'] = 1; // Enable updating in Post HTML.
+			/**
+			 * If current alt text setting is set to "Update alt text in media library only.",
+			 * then set it to "Update all attributes overwriting any existing attributes.".
+			 *
+			 * The value of "Update all attributes overwriting any existing attributes." is 1. 
+			 * Users can manage updating the Media Library using the "Update in:" setting.
+			 */
+			if ( $settings['bu_alt_text_in_post'] == '0' ) {
+				$settings['bu_alt_text_in_post'] = 1; // New values of bu_alt_text_in_post is either 1 or 2. 
 			}
 
 			// Remove deleted settings.
