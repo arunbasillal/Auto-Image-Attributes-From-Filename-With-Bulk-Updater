@@ -470,9 +470,16 @@ function iaff_miscellaneous_callback() {
 	
 		<!-- Clean filename -->
 		<label for="iaff_settings[clean_filename]">
-			<input type="checkbox" name="iaff_settings[clean_filename]" id="iaff_settings[clean_filename]" value="1" <?php if ( isset($settings['clean_filename']) ) checked( '1', $settings['clean_filename'] ); ?>>
+			<input type="checkbox" name="iaff_settings[clean_filename]" id="iaff_settings[clean_filename]" value="1" <?php if ( isset( $settings['clean_filename'] ) ) checked( '1', $settings['clean_filename'] ); ?>>
 			<span><?php _e('Clean actual image filename after upload.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
+
+		<!-- Copy image attributes to post HTML while updating in Media Library -->
+		<label for="iaff_settings[copy_attachment_to_post]">
+			<input type="checkbox" name="iaff_settings[copy_attachment_to_post]" id="iaff_settings[copy_attachment_to_post]" value="1" <?php if ( isset( $settings['copy_attachment_to_post'] ) ) checked( '1', $settings['copy_attachment_to_post'] ); ?>>
+			<span><?php _e( 'Copy image attributes to post HTML while updating in Media Library.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label>
+		<p class="iaff-description"><?php printf( __( 'Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'http://imageattributespro.com/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
 		
 	</fieldset>
 		
