@@ -71,7 +71,7 @@ jQuery( document ).ready( function($){
 		}
 
 		// Show or hide setting when user clicks the General Setting checkboxes in Bulk Updater Settings.
-		$( '#iaff_settings\\['+value+'\\]' ).click( function () {
+		$( '#iaff_settings\\['+value+'\\]' ).click( function() {
 			$('.iaff_'+value+'_settings').toggle( function() {
 				if ( $('#iaff_settings\\['+value+'\\]' ).is( ':checked' ) == true ) {
 					$('.iaff_'+value+'_settings').show( 400, 'linear' );
@@ -80,5 +80,33 @@ jQuery( document ).ready( function($){
 				}
 			});
 		});
+	});
+
+	// Copy custom attributes to all attributes on clicking 'Copy to all attributes' link.
+	var customAttributeInputIDEndings = [
+		'title',
+		'alt_text',
+		'caption',
+		'description',
+	];
+
+	$( '.copy-attribute-link' ).click( function( e ) {
+		
+		e.preventDefault();
+		
+		var attribute = $( this ).attr( 'data-attribute' );
+		var customAttributeValue = $( '#text_custom_attribute_' + attribute ).val();
+
+		$.each( customAttributeInputIDEndings, function( index, value ) {
+			$( '#text_custom_attribute_' + value ).val( customAttributeValue );
+		});
+
+		// Saving current innerHTML to handle language translations.
+		var currentTargetInnerHTML = e.target.innerHTML;
+		e.target.innerHTML = $( this ).attr( 'data-copied-text' );
+
+		setTimeout( function(){
+			e.target.innerHTML = currentTargetInnerHTML;
+		}, 1000);
 	});
 });

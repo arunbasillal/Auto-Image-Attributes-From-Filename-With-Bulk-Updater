@@ -191,3 +191,21 @@
 	float: left;
 	margin-right: 5px;
 }
+
+#iaff-pro .copy-attribute-link {
+	margin-left: 5px;
+	opacity: 0;
+	transition: 0.4s;
+}
+
+#iaff-pro .copy-attribute-link:hover, #iaff-pro .iaff-image-attribute-settings-fieldset:hover .copy-attribute-link {
+	opacity: 1;
+}
+
+#iaff-pro .copy-attribute-link a {
+	text-decoration: none;
+	font-size: 12px;
+}
+#iaff-pro .copy-attribute-link a:focus {
+	box-shadow: none;
+}

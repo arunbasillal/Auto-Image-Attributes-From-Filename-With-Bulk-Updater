@@ -318,7 +318,7 @@ function iaff_advanced_image_title_callback() {
 	$settings = iaff_get_settings();
 	?>
 		
-	<fieldset>
+	<fieldset class="iaff-image-attribute-settings-fieldset">
 	
 		<label>
 			<input type="radio" name="iaff_settings[title_source]" value="0" <?php if ( isset($settings['title_source']) ) checked( '0', $settings['title_source'] ); ?>/>
@@ -335,6 +335,8 @@ function iaff_advanced_image_title_callback() {
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
 			<input type="text" id="text_custom_attribute_title" class="text_custom_attribute regular-text code" data-attribute="title" name="iaff_settings[custom_attribute_title]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_title'] ) && ( ! empty( $settings['custom_attribute_title'] ) ) ) echo esc_attr( $settings['custom_attribute_title'] ); ?>" />
+
+			<span class="copy-attribute-link" data-attribute="title" data-copied-text="<?php _e( 'Copied!', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"><a href="#"><?php _e( 'Copy to all attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></a></span>
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'title' ); ?>
@@ -355,7 +357,7 @@ function iaff_advanced_image_alt_text_callback() {
 	$settings = iaff_get_settings();
 	?>
 		
-	<fieldset>
+	<fieldset class="iaff-image-attribute-settings-fieldset">
 	
 		<label>
 			<input type="radio" name="iaff_settings[alt_text_source]" value="0" <?php if ( isset($settings['alt_text_source']) ) checked( '0', $settings['alt_text_source'] ); ?>/>
@@ -372,6 +374,8 @@ function iaff_advanced_image_alt_text_callback() {
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
 			<input type="text" id="text_custom_attribute_alt_text" class="text_custom_attribute regular-text code" data-attribute="alt_text" name="iaff_settings[custom_attribute_alt_text]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_alt_text'] ) && ( ! empty( $settings['custom_attribute_alt_text'] ) ) ) echo esc_attr( $settings['custom_attribute_alt_text'] ); ?>" />
+
+			<span class="copy-attribute-link" data-attribute="alt_text" data-copied-text="<?php _e( 'Copied!', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"><a href="#"><?php _e( 'Copy to all attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></a></span>
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'alt_text' ); ?>
@@ -392,7 +396,7 @@ function iaff_advanced_image_caption_callback() {
 	$settings = iaff_get_settings();
 	?>
 		
-	<fieldset>
+	<fieldset class="iaff-image-attribute-settings-fieldset">
 	
 		<label>
 			<input type="radio" name="iaff_settings[caption_source]" value="0" <?php if ( isset($settings['caption_source']) ) checked( '0', $settings['caption_source'] ); ?>/>
@@ -409,6 +413,8 @@ function iaff_advanced_image_caption_callback() {
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
 			<input type="text" id="text_custom_attribute_caption" class="text_custom_attribute regular-text code" data-attribute="caption" name="iaff_settings[custom_attribute_caption]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_caption'] ) && ( ! empty( $settings['custom_attribute_caption'] ) ) ) echo esc_attr( $settings['custom_attribute_caption'] ); ?>" />
+
+			<span class="copy-attribute-link" data-attribute="caption" data-copied-text="<?php _e( 'Copied!', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"><a href="#"><?php _e( 'Copy to all attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></a></span>
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'caption' ); ?>
@@ -429,7 +435,7 @@ function iaff_advanced_image_description_callback() {
 	$settings = iaff_get_settings();
 	?>
 		
-	<fieldset>
+	<fieldset class="iaff-image-attribute-settings-fieldset">
 	
 		<label>
 			<input type="radio" name="iaff_settings[description_source]" value="0" <?php if ( isset($settings['description_source']) ) checked( '0', $settings['description_source'] ); ?>/>
@@ -446,6 +452,8 @@ function iaff_advanced_image_description_callback() {
 			<span><?php esc_attr_e( 'Use custom attribute', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 			
 			<input type="text" id="text_custom_attribute_description" class="text_custom_attribute regular-text code" data-attribute="description" name="iaff_settings[custom_attribute_description]" placeholder="%filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_description'] ) && ( ! empty( $settings['custom_attribute_description'] ) ) ) echo esc_attr( $settings['custom_attribute_description'] ); ?>" />
+
+			<span class="copy-attribute-link" data-attribute="description" data-copied-text="<?php _e( 'Copied!', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"><a href="#"><?php _e( 'Copy to all attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></a></span>
 		</label><br>
 
 		<?php iaff_custom_attribute_tags_ui_render( 'description' ); ?>
@@ -471,7 +479,7 @@ function iaff_miscellaneous_callback() {
 		<!-- Clean filename -->
 		<label for="iaff_settings[clean_filename]">
 			<input type="checkbox" name="iaff_settings[clean_filename]" id="iaff_settings[clean_filename]" value="1" <?php if ( isset( $settings['clean_filename'] ) ) checked( '1', $settings['clean_filename'] ); ?>>
-			<span><?php _e('Clean actual image filename after upload.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
+			<span><?php _e( 'Clean actual image filename after upload.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label><br>
 
 		<!-- Copy image attributes to post HTML while updating in Media Library. -->
