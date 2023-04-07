@@ -474,12 +474,19 @@ function iaff_miscellaneous_callback() {
 			<span><?php _e('Clean actual image filename after upload.', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
 
-		<!-- Copy image attributes to post HTML while updating in Media Library -->
+		<!-- Copy image attributes to post HTML while updating in Media Library. -->
 		<label for="iaff_settings[copy_attachment_to_post]">
 			<input type="checkbox" name="iaff_settings[copy_attachment_to_post]" id="iaff_settings[copy_attachment_to_post]" value="1" <?php if ( isset( $settings['copy_attachment_to_post'] ) ) checked( '1', $settings['copy_attachment_to_post'] ); ?>>
 			<span><?php _e( 'Copy image attributes to post HTML while updating in Media Library.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label>
 		<p class="iaff-description"><?php printf( __( 'Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'http://imageattributespro.com/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
+
+		<!-- Update image attributes on post publish or update. -->
+		<label for="iaff_settings[update_attributes_on_save_post]">
+			<input type="checkbox" name="iaff_settings[update_attributes_on_save_post]" id="iaff_settings[update_attributes_on_save_post]" value="1" <?php if ( isset( $settings['update_attributes_on_save_post'] ) ) checked( '1', $settings['update_attributes_on_save_post'] ); ?>>
+			<span><?php _e( 'Update image attributes on post publish or update.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
+		</label>
+		<p class="iaff-description"><?php printf( __( 'Automatically updates image attributes when a post is published or updated. Ensures image attributes are always consistent with settings. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/update-image-attributes-on-save-post/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
 		
 	</fieldset>
 		

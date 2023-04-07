@@ -64,6 +64,7 @@
 #iaff-pro p.iaff-description {
 	color: #646970;
 	font-weight: 400;
+	margin-bottom: 7px;
 }
 
 #iaff-pro a.nav-tab:focus {
