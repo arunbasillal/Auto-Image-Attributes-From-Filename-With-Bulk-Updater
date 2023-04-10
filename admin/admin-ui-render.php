@@ -484,17 +484,19 @@ function iaff_miscellaneous_callback() {
 
 		<!-- Copy image attributes to post HTML while updating in Media Library. -->
 		<label for="iaff_settings[copy_attachment_to_post]">
-			<input type="checkbox" name="iaff_settings[copy_attachment_to_post]" id="iaff_settings[copy_attachment_to_post]" value="1" <?php if ( isset( $settings['copy_attachment_to_post'] ) ) checked( '1', $settings['copy_attachment_to_post'] ); ?>>
+			<input type="checkbox" name="iaff_settings[copy_attachment_to_post]" id="iaff_settings[copy_attachment_to_post]" value="1" <?php if ( isset( $settings['copy_attachment_to_post'] ) ) checked( '1', $settings['copy_attachment_to_post'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Copy image attributes to post HTML while updating in Media Library.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label>
 		<p class="iaff-description"><?php printf( __( 'Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'http://imageattributespro.com/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
 
 		<!-- Update image attributes on post publish or update. -->
 		<label for="iaff_settings[update_attributes_on_save_post]">
-			<input type="checkbox" name="iaff_settings[update_attributes_on_save_post]" id="iaff_settings[update_attributes_on_save_post]" value="1" <?php if ( isset( $settings['update_attributes_on_save_post'] ) ) checked( '1', $settings['update_attributes_on_save_post'] ); ?>>
+			<input type="checkbox" name="iaff_settings[update_attributes_on_save_post]" id="iaff_settings[update_attributes_on_save_post]" value="1" <?php if ( isset( $settings['update_attributes_on_save_post'] ) ) checked( '1', $settings['update_attributes_on_save_post'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Update image attributes on post publish or update.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label>
 		<p class="iaff-description"><?php printf( __( 'Automatically updates image attributes when a post is published or updated. Ensures image attributes are always consistent with settings. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/update-image-attributes-on-save-post/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
+
+		<?php iaff_print_disabled_notice( '4.3' ); ?>
 		
 	</fieldset>
 		
@@ -553,9 +555,6 @@ function iaff_bu_image_title_settings_callback() {
 
 	// Get Settings
 	$settings = iaff_get_settings();
-
-	// Disable "Update in:" checkboxes if Image Attributes Pro is version 4.2 or lower.
-	$disabled = defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ? 'disabled' : '';
 	?>
 		
 	<fieldset>
@@ -563,18 +562,18 @@ function iaff_bu_image_title_settings_callback() {
 		<h4 style="margin-top: 5px;"><?php _e( 'Update in:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h4>
 
 		<label for="iaff_settings[bu_title_location_ml]">
-			<input type="checkbox" name="iaff_settings[bu_title_location_ml]" id="iaff_settings[bu_title_location_ml]" value="1" <?php if ( isset($settings['bu_title_location_ml']) ) checked( '1', $settings['bu_title_location_ml'] ); echo $disabled;?>>
+			<input type="checkbox" name="iaff_settings[bu_title_location_ml]" id="iaff_settings[bu_title_location_ml]" value="1" <?php if ( isset($settings['bu_title_location_ml']) ) checked( '1', $settings['bu_title_location_ml'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
 		<label for="iaff_settings[bu_title_location_post]">
-			<input type="checkbox" name="iaff_settings[bu_title_location_post]" id="iaff_settings[bu_title_location_post]" value="1" <?php if ( isset($settings['bu_title_location_post']) ) checked( '1', $settings['bu_title_location_post'] ); echo $disabled;?>>
+			<input type="checkbox" name="iaff_settings[bu_title_location_post]" id="iaff_settings[bu_title_location_post]" value="1" <?php if ( isset($settings['bu_title_location_post']) ) checked( '1', $settings['bu_title_location_post'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
-		<?php if ( $disabled == 'disabled' ) { ?>
-			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+		<?php iaff_print_disabled_notice( '4.3' ); ?>
 
+		<?php if ( iaff_disabled( '4.3' ) == 'disabled' ) { ?>
 			<!-- Hidden fields added to preserve values during a save -->
 			<input type="hidden" name="iaff_settings[bu_title_location_ml]" value="1">
 			<input type="hidden" name="iaff_settings[bu_title_location_post]" value="1">
@@ -607,9 +606,6 @@ function iaff_bu_image_alttext_settings_callback() {
 
 	// Get Settings
 	$settings = iaff_get_settings();
-
-	// Disable "Update in:" checkboxes if Image Attributes Pro is version 4.2 or lower.
-	$disabled = defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ? 'disabled' : '';
 	?>
 		
 	<fieldset>
@@ -621,18 +617,18 @@ function iaff_bu_image_alttext_settings_callback() {
 		?>
 
 		<label for="iaff_settings[bu_alt_text_location_ml]">
-			<input type="checkbox" name="iaff_settings[bu_alt_text_location_ml]" id="iaff_settings[bu_alt_text_location_ml]" value="1" <?php if ( isset($settings['bu_alt_text_location_ml']) ) checked( '1', $settings['bu_alt_text_location_ml'] ); echo $disabled;?>>
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_ml]" id="iaff_settings[bu_alt_text_location_ml]" value="1" <?php if ( isset($settings['bu_alt_text_location_ml']) ) checked( '1', $settings['bu_alt_text_location_ml'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
 		<label for="iaff_settings[bu_alt_text_location_post]">
-			<input type="checkbox" name="iaff_settings[bu_alt_text_location_post]" id="iaff_settings[bu_alt_text_location_post]" value="1" <?php if ( isset($settings['bu_alt_text_location_post']) ) checked( '1', $settings['bu_alt_text_location_post'] ); echo $disabled;?>>
+			<input type="checkbox" name="iaff_settings[bu_alt_text_location_post]" id="iaff_settings[bu_alt_text_location_post]" value="1" <?php if ( isset($settings['bu_alt_text_location_post']) ) checked( '1', $settings['bu_alt_text_location_post'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Post HTML', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?></span>
 		</label><br>
 
-		<?php if ( $disabled == 'disabled' ) { ?>
-			<p class="iaff-description"><?php printf( __( 'Note: Requires Image Attributes Pro 4.3 or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ); ?></p>
+		<?php iaff_print_disabled_notice( '4.3' ); ?>
 
+		<?php if ( iaff_disabled( '4.3' ) == 'disabled' ) { ?>
 			<!-- Hidden fields added to preserve values during a save -->
 			<input type="hidden" name="iaff_settings[bu_alt_text_location_ml]" value="1">
 			<input type="hidden" name="iaff_settings[bu_alt_text_location_post]" value="1">
