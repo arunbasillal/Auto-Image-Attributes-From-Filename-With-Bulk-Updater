@@ -153,6 +153,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 = 4.3 =
 * Date: April.2023.
 * Enhancement: Compatibility with Image Attributes Pro version 4.3. [Check what's new in 4.3](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+* Bug Fix: Fixed an issue where non English characters in image filename were not being read correctly. This fix will resolve such issues for new uploads going forward. Since information is already lost when WordPress sanitize the filename, there is no way to recover it once the image upload is complete.
 
 = 4.2 =
 * Date: 28.March.2023.
