@@ -445,6 +445,10 @@ function iaff_custom_attribute_tags() {
 		'tag'				=> __( 'Post or product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'excerpt'			=> __( 'Excerpt or product short description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 		'copymedialibrary'	=> __( 'Copy attribute from Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagetitle'		=> __( 'Image Title', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagealttext'		=> __( 'Image Alt Text', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagecaption'		=> __( 'Image Caption', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagedescription'	=> __( 'Image Description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
 	/**
