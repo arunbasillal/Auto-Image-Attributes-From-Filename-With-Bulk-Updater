@@ -457,37 +457,3 @@ function iaff_custom_attribute_tags() {
 	 */
 	return apply_filters( 'iaff_custom_attribute_tags', $available_tags );
 }
-
-/**
- * Print 'disabled' attribute to disable form inputs if compatible version if Image Attributes Pro is not installed.
- * 
- * @since 4.3
- * 
- * @param $version (string) The compatible version required to use the form input.
- * 
- * @return (string) Returns the string 'disabled' if installed version of Image Attributes Pro is lower than required version. Empty string otherwise.
- */
-function iaff_disabled( $version ) {
-	return defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, $version, '<' ) ? 'disabled' : '';
-}
-
-/**
- * Print notice to inform user why an option is disabled.
- * 
- * @since 4.3
- * 
- * @param $version (string) The compatible version required to use the form input.
- * 
- * @return (string) HTML notice if installed version of Image Attributes Pro is lower than required version. Empty string otherwise.
- */
-function iaff_print_disabled_notice( $version ) {
-
-	if ( iaff_disabled( $version ) != 'disabled' ) {
-		return '';
-	}
-
-	echo 
-		'<p class="iaff-description">' . 
-			sprintf( __( 'Note: Requires Image Attributes Pro ' . $version . ' or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ) . 
-		'</p>';
-}
