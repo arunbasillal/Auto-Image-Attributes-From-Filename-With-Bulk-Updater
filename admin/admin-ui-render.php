@@ -480,7 +480,8 @@ function iaff_miscellaneous_callback() {
 		<label for="iaff_settings[clean_filename]">
 			<input type="checkbox" name="iaff_settings[clean_filename]" id="iaff_settings[clean_filename]" value="1" <?php if ( isset( $settings['clean_filename'] ) ) checked( '1', $settings['clean_filename'] ); ?>>
 			<span><?php _e( 'Clean actual image filename after upload.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
-		</label><br>
+		</label>
+		<p class="iaff-description"><?php printf( __( 'Cleans filename of new image uploads using selected filters, including custom filters.', 'auto-image-attributes-from-filename-with-bulk-updater' ) ); ?></p>
 
 		<!-- Copy image attributes to post HTML while updating in Media Library. -->
 		<label for="iaff_settings[copy_attachment_to_post]">
