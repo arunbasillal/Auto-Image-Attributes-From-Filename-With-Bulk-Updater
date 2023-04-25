@@ -488,7 +488,7 @@ function iaff_miscellaneous_callback() {
 			<input type="checkbox" name="iaff_settings[copy_attachment_to_post]" id="iaff_settings[copy_attachment_to_post]" value="1" <?php if ( isset( $settings['copy_attachment_to_post'] ) ) checked( '1', $settings['copy_attachment_to_post'] ); echo iaff_disabled( '4.3' ); ?>>
 			<span><?php _e( 'Copy image attributes to post HTML while updating in Media Library.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></span>
 		</label>
-		<p class="iaff-description"><?php printf( __( 'Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'http://imageattributespro.com/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
+		<p class="iaff-description"><?php printf( __( 'Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/auto-copy-image-attributes-to-post-html-from-media-library/?utm_source=iaff-basic&utm_medium=advanced-tab' ); ?></p>
 
 		<!-- Update image attributes on post publish or update. -->
 		<label for="iaff_settings[update_attributes_on_save_post]">
@@ -1100,6 +1100,6 @@ function iaff_print_disabled_notice( $version ) {
 
 	echo 
 		'<p class="iaff-description">' . 
-			sprintf( __( 'Note: Requires Image Attributes Pro ' . $version . ' or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ) . 
+			sprintf( __( 'Note: Requires Image Attributes Pro %s or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), $version, 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ) . 
 		'</p>';
 }
