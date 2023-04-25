@@ -72,22 +72,23 @@ With the Image Attributes Pro bulk updater you can:
 
 * Update image title and alt text for images inserted into posts and custom post types. Not just the media library. [What is the difference?](https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=github&utm_medium=readme.md)
 * Fine tune all settings. Choose what to update.
-* Update image titles / alt text in media library only. Image titles / alt text in existing posts will be left unchanged.
-* Update image titles / alt text in media library and existing posts.
-* Update image titles / alt text in media library and existing posts only if no title / alt text is set. Existing image titles / alt text will not be changed.
+* Update image titles / alt text in media library and / or existing posts.
+* Update image titles / alt text in media library and / or existing posts only if no title / alt text is set. Existing image titles / alt text will be preserved.
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%`. Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%` and [many more](https://imageattributespro.com/custom-image-attribute-tags/?utm_source=github&utm_medium=readme.md). Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
-* Bulk update image attributes in [ACF's WYSIWYG Editor](https://imageattributespro.com/acf-compatibility/?utm_source=github&utm_medium=readme.md) and [Divi theme](https://imageattributespro.com/divi-compatibility/?utm_source=wordpress.org&utm_medium=readme.md).
+* Bulk update image attributes in [ACF's WYSIWYG Editor](https://imageattributespro.com/acf-compatibility/?utm_source=github&utm_medium=readme.md) and [Divi theme](https://imageattributespro.com/divi-compatibility/?utm_source=github&utm_medium=readme.md.md).
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
 * Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
-* Disable updating of attributes in media library completely using the [iaffpro_update_media_library filter](https://imageattributespro.com/codex/iaffpro_update_media_library/?utm_source=github&utm_medium=readme.md).
+* Disable updating of attributes in media library completely and just updated attributes in Post HTML or vice versa.
 * Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=github&utm_medium=readme.md)
 
 Other Image Attributes Pro features:
 
 * Bulk Update image attributes from WordPress Media Library. Select images and choose `Update image attributes` Bulk action in Media Library (list view). [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=github&utm_medium=readme.md)
 * Bulk Update image attributes from WordPress admin page for Posts, Pages and WooCommerce Products. Select the posts, pages or WooCommerce products in bulk and choose "Update image attributes" Bulk action. [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=github&utm_medium=readme.md)
+* Copy image attributes to post HTML while updating in Media Library. Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. [Read more.](https://imageattributespro.com/auto-copy-image-attributes-to-post-html-from-media-library/?utm_source=github&utm_medium=readme.md)
+* Update image attributes on post publish or update. Automatically updates image attributes when a post is published or updated. Ensures image attributes are always consistent with settings. [Read more.](https://imageattributespro.com/update-image-attributes-on-save-post/?utm_source=github&utm_medium=readme.md)
 
 For screenshots, FAQ and further details, please see the [product website](https://imageattributespro.com/?utm_source=github&utm_medium=readme.md).
 

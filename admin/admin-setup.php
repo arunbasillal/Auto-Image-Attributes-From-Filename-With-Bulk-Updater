@@ -193,67 +193,52 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id'					// Settings Section ID
 		);
 		
-		// Filter Settings
-		add_settings_field(
-			'iaff_bu_filter_settings',						// ID
-			__( 'Filter Settings<p class="iaff-description">Selected characters will be removed from filename text before using them as image attributes.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ),			// Title
-			'iaff_bu_filter_settings_callback',				// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
-		// Custom Filter
-		add_settings_field(
-			'iaff_bu_custom_filter_settings',				// ID
-			__('Custom Filter', 'auto-image-attributes-from-filename-with-bulk-updater'),				// Title
-			'iaff_bu_custom_filter_callback',				// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
-		// Capitalization Settings
-		add_settings_field(
-			'iaff_bu_capitalization_settings',				// ID
-			__('Capitalization Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
-			'iaff_bu_capitalization_settings_callback',		// Callback function
-			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
-		);
-		
 		// Image Title Settings
 		add_settings_field(
 			'iaff_bu_image_title_settings',					// ID
-			__('Image Title Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),		// Title
+			sprintf( __( 'Image Title Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),		// Title
 			'iaff_bu_image_title_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_title_settings',
+			),
 		);
 		
 		// Image Alt Text Settings
 		add_settings_field(
-			'iaff_bu_alt_text_settings',					// ID
-			__('Image Alt Text Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
-			'iaff_bu_alt_text_settings_callback',			// Callback function
+			'iaff_bu_image_alttext_settings',					// ID
+			sprintf( __('Image Alt Text Settings<p class="iaff-description">Recommended to update in both the Media Library and post HTML. <a href="%s" target="_blank">Read more.</a></p>', 'auto-image-attributes-from-filename-with-bulk-updater'), 'https://imageattributespro.com/how-wordpress-store-image-attributes/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ),	// Title
+			'iaff_bu_image_alttext_settings_callback',			// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_alttext_settings',
+			),
 		);
 		
 		// Image Caption Settings
 		add_settings_field(
 			'iaff_bu_image_caption_settings',				// ID
-			__('Image Caption Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
+			__('Image Caption Settings<p class="iaff-description">Caption is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),	// Title
 			'iaff_bu_image_caption_settings_callback',		// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_caption_settings',
+			),
 		);
 		
 		// Image Description Settings
 		add_settings_field(
 			'iaff_bu_image_description_settings',				// ID
-			__('Image Description Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
+			__('Image Description Settings<p class="iaff-description">Description is updated only in the Media Library.</p>', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
 			'iaff_bu_image_description_settings_callback',	// Callback function
 			'iaff_bu_settings_section',						// Page slug
-			'iaff_bu_settings_section_id'					// Settings Section ID
+			'iaff_bu_settings_section_id',					// Settings Section ID
+			array(
+				'class'	=> 'iaff_bu_image_description_settings',
+			),
 		);
 
 }
@@ -272,27 +257,17 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	
 	// Sanitize Custom Filter
 	$settings['custom_filter']	= sanitize_text_field( $settings['custom_filter'] );
-	$settings['bu_custom_filter']	= sanitize_text_field( $settings['bu_custom_filter'] );
-	
-	// Sanitize Custom Attributes
-	$settings['custom_attribute_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_title'] );
-	$settings['custom_attribute_bu_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_bu_title'] );
-	$settings['custom_attribute_alt_text'] 			= iaff_sanitize_text_field( $settings['custom_attribute_alt_text'] );
-	$settings['custom_attribute_bu_alt_text'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_alt_text'] );
-	$settings['custom_attribute_caption'] 			= iaff_sanitize_text_field( $settings['custom_attribute_caption'] );
-	$settings['custom_attribute_bu_caption'] 		= iaff_sanitize_text_field( $settings['custom_attribute_bu_caption'] );
-	$settings['custom_attribute_description'] 		= iaff_sanitize_text_field( $settings['custom_attribute_description'] );
-	$settings['custom_attribute_bu_description'] 	= iaff_sanitize_text_field( $settings['custom_attribute_bu_description'] );
-	
+
 	// Validating Regex
-	if( @preg_match( $settings['regex_filter'], null ) === false ) {
+	if ( @preg_match( $settings['regex_filter'], null ) === false ) {
 		unset( $settings['regex_filter'] );
 	}
 	
-	// Validating Bulk Updater Regex
-	if( @preg_match( $settings['bu_regex_filter'], null ) === false ) {
-		unset( $settings['bu_regex_filter'] );
-	}
+	// Sanitize Custom Attributes
+	$settings['custom_attribute_title'] 			= iaff_sanitize_text_field( $settings['custom_attribute_title'] );
+	$settings['custom_attribute_alt_text'] 			= iaff_sanitize_text_field( $settings['custom_attribute_alt_text'] );
+	$settings['custom_attribute_caption'] 			= iaff_sanitize_text_field( $settings['custom_attribute_caption'] );
+	$settings['custom_attribute_description'] 		= iaff_sanitize_text_field( $settings['custom_attribute_description'] );
 	
 	return $settings;
 }
@@ -328,36 +303,101 @@ function iaff_sanitize_text_field( $str ) {
 function iaff_get_settings() {
 
 	$iaff_defaults = array(
-		'image_title' 			=> '1',
-		'image_caption' 		=> '1',
+		'image_title' 				=> '1',
+		'image_caption' 			=> '1',
 		'image_description' 		=> '1',
-		'image_alttext' 		=> '1',
+		'image_alttext' 			=> '1',
+
 		'image_title_to_html' 		=> '1',
-		'preview_pro'			=> '0',
-		'hyphens' 			=> '1',
-		'under_score' 			=> '1',
-		'capitalization'		=> '0',
-		'title_source'			=> '0',
-		'alt_text_source'		=> '0',
-		'caption_source'		=> '0',
+
+		'preview_pro'				=> '0',
+
+		'hyphens' 					=> '1',
+		'under_score' 				=> '1',
+
+		'capitalization'			=> '0',
+
+		'title_source'				=> '0',
+		'alt_text_source'			=> '0',
+		'caption_source'			=> '0',
 		'description_source'		=> '0',
-		'clean_filename'		=> '1',
-		'bu_image_title' 		=> '1',
-		'bu_image_caption' 		=> '1',
+
+		'clean_filename'			=> '1',
+
+		'bu_image_title' 			=> '1',
+		'bu_image_caption' 			=> '1',
 		'bu_image_description' 		=> '1',
-		'bu_image_alttext' 		=> '1',
-		'bu_capitalization'		=> '0',
-		'bu_title_source'		=> '0',
-		'bu_titles_in_post'		=> '2',
-		'bu_alt_text_source'		=> '0',
-		'bu_alt_text_in_post'		=> '2',
-		'bu_caption_source'		=> '0',
+		'bu_image_alttext' 			=> '1',
+
+		'bu_title_location_ml'		=> '1',
+		'bu_title_location_post'	=> '1',
+		'bu_title_behaviour'		=> '2',
+
+		'bu_alt_text_location_ml'	=> '1',
+		'bu_alt_text_location_post'	=> '1',
+		'bu_alt_text_behaviour'		=> '2',
+
+		'bu_caption_location_ml'	=> '1',
 		'bu_caption_behaviour'		=> '1',
-		'bu_description_source'		=> '0',
+
+		'bu_description_location_ml'=> '1',
 		'bu_description_behaviour'	=> '1',
 	);
 
-	$settings = get_option('iaff_settings', $iaff_defaults);
+	$settings = get_option( 'iaff_settings', $iaff_defaults );
+
+	/**
+	 * Add compatibility for Image Attributes Pro 4.2 or lower. 
+	 * 
+	 * In a case where the basic plugin is version 4.3 or higher but Image Attributes Pro is 4.2 or lower,
+	 * make sure that the older settings are still available.
+	 */
+	if ( defined( 'IAFFPRO_VERSION_NUM' ) && version_compare( IAFFPRO_VERSION_NUM, '4.2', '<=' ) ) {
+
+		$deprecated_settings = array(
+			'bu_hyphens',
+			'bu_under_score',
+			'bu_full_stop',
+			'bu_commas',
+			'bu_all_numbers',
+			'bu_apostrophe',
+			'bu_tilde',
+			'bu_plus',
+			'bu_pound',
+			'bu_ampersand',
+			'bu_round_brackets',
+			'bu_square_brackets',
+			'bu_curly_brackets',
+			'bu_custom_filter',
+			'bu_regex_filter',
+			'bu_capitalization',
+			'bu_title_source',
+			'custom_attribute_bu_title',
+			'bu_alt_text_source',
+			'custom_attribute_bu_alt_text',
+			'bu_caption_source',
+			'custom_attribute_bu_caption',
+			'bu_description_source',
+			'custom_attribute_bu_description',
+		);
+
+		foreach( $deprecated_settings as $deprecated_setting ) {
+
+			// All these deprecated settings are replaced by their equivalent setting without the bu_ prefix.
+			$replacement_setting = str_replace( 'bu_', '', $deprecated_setting );
+
+			if ( isset( $settings[$replacement_setting] ) ) {
+				$settings[$deprecated_setting] = $settings[$replacement_setting];
+			}
+		}
+
+		/**
+		 * bu_titles_in_post became bu_title_behaviour in 4.3 and
+		 * bu_alt_text_in_post became bu_alt_text_behaviour in 4.3.
+		 */
+		$settings['bu_titles_in_post'] = $settings['bu_title_behaviour'];
+		$settings['bu_alt_text_in_post'] = $settings['bu_alt_text_behaviour'];
+	}
 	
 	return $settings;
 }
@@ -398,12 +438,17 @@ add_action( 'admin_enqueue_scripts', 'iaff_enqueue_js_and_css' );
 function iaff_custom_attribute_tags() {
 	
 	$available_tags = array(
-		'filename'		=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'posttitle'		=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'sitetitle'		=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'category'		=> __( 'Post or product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'tag'			=> __( 'Post or product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
-		'excerpt'		=> __( 'Excerpt or product short description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'filename'			=> __( 'Image filename', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'posttitle'			=> __( 'Title of the post, page or product where the image is used', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'sitetitle'			=> __( 'Site Title defined in WordPress General Settings', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'category'			=> __( 'Post or product Category', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'tag'				=> __( 'Post or product Tag', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'excerpt'			=> __( 'Excerpt or product short description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'copymedialibrary'	=> __( 'Copy attribute from Media Library', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagetitle'		=> __( 'Image Title', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagealttext'		=> __( 'Image Alt Text', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagecaption'		=> __( 'Image Caption', 'auto-image-attributes-from-filename-with-bulk-updater' ),
+		'imagedescription'	=> __( 'Image Description', 'auto-image-attributes-from-filename-with-bulk-updater' ),
 	);
 	
 	/**
