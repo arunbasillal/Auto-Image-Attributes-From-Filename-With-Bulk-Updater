@@ -202,7 +202,7 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id',					// Settings Section ID
 			array(
 				'class'	=> 'iaff_bu_image_title_settings',
-			),
+			)
 		);
 		
 		// Image Alt Text Settings
@@ -214,7 +214,7 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id',					// Settings Section ID
 			array(
 				'class'	=> 'iaff_bu_image_alttext_settings',
-			),
+			)
 		);
 		
 		// Image Caption Settings
@@ -226,7 +226,7 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id',					// Settings Section ID
 			array(
 				'class'	=> 'iaff_bu_image_caption_settings',
-			),
+			)
 		);
 		
 		// Image Description Settings
@@ -238,7 +238,7 @@ function iaff_register_settings() {
 			'iaff_bu_settings_section_id',					// Settings Section ID
 			array(
 				'class'	=> 'iaff_bu_image_description_settings',
-			),
+			)
 		);
 
 }

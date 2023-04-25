@@ -151,6 +151,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 4.3.1 =
+* Date: 25.April.2023.
+* Bug Fix: Fix a bug where trailing commas were used with unset and function calls. This is unsupported in PHP versions older than 7.3.
+
 = 4.3 =
 * Date: 25.April.2023.
 * Enhancement: Compatibility with Image Attributes Pro version 4.3. [Check what's new in 4.3](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
@@ -261,6 +265,10 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.3.1 =
+* Date: 25.April.2023.
+* Bug Fix: Fix a bug where trailing commas were used with unset and function calls. This is unsupported in PHP versions older than 7.3.
 
 = 4.3 =
 * Date: 25.April.2023.
