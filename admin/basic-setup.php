@@ -68,7 +68,7 @@ function iaff_plugin_row_meta( $links, $file ) {
 	
 	if ( strpos( $file, 'iaff_image-attributes-from-filename.php' ) !== false ) {
 		$new_links = array(
-				'upgrade' 	=> '<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=plugins-list" target="_blank">Upgrade To Image Attributes Pro</a>',
+				'upgrade' 	=> '<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=plugins-list" target="_blank">' . __( 'Upgrade To Image Attributes Pro', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '</a>',
 				);
 		$links = array_merge( $links, $new_links );
 	}
