@@ -869,7 +869,7 @@ function iaff_admin_interface_render () {
 						
 					<?php if ( $disabled_attribute === 'disabled' ) { ?>
 						<div class="error inline"> 
-							<p><strong><?php printf( __( '<a href="%s">Please enter license info</a> to activate the plugin and run the bulk updater.', 'auto-image-attributes-from-filename-with-bulk-updater' ), admin_url( 'options-general.php?page=image-attributes-pro-activation' ) ); ?></strong></p>
+							<p><strong><?php printf( __( '<a href="%s">Please enter license info</a> to activate the plugin and run the bulk updater.', 'auto-image-attributes-from-filename-with-bulk-updater' ), admin_url( 'options.php?page=image-attributes-pro-activation' ) ); ?></strong></p>
 						</div>
 					<?php } ?>
 					
