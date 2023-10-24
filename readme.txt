@@ -151,6 +151,11 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 4.4 =
+* Date: 
+* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image.
+* UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
+
 = 4.3.1 =
 * Date: 25.April.2023.
 * Bug Fix: Fix a bug where trailing commas were used with unset and function calls. This is unsupported in PHP versions older than 7.3.
