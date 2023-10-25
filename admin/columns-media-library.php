@@ -23,7 +23,7 @@ function iaff_manage_media_columns_add_columns( $columns ) {
     $columns['iaff_image_title'] = esc_html__( 'Title', 'auto-image-attributes-from-filename-with-bulk-updater' );
     $columns['iaff_image_alt'] = esc_html__( 'Alternative Text', 'auto-image-attributes-from-filename-with-bulk-updater' );
     $columns['iaff_image_caption'] = esc_html__( 'Caption', 'auto-image-attributes-from-filename-with-bulk-updater' );
-    $columns['iaff_image_description'] = esc_html__( 'Description', 'auto-image-attributes-from-filename-with-bulk-updater' );
+    $columns['iaff_image_description'] = esc_html__( 'Description', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '&nbsp;<a target="_blank" title="Read More." href="https://imageattributespro.com/media-library-bulk-editing/?utm_source=iaff-basic&utm_medium=media-library-info-button"><span class="dashicons dashicons-info"></span></a>';
 
     return $columns;
 }
