@@ -603,9 +603,11 @@ add_filter('wp_get_attachment_link', 'iaff_lcb_restore_title_to_gallery', 10, 4)
 /**
  * Replace commas in filename with hyphens
  *
- * WordPress removes commas during file upload. This function replaces commas with hyphens so that we can replace them later. Without this red,pill.jpg will become redpill.jpg and we cannot extract the word 'Red Pill' with the space out of it. 
- * @since	1.3
- * @refer	https://codex.wordpress.org/Plugin_API/Filter_Reference/wp_handle_upload_prefilter
+ * WordPress removes commas during file upload. This function replaces commas with hyphens so that we can replace them later. 
+ * Without this red,pill.jpg will become redpill.jpg and we cannot extract the word 'Red Pill' with the space out of it.
+ * 
+ * @since 1.3
+ * @refer https://codex.wordpress.org/Plugin_API/Filter_Reference/wp_handle_upload_prefilter
  */
 function iaff_clean_filename( $file ) {
 	
@@ -614,25 +616,25 @@ function iaff_clean_filename( $file ) {
 	);
 	
 	// Return if file is not an image file
-	if ( ! in_array($file['type'],$image_extensions) )
+	if ( ! in_array( $file['type'], $image_extensions ) ) {
 		return $file;
+	}
 	
 	// Clean filename with IAFF Pro
-	if( iaff_is_pro() ) {
-		
-		return iaffpro_clean_filename($file);
+	if ( iaff_is_pro() ) {
+		return iaffpro_clean_filename( $file );
 	}
 	
 	// Get Settings
 	$settings = iaff_get_settings();
 	
-	if ( isset( $settings['commas'] ) && boolval($settings['commas']) ) {
+	if ( isset( $settings['commas'] ) && boolval( $settings['commas'] ) ) {
 		$file['name'] = str_replace( ',', '-', $file['name'] );
 	}
 	
 	return $file;
 }
-add_filter('wp_handle_upload_prefilter', 'iaff_clean_filename' );
+add_filter( 'wp_handle_upload_prefilter', 'iaff_clean_filename' );
 
 /**
  * Extract, format and return image name from filename.
