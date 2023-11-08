@@ -481,10 +481,11 @@ function iaff_activate_image_attributes_pro_plugin() {
 	// Authentication
 	if ( 
 		! current_user_can( 'manage_options' ) || 
-		! ( isset( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'] ) && wp_verify_nonce( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'], 'activate_image_attributes_pro_plugin' ) )
+		! ( isset( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'] ) && wp_verify_nonce( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'], 'activate_image_attributes_pro_plugin' ) ) || 
+		is_plugin_active( 'auto-image-attributes-pro/auto-image-attributes-pro.php' )
 	) {
 		
-		// Return to referer if authentication fails.
+		// Return to referer if authentication fails or if plugin is already active.
 		wp_redirect( $redirect_url );
 		exit;
 	}
