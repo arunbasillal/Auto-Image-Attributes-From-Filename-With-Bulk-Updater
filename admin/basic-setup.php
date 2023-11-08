@@ -104,6 +104,15 @@ function iaff_admin_notices() {
 		// Delete transient
 		delete_transient( 'iaff_upgrade_complete_admin_notice' );
 	}
+
+	// Image Attributes Pro activation notice (when activated from basic plugin sidebar)
+	if ( get_transient( 'iaff_activate_image_attributes_pro_plugin_complete' ) ) {
+
+		echo '<div class="notice notice-success is-dismissible"><p>' . __( 'Image Attributes Pro activated', 'auto-image-attributes-from-filename-with-bulk-updater' ) . '</p></div>';
+
+		// Delete transient. 
+		delete_transient( 'iaff_activate_image_attributes_pro_plugin_complete' );
+	}
 }
 add_action( 'admin_notices', 'iaff_admin_notices' );
 

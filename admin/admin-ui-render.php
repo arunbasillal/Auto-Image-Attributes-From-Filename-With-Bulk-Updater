@@ -1002,11 +1002,23 @@ function iaff_admin_interface_render () {
 			</div><!-- .iaff-admin-options-main -->
 			
 			<!-- Upgrade to pro sidebar -->
-			<?php if ( ! iaff_is_pro() ) { ?>
+			<?php if ( ! iaff_is_pro() ) { 
+				
+				// Modify sidebar if Image Attributes Pro is installed, but not activated.
+				if ( file_exists( WP_PLUGIN_DIR . '/auto-image-attributes-pro/auto-image-attributes-pro.php' ) ) {
+					$button_text =  __( 'Activate Image Attributes Pro', 'auto-image-attributes-from-filename-with-bulk-updater' );
+					$button_link = wp_nonce_url( admin_url( 'admin-post.php?action=iaff_activate_image_attributes_pro_plugin' ), 'activate_image_attributes_pro_plugin', 'iaff_activate_image_attributes_pro_plugin_nonce_name' );
+					$button_target = '';
+				} else {
+					$button_text = __( 'Upgrade to Pro', 'auto-image-attributes-from-filename-with-bulk-updater' );
+					$button_link = 'https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=coupon-sidebar';
+					$button_target = '_blank'; 
+				}
+				?>
 				<div class="iaff-admin-options-sidebar">
 					
 					<div class="iaff-upgrade-header">
-						<a href="https://imageattributespro.com/?utm_source=iaff-basic&utm_medium=coupon-sidebar" target="_blank">
+						<a href="<?php echo $button_link; ?>" target="<?php echo $button_target; ?>">
 							<div class="iaff-icon"></div>
 							<h1 class="patua"><?php _e( 'Unlock Traffic', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></h1>
 							<ul>
@@ -1016,7 +1028,7 @@ function iaff_admin_interface_render () {
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Update attributes within posts', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 								<li><span class="dashicons dashicons-yes"></span><?php _e('Build custom attributes and fine tune settings', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></li>
 							</ul>
-							<button class="button" style="width:100%">Upgrade to Pro &rarr; </button>
+							<button class="button" style="width:100%"><?php echo $button_text; ?> &rarr; </button>
 						</a>
 					</div><!-- .iaff-upgrade-header -->
 					

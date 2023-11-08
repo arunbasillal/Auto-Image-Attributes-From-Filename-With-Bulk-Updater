@@ -461,3 +461,39 @@ function iaff_custom_attribute_tags() {
 	 */
 	return apply_filters( 'iaff_custom_attribute_tags', $available_tags );
 }
+
+/**
+ * Activate Image Attributes Pro plugin from the sidebar.
+ * 
+ * In the basic version, there is a sidebar to up sell Image Attributes Pro. When the pro plugin is installed, 
+ * and not activated, the button to buy is replaced with activate Image Attributes Pro. Activation is handled here.
+ * 
+ * Using WordPress native activation (using plugins.php?action=activate... link) redirects to the Plugins list after activation.
+ * There isn't an evident way to control the redirection after plugin activation without using activate_plugin().
+ * 
+ * @since 4.4
+ */
+function iaff_activate_image_attributes_pro_plugin() {
+	
+	// Add a fallback if wp_get_referer() returns false.
+	$redirect_url = wp_get_referer() === false ? admin_url( 'options-general.php?page=image-attributes-from-filename' ) : wp_get_referer();
+
+	// Authentication
+	if ( 
+		! current_user_can( 'manage_options' ) || 
+		! ( isset( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'] ) && wp_verify_nonce( $_GET['iaff_activate_image_attributes_pro_plugin_nonce_name'], 'activate_image_attributes_pro_plugin' ) )
+	) {
+		
+		// Return to referer if authentication fails.
+		wp_redirect( $redirect_url );
+		exit;
+	}
+
+	$activation_status = activate_plugin( 'auto-image-attributes-pro/auto-image-attributes-pro.php', $redirect_url );
+
+	if ( $activation_status === null ) {
+		// Show admin notice to inform that the operation was successful. 
+		set_transient( 'iaff_activate_image_attributes_pro_plugin_complete', true, 100 );
+	}
+}
+add_action( 'admin_post_iaff_activate_image_attributes_pro_plugin', 'iaff_activate_image_attributes_pro_plugin' );

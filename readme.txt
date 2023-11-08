@@ -153,7 +153,8 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 = 4.4 =
 * Date: 
-* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image.
+* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image. Image Attributes Pro let's you edit image attributes from the Media Library in bulk. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Activate Image Attributes Pro from plugin sidebar if pro plugin is installed.
 * UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
 
 = 4.3.1 =
