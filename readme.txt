@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 6.3.1
+Tested up to: 6.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,7 @@ With this plugin you can:
 * Remove commas from filename.
 * Remove all numbers from filename.
 * Choose to turn off any of the above mentioned features.
+* Display image attributes as columns in Media Library list view.
 
 With the bulk updater you can: 
 
@@ -53,7 +54,7 @@ If your image filename is *My_image-name.jpg*, your Image Title, Caption, Descri
 
 The plugin settings and bulk updater are in WordPress Admin > Settings > Image Attributes. Here you can choose which attributes to update for NEW uploads. 
 
-Please remember to take a database backup before running the bulk updater. The bulk updater updates ALL attributes for existing images in the Media Library and ignores the settings set for NEW uploads.
+**Please remember to take a database backup before running the bulk updater (or anything bulk in general). The bulk updater updates ALL attributes for existing images in the Media Library and ignores the settings set for NEW uploads.**
 
 ## Image Attributes Pro
 
@@ -109,6 +110,7 @@ The pro add-on can update the image attributes from not just the image filename,
 
 **Other Image Attributes Pro features:**
 
+* Bulk edit image attributes from the Media Library quickly and easily. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=readme)
 * Bulk Update image attributes from WordPress Media Library. Select images and choose `Update image attributes` Bulk action in Media Library (list view). [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=wordpress.org&utm_medium=readme)
 * Bulk Update image attributes from WordPress admin page for Posts, Pages and WooCommerce Products. Select the posts, pages or WooCommerce products in bulk and choose "Update image attributes" Bulk action. [Read more.](https://imageattributespro.com/bulk-actions/?utm_source=wordpress.org&utm_medium=readme)
 * Copy image attributes to post HTML while updating in Media Library. Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. [Read more.](https://imageattributespro.com/auto-copy-image-attributes-to-post-html-from-media-library/?utm_source=wordpress.org&utm_medium=readme)
@@ -148,8 +150,16 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 2. Preview of the Advanced settings screen. Seen only when the preview is enabled.
 2. Preview of the Bulk Updater settings screen. Seen only when the preview is enabled.
 4. Bulk Updater
+5. Image attributes displayed in the Media Library as columns.
 
 == Changelog ==
+
+= 4.4 =
+* Date: 09.November.2023.
+* Tested with WordPress 6.4.1.
+* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image. Image Attributes Pro let's you edit image attributes from the Media Library in bulk. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Activate Image Attributes Pro from plugin sidebar if pro plugin is installed.
+* UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
 
 = 4.3.1 =
 * Date: 25.April.2023.
@@ -265,6 +275,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.4 =
+* Date: 09.November.2023.
+* Tested with WordPress 6.4.1.
+* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image. Image Attributes Pro let's you edit image attributes from the Media Library in bulk. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Activate Image Attributes Pro from plugin sidebar if pro plugin is installed.
+* UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
 
 = 4.3.1 =
 * Date: 25.April.2023.

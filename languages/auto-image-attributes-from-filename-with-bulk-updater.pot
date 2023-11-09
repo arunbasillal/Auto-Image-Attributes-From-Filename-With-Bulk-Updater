@@ -2,16 +2,16 @@
 # This file is distributed under the GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.3\n"
+"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-25T06:37:31+00:00\n"
+"POT-Creation-Date: 2023-11-09T05:31:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: auto-image-attributes-from-filename-with-bulk-updater\n"
 
 #. Plugin Name of the plugin
@@ -564,6 +564,7 @@ msgid "Contact Support"
 msgstr ""
 
 #: admin/admin-ui-render.php:990
+#: admin/admin-ui-render.php:1013
 msgid "Upgrade to Pro"
 msgstr ""
 
@@ -579,64 +580,72 @@ msgstr ""
 msgid "Support ongoing development"
 msgstr ""
 
-#: admin/admin-ui-render.php:1011
+#: admin/admin-ui-render.php:1009
+msgid "Activate Image Attributes Pro"
+msgstr ""
+
+#: admin/admin-ui-render.php:1023
 msgid "Unlock Traffic"
 msgstr ""
 
-#: admin/admin-ui-render.php:1013
+#: admin/admin-ui-render.php:1025
 msgid "Get more traffic from Google Images"
 msgstr ""
 
-#: admin/admin-ui-render.php:1014
+#: admin/admin-ui-render.php:1026
 msgid "Use post / product title as attributes"
 msgstr ""
 
-#: admin/admin-ui-render.php:1015
+#: admin/admin-ui-render.php:1027
 msgid "Preserve existing attributes"
 msgstr ""
 
-#: admin/admin-ui-render.php:1016
+#: admin/admin-ui-render.php:1028
 msgid "Update attributes within posts"
 msgstr ""
 
-#: admin/admin-ui-render.php:1017
+#: admin/admin-ui-render.php:1029
 msgid "Build custom attributes and fine tune settings"
 msgstr ""
 
-#: admin/admin-ui-render.php:1027
+#: admin/admin-ui-render.php:1039
 msgid "Fast &amp; Simple Time Saver"
 msgstr ""
 
-#: admin/admin-ui-render.php:1035
+#: admin/admin-ui-render.php:1047
 msgid "This plugin will save me a LOT of time! Great plugin!"
 msgstr ""
 
-#: admin/admin-ui-render.php:1044
+#: admin/admin-ui-render.php:1056
 msgid "SEO Newsletter"
 msgstr ""
 
-#: admin/admin-ui-render.php:1048
+#: admin/admin-ui-render.php:1060
 msgid "Stay tuned to the latest image SEO news and receive helpful product updates."
 msgstr ""
 
-#: admin/admin-ui-render.php:1052
+#: admin/admin-ui-render.php:1064
 msgid "Your Email"
 msgstr ""
 
-#: admin/admin-ui-render.php:1057
+#: admin/admin-ui-render.php:1069
 msgid "Subscribe"
 msgstr ""
 
-#: admin/admin-ui-render.php:1061
+#: admin/admin-ui-render.php:1073
 msgid "Your email will be kept private and will not be shared or spammed."
 msgstr ""
 
-#: admin/admin-ui-render.php:1103
+#: admin/admin-ui-render.php:1115
 msgid "Note: Requires Image Attributes Pro %s or newer to manage these options. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
 #: admin/basic-setup.php:51
 msgid "Settings"
+msgstr ""
+
+#: admin/basic-setup.php:71
+msgid "Upgrade To Image Attributes Pro"
 msgstr ""
 
 #: admin/basic-setup.php:90
@@ -651,12 +660,32 @@ msgstr ""
 msgid "<br>Stay tuned to the latest image SEO news and receive helpful product updates. Subscribe to the <a href=\"%s\" target=\"_blank\">Image SEO Newsletter &rarr;</a>"
 msgstr ""
 
-#: admin/basic-setup.php:126
+#: admin/basic-setup.php:111
+msgid "Image Attributes Pro activated"
+msgstr ""
+
+#: admin/basic-setup.php:135
 msgid "If you like this plugin, please <a href=\"%s\" target=\"_blank\">upgrade to pro</a> or leave a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!"
 msgstr ""
 
-#: admin/basic-setup.php:132
+#: admin/basic-setup.php:141
 msgid "Thank you for choosing Image Attributes Pro! Use the support tab if you have any questions or feedback."
+msgstr ""
+
+#: admin/columns-media-library.php:23
+msgid "Title"
+msgstr ""
+
+#: admin/columns-media-library.php:24
+msgid "Alternative Text"
+msgstr ""
+
+#: admin/columns-media-library.php:25
+msgid "Caption"
+msgstr ""
+
+#: admin/columns-media-library.php:26
+msgid "Description"
 msgstr ""
 
 #: admin/do.php:112
