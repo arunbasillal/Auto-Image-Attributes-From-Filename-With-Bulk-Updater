@@ -3,7 +3,7 @@ Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
 Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
 Requires at least: 3.5.0
-Tested up to: 6.4
+Tested up to: 6.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -150,11 +150,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 2. Preview of the Advanced settings screen. Seen only when the preview is enabled.
 2. Preview of the Bulk Updater settings screen. Seen only when the preview is enabled.
 4. Bulk Updater
+5. Image attributes displayed in the Media Library as columns.
 
 == Changelog ==
 
 = 4.4 =
-* Date: 
+* Date: 09.November.2023.
+* Tested with WordPress 6.4.1.
 * New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image. Image Attributes Pro let's you edit image attributes from the Media Library in bulk. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=changelog)
 * Enhancement: Activate Image Attributes Pro from plugin sidebar if pro plugin is installed.
 * UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
@@ -273,6 +275,13 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.4 =
+* Date: 09.November.2023.
+* Tested with WordPress 6.4.1.
+* New Feature: Display image attributes in the Media Library columns (list view) to easily read image attributes without opening each image. Image Attributes Pro let's you edit image attributes from the Media Library in bulk. [Read more.](https://imageattributespro.com/media-library-bulk-editing/?utm_source=wordpress.org&utm_medium=changelog)
+* Enhancement: Activate Image Attributes Pro from plugin sidebar if pro plugin is installed.
+* UI Enhancement: Improved placeholder text in settings text boxes and made them lighter to avoid confusion.
 
 = 4.3.1 =
 * Date: 25.April.2023.
