@@ -1,20 +1,20 @@
 === Auto Image Attributes From Filename With Bulk Updater (Add Alt Text, Image Title For Image SEO) ===
 Contributors: arunbasillal
 Donate link: https://imageattributespro.com/?utm_source=wordpress.org&utm_medium=donate-link
-Tags: image title, image caption, image description, alt text, bulk edit images, bulk rename images, auto image attributes, auto image alt text, remove underscores, image seo
+Tags: image seo, image title, alt text, bulk edit images, accessibility
 Requires at least: 3.5.0
 Tested up to: 6.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically Add Image Title, Caption, Description And Alt Text From Filename. Includes a bulk updater to update existing images in the Media Library. Great for Image SEO.
+Automatically add Image Alt Text, Title, Caption and Description from Filename. Bulk update existing images. Great for Image SEO and Accessibility.
 
 == Description ==
 
-Automatically add Image attributes such as Image Title, Image Caption, Description And Alt Text from Image Filename. 
+Automatically add Image attributes such as Image Alt Text, Image Title, Image Caption and Image Description from Image Filename. 
 
-The plugin can update image attributes for both new images and existing images in the media library. 
+The plugin can update image attributes for both new image uploads and existing images in the media library. Great for Image SEO and Accessibility.
 
 https://www.youtube.com/watch?v=V5SOU4okOfU
 
