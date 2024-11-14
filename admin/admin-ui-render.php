@@ -464,6 +464,37 @@ function iaff_advanced_image_description_callback() {
 }
 
 /**
+ * Image Filename Settings Callback
+ *
+ * @since 	1.4
+ */
+function iaff_advanced_image_filename_callback() {	
+
+	// Get Settings
+	$settings = iaff_get_settings();
+	?>
+		
+	<fieldset class="iaff-image-filename-settings-fieldset">	
+		<label>
+			<input type="text" id="text_custom_attribute_filename" class="text_custom_filename regular-text code" data-attribute="filename" name="iaff_settings[custom_attribute_filename]" placeholder="e.g. %filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_filename'] ) && ( ! empty( $settings['custom_attribute_filename'] ) ) ) echo esc_attr( $settings['custom_attribute_filename'] ); ?>" />
+
+			<span class="copy-attribute-link" data-attribute="filename" data-copied-text="<?php _e( 'Copied!', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?>"><a href="#"><?php _e( 'Copy to all attributes.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></a></span>
+		</label><br>
+		
+		<?php iaff_custom_attribute_tags_ui_render( 'filename' ); ?>
+		
+		<label>
+			<br><br>
+			<input type="checkbox" name="iaff_settings[rename_file_new_upload]" value="1" <?php if ( isset($settings['rename_file_new_upload']) ) checked( '1', $settings['rename_file_new_upload'] ); ?>/>
+			<span><?php printf( __( 'Rename image filename for new uploads. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), '#link-here' ); ?></span>
+		</label><br>
+		
+	</fieldset>
+		
+	<?php
+}
+
+/**
  * Miscellaneous Settings Callback
  *
  * @since 	1.4

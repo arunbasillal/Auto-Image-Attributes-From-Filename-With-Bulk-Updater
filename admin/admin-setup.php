@@ -166,6 +166,15 @@ function iaff_register_settings() {
 			'iaff_advanced_settings_section',			// Page slug
 			'iaff_advanced_settings_section_id'			// Settings Section ID
 		);
+
+		// Image Filename Settings
+		add_settings_field(
+			'iaff_image_filename_settings',				// ID
+			__('Image Filename Settings', 'auto-image-attributes-from-filename-with-bulk-updater'),// Title
+			'iaff_advanced_image_filename_callback',	// Callback function
+			'iaff_advanced_settings_section',			// Page slug
+			'iaff_advanced_settings_section_id'			// Settings Section ID
+		);
 		
 		// Miscellaneous Settings
 		add_settings_field(
