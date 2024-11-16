@@ -483,9 +483,10 @@ function iaff_advanced_image_filename_callback() {
 		
 		<?php iaff_custom_attribute_tags_ui_render( 'filename' ); ?>
 		
+
 		<label>
 			<br><br>
-			<input type="checkbox" name="iaff_settings[rename_file_new_upload]" value="1" <?php if ( isset($settings['rename_file_new_upload']) ) checked( '1', $settings['rename_file_new_upload'] ); ?>/>
+			<input type="checkbox" name="iaff_settings[image_filename]" value="1" <?php if ( isset($settings['image_filename']) ) checked( '1', $settings['image_filename'] ); ?> />
 			<span><?php printf( __( 'Rename image filename for new uploads. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), '#link-here' ); ?></span>
 		</label><br>
 		
@@ -570,6 +571,12 @@ function iaff_bu_general_settings_callback() {
 		<label for="iaff_settings[bu_image_description]">
 			<input type="checkbox" name="iaff_settings[bu_image_description]" id="iaff_settings[bu_image_description]" value="1" <?php if ( isset($settings['bu_image_description']) ) checked( '1', $settings['bu_image_description'] ); ?>>
 			<span><?php _e('Update Image Description', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
+		</label><br>
+
+		<!-- Auto Add Image Description  -->
+		<label for="iaff_settings[bu_image_filename]">
+			<input type="checkbox" name="iaff_settings[bu_image_filename]" id="iaff_settings[bu_image_filename]" value="1" <?php if ( isset($settings['bu_image_filename']) ) checked( '1', $settings['bu_image_filename'] ); ?>>
+			<span><?php _e('Update Image Filename', 'auto-image-attributes-from-filename-with-bulk-updater') ?></span>
 		</label><br>
 		
 	</fieldset>
