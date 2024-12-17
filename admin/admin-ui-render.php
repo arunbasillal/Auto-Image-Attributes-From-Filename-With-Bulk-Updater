@@ -466,15 +466,15 @@ function iaff_advanced_image_description_callback() {
 /**
  * Image Filename Settings Callback
  *
- * @since 	1.4
+ * @since 5.0
  */
-function iaff_advanced_image_filename_callback() {	
+function iaff_advanced_image_filename_callback() {
 
 	// Get Settings
 	$settings = iaff_get_settings();
 	?>
 		
-	<fieldset class="iaff-image-filename-settings-fieldset">	
+	<fieldset class="iaff-image-filename-settings-fieldset">
 		<label>
 			<input type="text" id="text_custom_attribute_filename" class="text_custom_filename regular-text code" data-attribute="filename" name="iaff_settings[custom_attribute_filename]" placeholder="e.g. %filename% - %posttitle%" value="<?php if ( isset( $settings['custom_attribute_filename'] ) && ( ! empty( $settings['custom_attribute_filename'] ) ) ) echo esc_attr( $settings['custom_attribute_filename'] ); ?>" />
 
@@ -483,9 +483,8 @@ function iaff_advanced_image_filename_callback() {
 		
 		<?php iaff_custom_attribute_tags_ui_render( 'filename' ); ?>
 		
-
 		<label>
-			<br><br>
+			<br>
 			<input type="checkbox" name="iaff_settings[image_filename]" value="1" <?php if ( isset($settings['image_filename']) ) checked( '1', $settings['image_filename'] ); ?> />
 			<span><?php printf( __( 'Rename image filename for new uploads. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), '#link-here' ); ?></span>
 		</label><br>

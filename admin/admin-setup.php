@@ -316,7 +316,6 @@ function iaff_get_settings() {
 		'image_caption' 			=> '1',
 		'image_description' 		=> '1',
 		'image_alttext' 			=> '1',
-		'image_filename' 			=> '1',
 
 		'image_title_to_html' 		=> '1',
 
@@ -338,7 +337,6 @@ function iaff_get_settings() {
 		'bu_image_caption' 			=> '1',
 		'bu_image_description' 		=> '1',
 		'bu_image_alttext' 			=> '1',
-		'bu_image_filename' 		=> '1',
 
 		'bu_title_location_ml'		=> '1',
 		'bu_title_location_post'	=> '1',
