@@ -1,36 +1,41 @@
-# Copyright (C) 2023 Arun Basil Lal
+# Copyright (C) 2025 Arun Basil Lal
 # This file is distributed under the GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.4\n"
+"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-09T05:31:31+00:00\n"
+"POT-Creation-Date: 2025-10-07T15:57:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: auto-image-attributes-from-filename-with-bulk-updater\n"
 
 #. Plugin Name of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Auto Image Attributes From Filename With Bulk Updater"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=plugin-uri"
 msgstr ""
 
 #. Description of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images."
 msgstr ""
 
 #. Author of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Arun Basil Lal"
 msgstr ""
 
 #. Author URI of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri"
 msgstr ""
 
@@ -103,10 +108,12 @@ msgid "General Settings<p class=\"iaff-description\">Select image attributes tha
 msgstr ""
 
 #: admin/admin-setup.php:199
+#, php-format
 msgid "Image Title Settings<p class=\"iaff-description\">Recommended to update in both the Media Library and post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a></p>"
 msgstr ""
 
 #: admin/admin-setup.php:211
+#, php-format
 msgid "Image Alt Text Settings<p class=\"iaff-description\">Recommended to update in both the Media Library and post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a></p>"
 msgstr ""
 
@@ -203,6 +210,7 @@ msgid "Insert Image Title into post HTML. This will add title=\"Image Title\" in
 msgstr ""
 
 #: admin/admin-ui-render.php:162
+#, php-format
 msgid "Check to see a preview of all the options that ship with <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>."
 msgstr ""
 
@@ -239,6 +247,7 @@ msgid "Remove curly brackets ( { } ) from filename"
 msgstr ""
 
 #: admin/admin-ui-render.php:251
+#, php-format
 msgid "Enter words or characters to filter separated by commas. Filter is case sensitive. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -332,6 +341,7 @@ msgid "Copy image attributes to post HTML while updating in Media Library."
 msgstr ""
 
 #: admin/admin-ui-render.php:491
+#, php-format
 msgid "Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -340,6 +350,7 @@ msgid "Update image attributes on post publish or update."
 msgstr ""
 
 #: admin/admin-ui-render.php:498
+#, php-format
 msgid "Automatically updates image attributes when a post is published or updated. Ensures image attributes are always consistent with settings. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -421,6 +432,7 @@ msgid "Support"
 msgstr ""
 
 #: admin/admin-ui-render.php:802
+#, php-format
 msgid "Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads. <a href=\"%s\" target=\"_blank\">Take a tour</a>"
 msgstr ""
 
@@ -432,6 +444,7 @@ msgstr ""
 
 #: admin/admin-ui-render.php:812
 #: admin/admin-ui-render.php:826
+#, php-format
 msgid "The options below is a preview of the features included in <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>. Please upgrade to use them."
 msgstr ""
 
@@ -456,10 +469,12 @@ msgid "Use <code>Test Bulk Updater</code> button to update one image at a time a
 msgstr ""
 
 #: admin/admin-ui-render.php:853
+#, php-format
 msgid "The Bulk Updater will update every attribute. If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Alt Text, Caption and Description will be: <em>a lot like love</em>. <a href=\"%s\" target=\"_blank\">Upgrade to Pro</a> for more options."
 msgstr ""
 
 #: admin/admin-ui-render.php:872
+#, php-format
 msgid "<a href=\"%s\">Please enter license info</a> to activate the plugin and run the bulk updater."
 msgstr ""
 
@@ -486,6 +501,7 @@ msgid "To restart processing images from the beginning (the oldest upload first)
 msgstr ""
 
 #: admin/admin-ui-render.php:889
+#, php-format
 msgid "If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -637,6 +653,7 @@ msgid "Your email will be kept private and will not be shared or spammed."
 msgstr ""
 
 #: admin/admin-ui-render.php:1115
+#, php-format
 msgid "Note: Requires Image Attributes Pro %s or newer to manage these options. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -649,6 +666,7 @@ msgid "Upgrade To Image Attributes Pro"
 msgstr ""
 
 #: admin/basic-setup.php:90
+#, php-format
 msgid "Thank you for installing <strong>Auto Image Attributes From Filename With Bulk Updater</strong>! <a href=\"%s\">Change settings &rarr;</a>"
 msgstr ""
 
@@ -657,6 +675,7 @@ msgid "<strong>Auto Image Attributes From Filename With Bulk Updater</strong> su
 msgstr ""
 
 #: admin/basic-setup.php:102
+#, php-format
 msgid "<br>Stay tuned to the latest image SEO news and receive helpful product updates. Subscribe to the <a href=\"%s\" target=\"_blank\">Image SEO Newsletter &rarr;</a>"
 msgstr ""
 
@@ -665,6 +684,7 @@ msgid "Image Attributes Pro activated"
 msgstr ""
 
 #: admin/basic-setup.php:135
+#, php-format
 msgid "If you like this plugin, please <a href=\"%s\" target=\"_blank\">upgrade to pro</a> or leave a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!"
 msgstr ""
 

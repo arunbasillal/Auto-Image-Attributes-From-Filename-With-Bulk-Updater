@@ -154,6 +154,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 
 == Changelog ==
 
+= 4.6 =
+* Date: 07.October.2025
+* Tested with WordPress 6.8.3
+* Tested with PHP 8.4.10
+* Enhancement: Compatibility with Image Attributes Pro version 4.6. [Check what's new in 4.6](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
+
 = 4.4 =
 * Date: 09.November.2023.
 * Tested with WordPress 6.4.1.
@@ -275,6 +281,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.6 =
+* Date: 07.October.2025
+* Tested with WordPress 6.8.3
+* Tested with PHP 8.4.10
+* Enhancement: Compatibility with Image Attributes Pro version 4.6. [Check what's new in 4.6](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
 
 = 4.4 =
 * Date: 09.November.2023.
