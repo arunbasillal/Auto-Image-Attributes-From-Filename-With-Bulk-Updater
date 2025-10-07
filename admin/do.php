@@ -612,7 +612,7 @@ add_filter('wp_get_attachment_link', 'iaff_lcb_restore_title_to_gallery', 10, 4)
 function iaff_clean_filename( $file ) {
 	
 	$image_extensions = array (
-		'image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'image/tiff', 'ico'
+		'image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'image/tiff', 'image/webp', 'ico'
 	);
 	
 	// Return if file is not an image file

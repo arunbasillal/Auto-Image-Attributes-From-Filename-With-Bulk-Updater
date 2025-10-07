@@ -5,7 +5,7 @@
  * Description: Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images. 
  * Author: Arun Basil Lal
  * Author URI: https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri
- * Version: 4.4
+ * Version: 4.6
  * Text Domain: auto-image-attributes-from-filename-with-bulk-updater
  * Domain Path: /languages
  * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -65,7 +65,7 @@ if ( ! defined( 'IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_URL' ) ) {
  * @since 1.3
  */
 if ( ! defined( 'IAFF_VERSION_NUM' ) ) {
-	define( 'IAFF_VERSION_NUM', '4.4' );
+	define( 'IAFF_VERSION_NUM', '4.6' );
 }
 
 /**
