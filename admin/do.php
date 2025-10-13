@@ -82,6 +82,8 @@ function iaff_rename_old_image() {
 	if ($image === NULL) {
 		wp_die();
 	}
+
+	$update_status = array();
 	
 	// Image Attributes Pro
 	if ( iaff_is_pro() ) {
@@ -90,7 +92,19 @@ function iaff_rename_old_image() {
 		$image_object = get_post( $image->ID );
 		
 		// Running the pro module
-		iaffpro_auto_image_attributes_pro( $image_object, true );
+		$update_status = iaffpro_auto_image_attributes_pro( $image_object, true );
+
+		/**
+		 * Error messages were added in version 4.7 for both plugins. 
+		 * Before that iaffpro_auto_image_attributes_pro() had no return (null).
+		 * 
+		 * If the basic plugin is upgraded to 4.7, but the pro version was 4.6 or lower, 
+		 * then $update_status would be null instead of an array. The following fixes this 
+		 * by setting the $update_status['success'] to true, thereby restoring the pre 4.7 behaviour.
+		 */
+		if ( version_compare( IAFFPRO_VERSION_NUM, '4.6', '<=' ) ) {
+			$update_status = array( 'success' 	=> true );
+		}
 		
 	} else {
 		
@@ -98,7 +112,7 @@ function iaff_rename_old_image() {
 		$image_name = iaff_image_name_from_filename($image->ID, true);
 		
 		// Update image attributes
-		iaff_update_image($image->ID, $image_name, true);
+		$update_status = iaff_update_image($image->ID, $image_name, true);
 	}
 	
 	// Increment counter and update it
@@ -106,10 +120,20 @@ function iaff_rename_old_image() {
 	update_option( 'iaff_bulk_updater_counter', $counter );
 	
 	// Extract the image url
-	$image_url = wp_get_attachment_url($image->ID);
+	$image_url = wp_get_attachment_url( $image->ID );
 	
 	// Update Event log
-	echo __('Image attributes updated for: ', 'auto-image-attributes-from-filename-with-bulk-updater') . '<a href="'. get_edit_post_link($image->ID) .'">'. $image_url .'</a>';
+	if ( $update_status['success'] === true ) {
+		echo __('Image attributes updated for: ', 'auto-image-attributes-from-filename-with-bulk-updater') . '<a href="'. get_edit_post_link( $image->ID ) .'">'. $image_url .'</a>';
+	} else {
+		printf( 
+			__('Image attributes were not updated for: <a href="%s">%s</a><br>
+			Reason: %s', 'auto-image-attributes-from-filename-with-bulk-updater'),
+			get_edit_post_link( $image->ID ),
+			$image_url,
+			$update_status['error']
+		);
+	}
 	
 	wp_die();
 }
@@ -705,16 +729,26 @@ function iaff_image_name_from_filename( $image_id, $bulk = false ) {
 /**
  * Update Image Attributes in database
  *
- * @since 	1.4
+ * @since 1.4
+ * @since 4.7 Return type changed from boolean to array to accommodate error messages.
+ * 
  * @param	$image_id	Integer		ID of the image to work on
  * @param	$text		String		String to be used for Image Title, Caption, Description and Alt Text
  * @param	$bulk		Boolean		True when called from Bulk Updater. False by default
- * @return	True on success. False otherwise
+ * 
+ * @return (array) An array with keys following keys
+ * 		'success' (bool) => True if image was updated. False otherwise.
+ * 		'error' (string) => Error message if image was not updated.
  */
 function iaff_update_image( $image_id, $text, $bulk = false ) {
 	
 	// Return if no image ID is passed
-	if( $image_id === NULL ) return false;
+	if ( $image === NULL ) {
+		return [
+			'success' 	=> false, 
+			'error' 	=> __( 'Image object was not provided.', 'auto-image-attributes-from-filename-with-bulk-updater' )
+		];
+	}
 	
 	// Get Settings
 	$settings = iaff_get_settings();
@@ -748,9 +782,14 @@ function iaff_update_image( $image_id, $text, $bulk = false ) {
 
 	$return_id = wp_update_post( $image ); // Retruns the ID of the post if the post is successfully updated in the database. Otherwise returns 0.
 	
-	if ( $return_id == 0 ) return false;
+	if ( $return_id == 0 ) {
+		return [
+			'success' 	=> false, 
+			'error' 	=> __( 'Image could not be updated.', 'auto-image-attributes-from-filename-with-bulk-updater' )
+		];
+	}
 	
-	return true;
+	return [ 'success' 	=> true ];
 }
 
 /**
