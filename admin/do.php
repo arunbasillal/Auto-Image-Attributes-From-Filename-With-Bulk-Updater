@@ -820,3 +820,22 @@ function iaff_is_pro() {
 	
 	return false;
 }
+
+/**
+ * Disable using EXIF data as image title.
+ * 
+ * WordPress by default reads EXIF data and if it's present, uses it to generate image title.
+ * Since version IAFF 4.3, this generated image title is saved as post meta in 
+ * iaff_wp_attachment_original_post_title and used to generate image title from filename. 
+ * 
+ * This was causing issues for uses who uploaded images with EXIF data as the generated 
+ * image title does not match the image filename. 
+ * 
+ * @since 4.7
+ */
+function iaff_disable_exif_data_as_image_title( $metadata ) {
+	
+	$metadata['title'] = '';
+	return $metadata;
+}
+add_filter( 'wp_read_image_metadata', 'iaff_disable_exif_data_as_image_title' );
