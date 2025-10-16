@@ -98,7 +98,8 @@ jQuery( document ).ready( function($){
 		var customAttributeValue = $( '#text_custom_attribute_' + attribute ).val();
 
 		$.each( customAttributeInputIDEndings, function( index, value ) {
-			$( '#text_custom_attribute_' + value ).val( customAttributeValue );
+			$( '#text_custom_attribute_' + value ).val( customAttributeValue ); // Update textbox
+			$( '#radio_custom_attribute_' + value ).prop( 'checked', true ); // Update radio button
 		});
 
 		// Saving current innerHTML to handle language translations.
