@@ -155,7 +155,7 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 == Changelog ==
 
 = 4.7 =
-* Date: 
+* Date: 20.October.2025
 * Enhancement: Updated event log messaging for cases where image attributes are not updated.
 * Enhancement: Compatibility with Image Attributes Pro version 4.7. [Check what's new in 4.7](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog).
 * Bug Fix: Disable the use of EXIF data as image title.
@@ -287,6 +287,12 @@ I am glad to hear that! You can either [upgrade to pro](https://imageattributesp
 * First release of the plugin.
 
 == Upgrade Notice ==
+
+= 4.7 =
+* Date: 20.October.2025 
+* Enhancement: Updated event log messaging for cases where image attributes are not updated. 
+* Enhancement: Compatibility with Image Attributes Pro version 4.7. [Check what's new in 4.7](https://imageattributespro.com/changelog/?utm_source=wordpress.org&utm_medium=changelog). 
+* Bug Fix: Disable the use of EXIF data as image title. 
 
 = 4.6 =
 * Date: 07.October.2025
