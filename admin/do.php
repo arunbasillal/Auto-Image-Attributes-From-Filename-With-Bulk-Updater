@@ -817,11 +817,18 @@ function iaff_is_pro() {
  * This was causing issues for uses who uploaded images with EXIF data as the generated 
  * image title does not match the image filename. 
  * 
+ * Note: In Debug mode, this will throw a PHP warning: Incorrect APP1 Exif Identifier Code
+ * This is expected, refer: https://bit.ly/47fixzT
+ * 
  * @since 4.7
+ * 
+ * @param $meta (array) Image meta data.
+ * 
+ * @return $meta (array) Image meta data with the title redacted.
  */
-function iaff_disable_exif_data_as_image_title( $metadata ) {
+function iaff_disable_exif_data_as_image_title( $meta ) {
 	
-	$metadata['title'] = '';
-	return $metadata;
+	$meta['title'] = '';
+	return $meta;
 }
 add_filter( 'wp_read_image_metadata', 'iaff_disable_exif_data_as_image_title' );
