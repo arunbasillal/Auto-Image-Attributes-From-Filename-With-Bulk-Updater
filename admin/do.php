@@ -729,7 +729,7 @@ function iaff_image_name_from_filename( $image_id, $bulk = false ) {
 function iaff_update_image( $image_id, $text, $bulk = false ) {
 	
 	// Return if no image ID is passed
-	if ( $image === NULL ) {
+	if ( $image_id === NULL ) {
 		return [
 			'success' 	=> false, 
 			'error' 	=> __( 'Image object was not provided.', 'auto-image-attributes-from-filename-with-bulk-updater' )
