@@ -750,6 +750,54 @@ function iaff_bu_image_description_settings_callback() {
 }
 
 /**
+ * Bulk Updater Settings: 'Post Types to Update' multiselect callback
+ * 
+ * @since 4.9
+ */
+function iaff_bu_post_types_callback() {
+
+	// Get all public post types (as objects so we can use labels)
+	$post_types = get_post_types( array( 'public' => true, ), 'objects' );
+
+	// Hide attachment post type.
+	unset( $post_types['attachment'] );
+
+	// Get selected post types.
+	$settings = iaff_get_settings();
+	$selected_post_types = isset( $settings['bu_post_types'] ) ? $settings['bu_post_types'] : array();
+
+	// If nothing is saved yet, default to *all* post types
+	if ( ! is_array( $selected_post_types ) || empty( $selected_post_types ) ) {
+		$selected_post_types = array_keys( $post_types );
+	}
+
+	// Size for the multiselect
+	$size = min( 8, count( $post_types ) );
+
+	echo '<select multiple="multiple" id="iaff_bu_post_types" name="iaff_settings[bu_post_types][]" size="' . esc_attr( $size ) . '">';
+
+	foreach ( $post_types as $post_type => $post_type_obj ) {
+
+		$label = ! empty( $post_type_obj->labels->name )
+		? $post_type_obj->labels->name
+		: $post_type;
+
+		printf(
+			'<option value="%1$s" %2$s>%3$s (%1$s)</option>',
+			esc_attr( $post_type ),
+			selected( in_array( $post_type, $selected_post_types, true ), true, false ),
+			esc_html( $label )
+		);
+	}
+
+	echo '</select>';
+
+	echo '<p class="description iaff-description">';
+	esc_html_e( 'Hold down the Ctrl (Windows) or Command (Mac) key to select multiple post types.', 'auto-image-attributes-from-filename-with-bulk-updater' );
+	echo '</p>';
+}
+
+/**
  * Display the selector UI to show available tags.
  * 
  * @since 2.1
@@ -764,7 +812,7 @@ function iaff_custom_attribute_tags_ui_render( $data_attribute ) {
 
 	if ( ! empty( $available_tags ) ) :
 		?>
-		<p><?php _e( 'Available tags:' ); ?></p>
+		<p><?php _e( 'Available tags:', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></p>
 		<p><?php _e( 'The following tags when used in a custom attribute will be replaced with their corresponding value.', 'auto-image-attributes-from-filename-with-bulk-updater' ); ?></p>
 		<ul class="iaff-available-custom-attribute-tags" role="list">
 			<?php
@@ -937,7 +985,16 @@ function iaff_admin_interface_render () {
 					<!-- Event log -->
 					<div id="bulk-updater-results">
 						<fieldset id="bulk-updater-log-wrapper">
-							<legend><span class="dashicons dashicons-welcome-write-blog"></span>&nbsp;<strong><?php _e('Event Log', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></strong>&nbsp;<div class="iaff-spinner is-active" style="margin-top:0px;"></div></legend>
+							<legend><span class="dashicons dashicons-welcome-write-blog"></span>&nbsp;<strong><?php _e('Event Log', 'auto-image-attributes-from-filename-with-bulk-updater'); ?></strong>&nbsp;
+							
+							<?php 
+							$spinner='';
+							// Check if bulk updater is in progress
+							if ( function_exists( 'as_has_scheduled_action' ) && ( as_has_scheduled_action( 'iaffpro_bu_bulk_updater' ) === true ) ) {
+								$spinner = 'spinner';
+							}?>
+
+							<div class="iaff-spinner is-active <?php echo $spinner; ?>" style="margin-top:0px;"></div></legend>
 
 							<?php if ( function_exists( 'iaffpro_event_log_delete' ) ) { ?>
 								<div id="bulk-updater-delete-log-button" class="dashicons dashicons-trash" title="<?php _e( 'Delete Event Log', 'auto-image-attributes-from-filename-with-bulk-updater' ) ?>" style="float: right; opacity: 0.7; margin-top: -25px; font-size: 18px;"></div>
@@ -950,7 +1007,7 @@ function iaff_admin_interface_render () {
 									$event_log = iaffpro_event_log_read();
 
 									foreach ( $event_log as $log ) {
-										echo '<p>' . $log . '</p>';
+										echo '<p class="iaff-event-log-line">' . $log . '</p>';
 									}
 								}
 								?>
@@ -1149,6 +1206,6 @@ function iaff_print_disabled_notice( $version ) {
 
 	echo 
 		'<p class="iaff-description">' . 
-			sprintf( __( 'Note: Requires Image Attributes Pro %s or newer to manage these options. <a href="%s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), $version, 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ) . 
+			sprintf( esc_html__( 'Note: Requires Image Attributes Pro %1$1s or newer to manage these options. <a href="%2$2s" target="_blank">Read more.</a>', 'auto-image-attributes-from-filename-with-bulk-updater' ), esc_html( $version ), 'https://imageattributespro.com/backwards-compatibility/?utm_source=iaff-basic&utm_medium=bulk-updater-settings-tab' ) . 
 		'</p>';
 }

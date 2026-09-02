@@ -250,6 +250,18 @@ function iaff_register_settings() {
 			)
 		);
 
+		// Post Types to Update
+		add_settings_field(
+			'iaff_bu_post_types', // ID
+			__( 'Post Types to Update<p class="iaff-description">Select the post types to update. All post types are selected by default.</p>', 'auto-image-attributes-from-filename-with-bulk-updater' ), // Title
+			'iaff_bu_post_types_callback', // Callback function
+			'iaff_bu_settings_section', // Page slug
+			'iaff_bu_settings_section_id', // Settings Section ID
+			array(
+				'class' => 'iaff_bu_post_types',
+			)
+		);
+
 }
 add_action( 'admin_init', 'iaff_register_settings' );
 
@@ -278,6 +290,13 @@ function iaff_settings_validater_and_sanitizer( $settings ) {
 	$settings['custom_attribute_caption'] 			= iaff_sanitize_text_field( $settings['custom_attribute_caption'] );
 	$settings['custom_attribute_description'] 		= iaff_sanitize_text_field( $settings['custom_attribute_description'] );
 	
+	// Sanitize 'Post Types to Update' multiselect array keys
+	$settings['bu_post_types'] = array_map( 'sanitize_key', $settings['bu_post_types'] );
+
+	// Only keep valid public post types for 'Post Types to Update' multiselect
+	$valid_post_types = get_post_types( array( 'public' => true, ), 'names' );
+	$settings['bu_post_types'] = array_intersect( $settings['bu_post_types'], $valid_post_types );
+
 	return $settings;
 }
 

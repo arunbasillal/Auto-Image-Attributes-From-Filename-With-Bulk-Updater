@@ -47,20 +47,21 @@ function iaff_manage_media_custom_column_add_data( $column_name, $id ) {
 
     switch( $column_name ) {
         case 'iaff_image_title':
-            echo $image->post_title;
+            echo esc_html( $image->post_title );
             break;
 
         case 'iaff_image_alt':
             $iaff_image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
-            echo ( $iaff_image_alt !== false ) ? $iaff_image_alt : '';
+            $iaff_image_alt = ( $iaff_image_alt !== false ) ? $iaff_image_alt : '';
+            echo esc_html( $iaff_image_alt );
             break;
 
         case 'iaff_image_caption':
-            echo $image->post_excerpt;
+            echo esc_html( $image->post_excerpt );
             break;
 
         case 'iaff_image_description':
-            echo $image->post_content;
+            echo esc_html( $image->post_content );
             break;
     }
 }

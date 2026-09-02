@@ -1,41 +1,46 @@
-# Copyright (C) 2023 Arun Basil Lal
+# Copyright (C) 2025 Arun Basil Lal
 # This file is distributed under the GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.4\n"
+"Project-Id-Version: Auto Image Attributes From Filename With Bulk Updater 4.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-attributes-from-filename-with-bulk-updater\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-09T05:31:31+00:00\n"
+"POT-Creation-Date: 2025-12-17T18:32:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: auto-image-attributes-from-filename-with-bulk-updater\n"
 
 #. Plugin Name of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Auto Image Attributes From Filename With Bulk Updater"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=plugin-uri"
 msgstr ""
 
 #. Description of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Automatically Add Image Title, Image Caption, Description And Alt Text From Image Filename. Since this plugin includes a bulk updater this can update both existing images in the Media Library and new images."
 msgstr ""
 
 #. Author of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "Arun Basil Lal"
 msgstr ""
 
 #. Author URI of the plugin
+#: iaff_image-attributes-from-filename.php
 msgid "https://imageattributespro.com/?utm_source=plugin-header&utm_medium=author-uri"
 msgstr ""
 
 #: admin/admin-setup.php:55
-#: admin/admin-ui-render.php:801
+#: admin/admin-ui-render.php:849
 msgid "Basic Settings"
 msgstr ""
 
@@ -56,7 +61,7 @@ msgid "Preview Pro Features"
 msgstr ""
 
 #: admin/admin-setup.php:102
-#: admin/admin-ui-render.php:816
+#: admin/admin-ui-render.php:864
 msgid "Advanced Settings"
 msgstr ""
 
@@ -93,8 +98,8 @@ msgid "Miscellaneous Settings"
 msgstr ""
 
 #: admin/admin-setup.php:182
-#: admin/admin-ui-render.php:788
-#: admin/admin-ui-render.php:830
+#: admin/admin-ui-render.php:836
+#: admin/admin-ui-render.php:878
 msgid "Bulk Updater Settings"
 msgstr ""
 
@@ -103,10 +108,12 @@ msgid "General Settings<p class=\"iaff-description\">Select image attributes tha
 msgstr ""
 
 #: admin/admin-setup.php:199
+#, php-format
 msgid "Image Title Settings<p class=\"iaff-description\">Recommended to update in both the Media Library and post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a></p>"
 msgstr ""
 
 #: admin/admin-setup.php:211
+#, php-format
 msgid "Image Alt Text Settings<p class=\"iaff-description\">Recommended to update in both the Media Library and post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a></p>"
 msgstr ""
 
@@ -118,47 +125,51 @@ msgstr ""
 msgid "Image Description Settings<p class=\"iaff-description\">Description is updated only in the Media Library.</p>"
 msgstr ""
 
-#: admin/admin-setup.php:441
+#: admin/admin-setup.php:247
+msgid "Post Types to Update<p class=\"iaff-description\">Select the post types to update. All post types are selected by default.</p>"
+msgstr ""
+
+#: admin/admin-setup.php:460
 msgid "Image filename"
 msgstr ""
 
-#: admin/admin-setup.php:442
+#: admin/admin-setup.php:461
 msgid "Title of the post, page or product where the image is used"
 msgstr ""
 
-#: admin/admin-setup.php:443
+#: admin/admin-setup.php:462
 msgid "Site Title defined in WordPress General Settings"
 msgstr ""
 
-#: admin/admin-setup.php:444
+#: admin/admin-setup.php:463
 msgid "Post or product Category"
 msgstr ""
 
-#: admin/admin-setup.php:445
+#: admin/admin-setup.php:464
 msgid "Post or product Tag"
 msgstr ""
 
-#: admin/admin-setup.php:446
+#: admin/admin-setup.php:465
 msgid "Excerpt or product short description"
 msgstr ""
 
-#: admin/admin-setup.php:447
+#: admin/admin-setup.php:466
 msgid "Copy attribute from Media Library"
 msgstr ""
 
-#: admin/admin-setup.php:448
+#: admin/admin-setup.php:467
 msgid "Image Title"
 msgstr ""
 
-#: admin/admin-setup.php:449
+#: admin/admin-setup.php:468
 msgid "Image Alt Text"
 msgstr ""
 
-#: admin/admin-setup.php:450
+#: admin/admin-setup.php:469
 msgid "Image Caption"
 msgstr ""
 
-#: admin/admin-setup.php:451
+#: admin/admin-setup.php:470
 msgid "Image Description"
 msgstr ""
 
@@ -203,6 +214,7 @@ msgid "Insert Image Title into post HTML. This will add title=\"Image Title\" in
 msgstr ""
 
 #: admin/admin-ui-render.php:162
+#, php-format
 msgid "Check to see a preview of all the options that ship with <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>."
 msgstr ""
 
@@ -239,6 +251,7 @@ msgid "Remove curly brackets ( { } ) from filename"
 msgstr ""
 
 #: admin/admin-ui-render.php:251
+#, php-format
 msgid "Enter words or characters to filter separated by commas. Filter is case sensitive. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -332,6 +345,7 @@ msgid "Copy image attributes to post HTML while updating in Media Library."
 msgstr ""
 
 #: admin/admin-ui-render.php:491
+#, php-format
 msgid "Any changes made to image attributes in the media library will be automatically synced to the corresponding post HTML. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -340,6 +354,7 @@ msgid "Update image attributes on post publish or update."
 msgstr ""
 
 #: admin/admin-ui-render.php:498
+#, php-format
 msgid "Automatically updates image attributes when a post is published or updated. Ensures image attributes are always consistent with settings. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -395,248 +410,258 @@ msgstr ""
 msgid "Preserve existing attributes and add missing attributes only."
 msgstr ""
 
-#: admin/admin-ui-render.php:731
+#: admin/admin-ui-render.php:759
+msgid "Hold down the Ctrl (Windows) or Command (Mac) key to select multiple post types."
+msgstr ""
+
+#: admin/admin-ui-render.php:779
 msgid "The following tags when used in a custom attribute will be replaced with their corresponding value."
 msgstr ""
 
-#: admin/admin-ui-render.php:749
+#: admin/admin-ui-render.php:797
 msgid "For example, if you set custom attribute as <code>%posttitle% - Your Name</code>, the <code>%posttitle%</code> will be replaced by the title of the post to which the image is uploaded to. "
 msgstr ""
 
-#: admin/admin-ui-render.php:785
+#: admin/admin-ui-render.php:833
 msgid "Basic"
 msgstr ""
 
-#: admin/admin-ui-render.php:787
+#: admin/admin-ui-render.php:835
 msgid "Advanced"
 msgstr ""
 
-#: admin/admin-ui-render.php:790
-#: admin/admin-ui-render.php:841
+#: admin/admin-ui-render.php:838
+#: admin/admin-ui-render.php:889
 msgid "Bulk Updater"
 msgstr ""
 
-#: admin/admin-ui-render.php:791
+#: admin/admin-ui-render.php:839
 msgid "Support"
 msgstr ""
 
-#: admin/admin-ui-render.php:802
+#: admin/admin-ui-render.php:850
+#, php-format
 msgid "Automatically add image attributes such as Image Title, Alt Text, Caption and Description from image filename for new uploads. <a href=\"%s\" target=\"_blank\">Take a tour</a>"
 msgstr ""
 
-#: admin/admin-ui-render.php:804
-#: admin/admin-ui-render.php:818
-#: admin/admin-ui-render.php:833
+#: admin/admin-ui-render.php:852
+#: admin/admin-ui-render.php:866
+#: admin/admin-ui-render.php:881
 msgid "Save Settings"
 msgstr ""
 
-#: admin/admin-ui-render.php:812
-#: admin/admin-ui-render.php:826
+#: admin/admin-ui-render.php:860
+#: admin/admin-ui-render.php:874
+#, php-format
 msgid "The options below is a preview of the features included in <a href=\"%s\" target=\"_blank\">Image Attributes Pro</a>. Please upgrade to use them."
 msgstr ""
 
-#: admin/admin-ui-render.php:831
+#: admin/admin-ui-render.php:879
 msgid "Options set here will be used while running the Bulk Updater."
 msgstr ""
 
-#: admin/admin-ui-render.php:843
+#: admin/admin-ui-render.php:891
 msgid "Run this bulk updater to update Image Title, Caption, Description and Alt Text for all images."
 msgstr ""
 
-#: admin/admin-ui-render.php:846
+#: admin/admin-ui-render.php:894
 msgid "It seems that JavaScript is disabled in your browser. Please enable JavasScript or use a different browser to use the bulk updater."
 msgstr ""
 
-#: admin/admin-ui-render.php:848
+#: admin/admin-ui-render.php:896
 msgid "IMPORTANT: Please backup your database before running the bulk updater."
 msgstr ""
 
-#: admin/admin-ui-render.php:850
+#: admin/admin-ui-render.php:898
 msgid "Use <code>Test Bulk Updater</code> button to update one image at a time and verify the results."
 msgstr ""
 
-#: admin/admin-ui-render.php:853
+#: admin/admin-ui-render.php:901
+#, php-format
 msgid "The Bulk Updater will update every attribute. If your image is named <em>a-lot-like_love.jpg</em>, your Image Title, Alt Text, Caption and Description will be: <em>a lot like love</em>. <a href=\"%s\" target=\"_blank\">Upgrade to Pro</a> for more options."
 msgstr ""
 
-#: admin/admin-ui-render.php:872
+#: admin/admin-ui-render.php:920
+#, php-format
 msgid "<a href=\"%s\">Please enter license info</a> to activate the plugin and run the bulk updater."
 msgstr ""
 
-#: admin/admin-ui-render.php:877
-#: admin/admin-ui-render.php:933
+#: admin/admin-ui-render.php:925
+#: admin/admin-ui-render.php:990
 msgid "Run Bulk Updater"
 msgstr ""
 
-#: admin/admin-ui-render.php:879
-#: admin/admin-ui-render.php:938
+#: admin/admin-ui-render.php:927
+#: admin/admin-ui-render.php:995
 msgid "Test Bulk Updater"
 msgstr ""
 
-#: admin/admin-ui-render.php:881
+#: admin/admin-ui-render.php:929
 msgid "Stop Bulk Updater"
 msgstr ""
 
-#: admin/admin-ui-render.php:884
+#: admin/admin-ui-render.php:932
 msgid "Tools"
 msgstr ""
 
-#: admin/admin-ui-render.php:886
+#: admin/admin-ui-render.php:934
 msgid "To restart processing images from the beginning (the oldest upload first), reset the counter."
 msgstr ""
 
-#: admin/admin-ui-render.php:889
+#: admin/admin-ui-render.php:937
+#, php-format
 msgid "If Bulk Updater is stuck, refresh the page, skip current image and try running the bulk updater again. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
-#: admin/admin-ui-render.php:893
-#: admin/admin-ui-render.php:943
+#: admin/admin-ui-render.php:941
+#: admin/admin-ui-render.php:1000
 msgid "Reset Counter"
 msgstr ""
 
-#: admin/admin-ui-render.php:896
+#: admin/admin-ui-render.php:944
 msgid "Skip Image"
 msgstr ""
 
-#: admin/admin-ui-render.php:903
+#: admin/admin-ui-render.php:951
 msgid "Event Log"
 msgstr ""
 
-#: admin/admin-ui-render.php:906
+#: admin/admin-ui-render.php:963
 msgid "Delete Event Log"
 msgstr ""
 
-#: admin/admin-ui-render.php:921
+#: admin/admin-ui-render.php:978
 msgid "Number of Images Remaining: "
 msgstr ""
 
-#: admin/admin-ui-render.php:923
+#: admin/admin-ui-render.php:980
 msgid "Number of Images Updated: "
 msgstr ""
 
-#: admin/admin-ui-render.php:934
+#: admin/admin-ui-render.php:991
 msgid "You are about to run the bulk updater. This will update all images and cannot be undone. Please make a database backup before you proceed. Press OK to confirm."
 msgstr ""
 
-#: admin/admin-ui-render.php:939
+#: admin/admin-ui-render.php:996
 msgid "The bulk updater will do a test run by updating one image. Note that this is a live test and actual values will be updated in the database. Please make a database backup before you proceed. Press Ok to confirm."
 msgstr ""
 
-#: admin/admin-ui-render.php:944
+#: admin/admin-ui-render.php:1001
 msgid "You are about to reset the bulk updater counter. The bulk updater will start from scratch in the next run. Press Ok to confirm."
 msgstr ""
 
-#: admin/admin-ui-render.php:954
+#: admin/admin-ui-render.php:1011
 msgid "Support And Documentation"
 msgstr ""
 
-#: admin/admin-ui-render.php:956
+#: admin/admin-ui-render.php:1013
 msgid "Looking for help? Here are the available options."
 msgstr ""
 
-#: admin/admin-ui-render.php:961
+#: admin/admin-ui-render.php:1018
 msgid "Free Support"
 msgstr ""
 
-#: admin/admin-ui-render.php:963
-#: admin/admin-ui-render.php:976
+#: admin/admin-ui-render.php:1020
+#: admin/admin-ui-render.php:1033
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin-ui-render.php:964
+#: admin/admin-ui-render.php:1021
 msgid "Read the FAQ"
 msgstr ""
 
-#: admin/admin-ui-render.php:965
+#: admin/admin-ui-render.php:1022
 msgid "Free Support Forum"
 msgstr ""
 
-#: admin/admin-ui-render.php:974
+#: admin/admin-ui-render.php:1031
 msgid "Premium Support"
 msgstr ""
 
-#: admin/admin-ui-render.php:977
+#: admin/admin-ui-render.php:1034
 msgid "Priority Email Support"
 msgstr ""
 
-#: admin/admin-ui-render.php:978
+#: admin/admin-ui-render.php:1035
 msgid "Contact Support"
 msgstr ""
 
-#: admin/admin-ui-render.php:990
-#: admin/admin-ui-render.php:1013
+#: admin/admin-ui-render.php:1047
+#: admin/admin-ui-render.php:1070
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: admin/admin-ui-render.php:992
+#: admin/admin-ui-render.php:1049
 msgid "Priority support"
 msgstr ""
 
-#: admin/admin-ui-render.php:993
+#: admin/admin-ui-render.php:1050
 msgid "Advanced features"
 msgstr ""
 
-#: admin/admin-ui-render.php:994
+#: admin/admin-ui-render.php:1051
 msgid "Support ongoing development"
 msgstr ""
 
-#: admin/admin-ui-render.php:1009
+#: admin/admin-ui-render.php:1066
 msgid "Activate Image Attributes Pro"
 msgstr ""
 
-#: admin/admin-ui-render.php:1023
+#: admin/admin-ui-render.php:1080
 msgid "Unlock Traffic"
 msgstr ""
 
-#: admin/admin-ui-render.php:1025
+#: admin/admin-ui-render.php:1082
 msgid "Get more traffic from Google Images"
 msgstr ""
 
-#: admin/admin-ui-render.php:1026
+#: admin/admin-ui-render.php:1083
 msgid "Use post / product title as attributes"
 msgstr ""
 
-#: admin/admin-ui-render.php:1027
+#: admin/admin-ui-render.php:1084
 msgid "Preserve existing attributes"
 msgstr ""
 
-#: admin/admin-ui-render.php:1028
+#: admin/admin-ui-render.php:1085
 msgid "Update attributes within posts"
 msgstr ""
 
-#: admin/admin-ui-render.php:1029
+#: admin/admin-ui-render.php:1086
 msgid "Build custom attributes and fine tune settings"
 msgstr ""
 
-#: admin/admin-ui-render.php:1039
+#: admin/admin-ui-render.php:1096
 msgid "Fast &amp; Simple Time Saver"
 msgstr ""
 
-#: admin/admin-ui-render.php:1047
+#: admin/admin-ui-render.php:1104
 msgid "This plugin will save me a LOT of time! Great plugin!"
 msgstr ""
 
-#: admin/admin-ui-render.php:1056
+#: admin/admin-ui-render.php:1113
 msgid "SEO Newsletter"
 msgstr ""
 
-#: admin/admin-ui-render.php:1060
+#: admin/admin-ui-render.php:1117
 msgid "Stay tuned to the latest image SEO news and receive helpful product updates."
 msgstr ""
 
-#: admin/admin-ui-render.php:1064
+#: admin/admin-ui-render.php:1121
 msgid "Your Email"
 msgstr ""
 
-#: admin/admin-ui-render.php:1069
+#: admin/admin-ui-render.php:1126
 msgid "Subscribe"
 msgstr ""
 
-#: admin/admin-ui-render.php:1073
+#: admin/admin-ui-render.php:1130
 msgid "Your email will be kept private and will not be shared or spammed."
 msgstr ""
 
-#: admin/admin-ui-render.php:1115
+#: admin/admin-ui-render.php:1172
+#, php-format
 msgid "Note: Requires Image Attributes Pro %s or newer to manage these options. <a href=\"%s\" target=\"_blank\">Read more.</a>"
 msgstr ""
 
@@ -649,6 +674,7 @@ msgid "Upgrade To Image Attributes Pro"
 msgstr ""
 
 #: admin/basic-setup.php:90
+#, php-format
 msgid "Thank you for installing <strong>Auto Image Attributes From Filename With Bulk Updater</strong>! <a href=\"%s\">Change settings &rarr;</a>"
 msgstr ""
 
@@ -657,6 +683,7 @@ msgid "<strong>Auto Image Attributes From Filename With Bulk Updater</strong> su
 msgstr ""
 
 #: admin/basic-setup.php:102
+#, php-format
 msgid "<br>Stay tuned to the latest image SEO news and receive helpful product updates. Subscribe to the <a href=\"%s\" target=\"_blank\">Image SEO Newsletter &rarr;</a>"
 msgstr ""
 
@@ -665,6 +692,7 @@ msgid "Image Attributes Pro activated"
 msgstr ""
 
 #: admin/basic-setup.php:135
+#, php-format
 msgid "If you like this plugin, please <a href=\"%s\" target=\"_blank\">upgrade to pro</a> or leave a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating to support continued development. Thanks a bunch!"
 msgstr ""
 
@@ -688,18 +716,33 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: admin/do.php:112
+#: admin/do.php:127
 msgid "Image attributes updated for: "
 msgstr ""
 
-#: admin/do.php:187
+#: admin/do.php:130
+#, php-format
+msgid ""
+"Image attributes were not updated for: <a href=\"%s\">%s</a><br>\r\n"
+"\t\t\tReason: %s"
+msgstr ""
+
+#: admin/do.php:211
 msgid "Counter reset. The bulk updater will start from scratch in the next run."
 msgstr ""
 
-#: admin/do.php:259
+#: admin/do.php:283
 msgid "No more images to skip."
 msgstr ""
 
-#: admin/do.php:273
+#: admin/do.php:297
 msgid "Image skipped: "
+msgstr ""
+
+#: admin/do.php:735
+msgid "Image object was not provided."
+msgstr ""
+
+#: admin/do.php:774
+msgid "Image could not be updated."
 msgstr ""

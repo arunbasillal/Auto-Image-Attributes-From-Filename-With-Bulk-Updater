@@ -48,7 +48,7 @@ What the pro add-on you get these additional features:
 * Use post title as alt text. If image is not attached to a post, image filename will be used instead.
 * Use post title as caption. If image is not attached to a post, image filename will be used instead.
 * Use post title as description. If image is not attached to a post, image filename will be used instead.
-* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%` and [many more](https://imageattributespro.com/custom-image-attribute-tags/?utm_source=github&utm_medium=readme.md). Each custom tag will be replaced  with it's value. You can combine them as you please!
+* Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%wc_variation%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%` and [many more](https://imageattributespro.com/custom-image-attribute-tags/?utm_source=github&utm_medium=readme.md). Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Use Yoast Focus Keyword and Rank Math Focus Keyword as image attributes.
 * Clear any image attribute by setting it as blank / empty. 
 * Exclude images from Bulk Updater. A meta box and a checkbox is added to the `Media Library` > `Edit Media` sidebar. When checked, the bulk updater will not update the attributes of that image in the media library or in posts / products where the image is used.
@@ -78,9 +78,9 @@ With the Image Attributes Pro bulk updater you can:
 * Update image caption and description in the media library. Existing image captions and descriptions can be preserved.
 * Build your own attributes using custom tags like `%filename%`, `%posttitle%`, `%sitetitle%`, `%category%`, `%tag%`, `%yoastfocuskw%`, `%yoastseotitle%`, `%rankmathfocuskw%`, `%seopresstargetkw%` and [many more](https://imageattributespro.com/custom-image-attribute-tags/?utm_source=github&utm_medium=readme.md). Each custom tag will be replaced  with it's value. You can combine them as you please!
 * Choose to turn off any of the above mentioned features.
+* Choose specific post types to bulk update.
 * Bulk update image attributes in [ACF's WYSIWYG Editor](https://imageattributespro.com/acf-compatibility/?utm_source=github&utm_medium=readme.md) and [Divi theme](https://imageattributespro.com/divi-compatibility/?utm_source=github&utm_medium=readme.md.md).
 * Modify auto generated image attributes using the [iaffpro_image_attributes filter](https://imageattributespro.com/codex/iaffpro_image_attributes/?utm_source=github&utm_medium=readme.md).
-* Choose specific post types to bulk update using the [iaffpro_included_post_types filter](https://imageattributespro.com/codex/iaffpro_included_post_types/?utm_source=github&utm_medium=readme.md).
 * Disable updating of attributes in media library completely and just updated attributes in Post HTML or vice versa.
 * Add or remove custom image attributes using the [iaffpro_html_image_markup_post_update filter](https://imageattributespro.com/codex/iaffpro_html_image_markup_post_update/?utm_source=github&utm_medium=readme.md)
 

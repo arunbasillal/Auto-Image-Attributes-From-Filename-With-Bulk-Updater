@@ -36,7 +36,7 @@ function iaff_activate_plugin() {
  * @since	1.0
  */
 function iaff_load_plugin_textdomain() {
-    load_plugin_textdomain( 'auto-image-attributes-from-filename-with-bulk-updater', FALSE, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
+    load_plugin_textdomain( 'auto-image-attributes-from-filename-with-bulk-updater', false, IAFF_IMAGE_ATTRIBUTES_FROM_FILENAME_DIR . '/languages/' );
 }
 add_action( 'plugins_loaded', 'iaff_load_plugin_textdomain' );
 
